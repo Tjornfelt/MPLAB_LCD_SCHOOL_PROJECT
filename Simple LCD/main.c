@@ -1,81 +1,50 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pic.h>
+#include <htc.h>
+#include "sound.h"
+#include "LCD.h"
+#include "ADC.h"
 
-#define Data PORTD
-#define Control PORTA
-#define Enable 0x2 	//0010
-#define Write 0xA 	//1010
-#define DataRegister 0x08
-#define Disable 0x00
+
+unsigned int a;
 void main()
 {
+	//=================STARTUP INITIALIZERS==============================================
+
 	//LED lights for verifying stuff works!
-	TRISB = 0; //set for output
-	PORTB = 0x9;
+	TRISB = 0x01; //set for output
+	PORTB = 0x9; //1001
+	
+	//Buzzer
+	TRISC = 0;
+	PORTC = 0;
 	
 	//display control ports
-	TRISA = 0b00010000; //Always output data.
+	TRISA = 0b00010001; //RA0 and RA4 are inputs. RA1-3 are outputs.
 	
 	//Display 
 	TRISD = 0; //Always output data.
 
-	//initialize
-	//4 bit mode 2 line
-	Control = Enable;
-	Data = 0b0010;
-	Control = Disable;
-	Control = Enable;
-	Data = 0b1000;
-	Control = Disable;
-	_delay(20000);
+	//Initialize the lcd screen
+	init_lcd();
 
-	//Display blinking block cursor
-	Control = Enable;
-	Data = 0b0000;
-	Control = Disable;
-	Control = Enable;
-	Data = 0b1111;
-	Control = Disable;
-	_delay(20000);
+	//Initialize the Analog/Digital module
+	ADC_Init();
 
-	//Address DDRAM with 0 offset 80h
-	Control = Enable;
-	Data = 0b1000;
-	Control = Disable;
-	Control = Enable;
-	Data = 0b0000;
-	Control = Disable;
-	_delay(20000);
-	
-
-	Control = Write;
-	Data = 0b0100;
-	Control = DataRegister;
-
-	Control = Write;
-	Data = 0b0001;
-	Control = DataRegister;
-
-	_delay(20000);
+	//=================END OF STARTUP INITIALIZERS=======================================
 
 
-	int charWritten = 0;	
 
+	//main program loop.
+	int charWritten = 0;
 	while(1)
 	{
+		//write a character to the display. Once per click.
 		if(RA4 == 0 && charWritten == 0)
 		{
-			Control = Write;
-			Data = 0b0100;
-			Control = DataRegister;
-		
-			Control = Write;
-			Data = 0b0001;
-			Control = DataRegister;
-			
-			_delay(20000);
-
+			write_data(0b0100, 0b0011);
+			sound();
 			charWritten = 1;
 		}
 		
@@ -83,5 +52,37 @@ void main()
 		{
 			charWritten = 0;
 		}
+
+
+		if(RB0 == 0)
+		{
+			clear_display();
+			write_data(0b0101, 0b0110);
+			write_data(0b0100, 0b1111);
+			write_data(0b0100, 0b1100);
+			write_data(0b0101, 0b0100);
+			write_data(0b0100, 0b0001);
+			write_data(0b0100, 0b0111);
+			write_data(0b0100, 0b0101);
+			write_data(0b0011, 0b1101);
+
+			a = ADC_Read(0); //Reading Analog Channel 0
+			
+			write_voltage(a);
+		}
+
 	}
+	
+	
+/*
+	do
+  {
+    a = ADC_Read(0); //Reading Analog Channel 0
+
+
+    PORTB = a; //Lower 8 bits to PORTB
+    PORTC = a>>8; //Higher 2 bits to PORTC
+    __delay_ms(100); //Delay
+  }while(1); //Infinite Loop
+*/
 }

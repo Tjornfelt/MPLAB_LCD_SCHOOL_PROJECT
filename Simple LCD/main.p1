@@ -827,10 +827,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _EECON1bits `VS99  1 e@396 ]
 "1104 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _EECON2 `Vuc  1 e@397 ]
-[p mainexit ]
 "154 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic.h
 [v __delay `(v  0 ef1`ul ]
 [p i __delay ]
+"10 C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\main.c
+[v _a `ui  1 e ]
+[p mainexit ]
 [; ;stdio.h: 12: typedef int ptrdiff_t;
 [; ;stdio.h: 13: typedef unsigned size_t;
 [; ;stdio.h: 14: typedef unsigned short wchar_t;
@@ -1692,174 +1694,623 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eeprom_routines.h: 43: extern void eecpymem(volatile unsigned char *to, eeprom unsigned char *from, unsigned char size);
 [; ;eeprom_routines.h: 44: extern void memcpyee(eeprom unsigned char *to, const unsigned char *from, unsigned char size);
 [; ;pic.h: 154: extern void _delay(unsigned long);
-"12 C:\Users\Mads\Desktop\MPLAB Projects\PIC16F877\Simple LCD\main.c
+"4 C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\sound.h
+[v _sound `(v  1 ef ]
+{
+[; ;sound.h: 4: void sound(){
+[e :U _sound ]
+[f ]
+"6
+[v _i `i  1 a ]
+[; ;sound.h: 6: int i = 0;
+[e = _i -> 0 `i ]
+[; ;sound.h: 9: while(i < 20)
+"9
+[e $U 102  ]
+[e :U 103 ]
+[; ;sound.h: 10: {
+"10
+{
+[; ;sound.h: 12: RC2 = 1;
+"12
+[e = _RC2 -> -> 1 `i `b ]
+[; ;sound.h: 15: _delay(6000);
+"15
+[e ( __delay (1 -> -> -> 6000 `i `l `ul ]
+[; ;sound.h: 17: RC2 = 0;
+"17
+[e = _RC2 -> -> 0 `i `b ]
+[; ;sound.h: 18: i++;
+"18
+[e ++ _i -> 1 `i ]
+"19
+}
+[e :U 102 ]
+"9
+[e $ < _i -> 20 `i 103  ]
+[e :U 104 ]
+[; ;sound.h: 19: }
+[; ;sound.h: 20: }
+"20
+[e :UE 101 ]
+}
+"11 C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.h
+[v _clear_display `(v  1 ef ]
+{
+[; ;LCD.h: 10: void clear_display()
+[; ;LCD.h: 11: {
+[e :U _clear_display ]
+[f ]
+[; ;LCD.h: 13: PORTA = 0x2;
+"13
+[e = _PORTA -> -> 2 `i `uc ]
+[; ;LCD.h: 14: PORTD = 0b0000;
+"14
+[e = _PORTD -> -> 0 `i `uc ]
+[; ;LCD.h: 15: PORTA = 0x00;
+"15
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;LCD.h: 16: PORTA = 0x2;
+"16
+[e = _PORTA -> -> 2 `i `uc ]
+[; ;LCD.h: 17: PORTD = 0b0001;
+"17
+[e = _PORTD -> -> 1 `i `uc ]
+[; ;LCD.h: 18: PORTA = 0x00;
+"18
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;LCD.h: 19: _delay(20000);
+"19
+[e ( __delay (1 -> -> -> 20000 `i `l `ul ]
+[; ;LCD.h: 20: }
+"20
+[e :UE 105 ]
+}
+"23
+[v _init_lcd `(v  1 ef ]
+{
+[; ;LCD.h: 22: void init_lcd()
+[; ;LCD.h: 23: {
+[e :U _init_lcd ]
+[f ]
+[; ;LCD.h: 25: PORTA = 0x2;
+"25
+[e = _PORTA -> -> 2 `i `uc ]
+[; ;LCD.h: 26: PORTD = 0b0010;
+"26
+[e = _PORTD -> -> 2 `i `uc ]
+[; ;LCD.h: 27: PORTA = 0x00;
+"27
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;LCD.h: 28: PORTA = 0x2;
+"28
+[e = _PORTA -> -> 2 `i `uc ]
+[; ;LCD.h: 29: PORTD = 0b1000;
+"29
+[e = _PORTD -> -> 8 `i `uc ]
+[; ;LCD.h: 30: PORTA = 0x00;
+"30
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;LCD.h: 31: _delay(20000);
+"31
+[e ( __delay (1 -> -> -> 20000 `i `l `ul ]
+[; ;LCD.h: 34: PORTA = 0x2;
+"34
+[e = _PORTA -> -> 2 `i `uc ]
+[; ;LCD.h: 35: PORTD = 0b0000;
+"35
+[e = _PORTD -> -> 0 `i `uc ]
+[; ;LCD.h: 36: PORTA = 0x00;
+"36
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;LCD.h: 37: PORTA = 0x2;
+"37
+[e = _PORTA -> -> 2 `i `uc ]
+[; ;LCD.h: 38: PORTD = 0b1111;
+"38
+[e = _PORTD -> -> 15 `i `uc ]
+[; ;LCD.h: 39: PORTA = 0x00;
+"39
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;LCD.h: 40: _delay(20000);
+"40
+[e ( __delay (1 -> -> -> 20000 `i `l `ul ]
+[; ;LCD.h: 42: clear_display();
+"42
+[e ( _clear_display ..  ]
+[; ;LCD.h: 45: }
+"45
+[e :UE 106 ]
+}
+"50
+[v _write_data `(v  1 ef2`uc`uc ]
+{
+[; ;LCD.h: 49: void write_data(char hb, char lb)
+[; ;LCD.h: 50: {
+[e :U _write_data ]
+[v _hb `uc  1 r1 ]
+[v _lb `uc  1 r2 ]
+[f ]
+[; ;LCD.h: 51: PORTA = 0xA;
+"51
+[e = _PORTA -> -> 10 `i `uc ]
+[; ;LCD.h: 52: PORTD = hb;
+"52
+[e = _PORTD _hb ]
+[; ;LCD.h: 53: PORTA = 0x08;
+"53
+[e = _PORTA -> -> 8 `i `uc ]
+[; ;LCD.h: 55: PORTA = 0xA;
+"55
+[e = _PORTA -> -> 10 `i `uc ]
+[; ;LCD.h: 56: PORTD = lb;
+"56
+[e = _PORTD _lb ]
+[; ;LCD.h: 57: PORTA = 0x08;
+"57
+[e = _PORTA -> -> 8 `i `uc ]
+[; ;LCD.h: 59: _delay(20000);
+"59
+[e ( __delay (1 -> -> -> 20000 `i `l `ul ]
+[; ;LCD.h: 60: }
+"60
+[e :UE 107 ]
+}
+"62
+[v _write_digits `(v  1 ef1`i ]
+{
+[; ;LCD.h: 61: void write_digits(int adc_measurement)
+[; ;LCD.h: 62: {
+[e :U _write_digits ]
+[v _adc_measurement `i  1 r1 ]
+[f ]
+[; ;LCD.h: 63: write_data(0b0010,0b1100);
+"63
+[e ( _write_data (2 , -> -> 2 `i `uc -> -> 12 `i `uc ]
+[; ;LCD.h: 65: if(adc_measurement > 180)
+"65
+[e $ ! > _adc_measurement -> 180 `i 109  ]
+[; ;LCD.h: 66: {
+"66
+{
+[; ;LCD.h: 67: write_data(0b0011, 0b1001);
+"67
+[e ( _write_data (2 , -> -> 3 `i `uc -> -> 9 `i `uc ]
+"68
+}
+[; ;LCD.h: 68: }
+[e $U 110  ]
+"69
+[e :U 109 ]
+[; ;LCD.h: 69: else if(adc_measurement > 160)
+[e $ ! > _adc_measurement -> 160 `i 111  ]
+[; ;LCD.h: 70: {
+"70
+{
+[; ;LCD.h: 71: write_data(0b0011, 0b1000);
+"71
+[e ( _write_data (2 , -> -> 3 `i `uc -> -> 8 `i `uc ]
+"72
+}
+[; ;LCD.h: 72: }
+[e $U 112  ]
+"73
+[e :U 111 ]
+[; ;LCD.h: 73: else if(adc_measurement > 140)
+[e $ ! > _adc_measurement -> 140 `i 113  ]
+[; ;LCD.h: 74: {
+"74
+{
+[; ;LCD.h: 75: write_data(0b0011, 0b0111);
+"75
+[e ( _write_data (2 , -> -> 3 `i `uc -> -> 7 `i `uc ]
+"76
+}
+[; ;LCD.h: 76: }
+[e $U 114  ]
+"77
+[e :U 113 ]
+[; ;LCD.h: 77: else if(adc_measurement > 120)
+[e $ ! > _adc_measurement -> 120 `i 115  ]
+[; ;LCD.h: 78: {
+"78
+{
+[; ;LCD.h: 79: write_data(0b0011, 0b0110);
+"79
+[e ( _write_data (2 , -> -> 3 `i `uc -> -> 6 `i `uc ]
+"80
+}
+[; ;LCD.h: 80: }
+[e $U 116  ]
+"81
+[e :U 115 ]
+[; ;LCD.h: 81: else if(adc_measurement > 100)
+[e $ ! > _adc_measurement -> 100 `i 117  ]
+[; ;LCD.h: 82: {
+"82
+{
+[; ;LCD.h: 83: write_data(0b0011, 0b0101);
+"83
+[e ( _write_data (2 , -> -> 3 `i `uc -> -> 5 `i `uc ]
+"84
+}
+[; ;LCD.h: 84: }
+[e $U 118  ]
+"85
+[e :U 117 ]
+[; ;LCD.h: 85: else if(adc_measurement > 80)
+[e $ ! > _adc_measurement -> 80 `i 119  ]
+[; ;LCD.h: 86: {
+"86
+{
+[; ;LCD.h: 87: write_data(0b0011, 0b0100);
+"87
+[e ( _write_data (2 , -> -> 3 `i `uc -> -> 4 `i `uc ]
+"88
+}
+[; ;LCD.h: 88: }
+[e $U 120  ]
+"89
+[e :U 119 ]
+[; ;LCD.h: 89: else if(adc_measurement > 60)
+[e $ ! > _adc_measurement -> 60 `i 121  ]
+[; ;LCD.h: 90: {
+"90
+{
+[; ;LCD.h: 91: write_data(0b0011, 0b0011);
+"91
+[e ( _write_data (2 , -> -> 3 `i `uc -> -> 3 `i `uc ]
+"92
+}
+[; ;LCD.h: 92: }
+[e $U 122  ]
+"93
+[e :U 121 ]
+[; ;LCD.h: 93: else if(adc_measurement > 40)
+[e $ ! > _adc_measurement -> 40 `i 123  ]
+[; ;LCD.h: 94: {
+"94
+{
+[; ;LCD.h: 95: write_data(0b0011, 0b0010);
+"95
+[e ( _write_data (2 , -> -> 3 `i `uc -> -> 2 `i `uc ]
+"96
+}
+[; ;LCD.h: 96: }
+[e $U 124  ]
+"97
+[e :U 123 ]
+[; ;LCD.h: 97: else if(adc_measurement > 20)
+[e $ ! > _adc_measurement -> 20 `i 125  ]
+[; ;LCD.h: 98: {
+"98
+{
+[; ;LCD.h: 99: write_data(0b0011, 0b0001);
+"99
+[e ( _write_data (2 , -> -> 3 `i `uc -> -> 1 `i `uc ]
+"100
+}
+[; ;LCD.h: 100: }
+[e $U 126  ]
+"101
+[e :U 125 ]
+[; ;LCD.h: 101: else if(adc_measurement >= 0)
+[e $ ! >= _adc_measurement -> 0 `i 127  ]
+[; ;LCD.h: 102: {
+"102
+{
+[; ;LCD.h: 103: write_data(0b0011, 0b0000);
+"103
+[e ( _write_data (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"104
+}
+[e :U 127 ]
+"105
+[e :U 126 ]
+[e :U 124 ]
+[e :U 122 ]
+[e :U 120 ]
+[e :U 118 ]
+[e :U 116 ]
+[e :U 114 ]
+[e :U 112 ]
+[e :U 110 ]
+[; ;LCD.h: 104: }
+[; ;LCD.h: 105: }
+[e :UE 108 ]
+}
+"108
+[v _write_voltage `(v  1 ef1`i ]
+{
+[; ;LCD.h: 107: void write_voltage(int adc_measurement)
+[; ;LCD.h: 108: {
+[e :U _write_voltage ]
+[v _adc_measurement `i  1 r1 ]
+[f ]
+[; ;LCD.h: 111: if(adc_measurement < 200)
+"111
+[e $ ! < _adc_measurement -> 200 `i 129  ]
+[; ;LCD.h: 112: {
+"112
+{
+[; ;LCD.h: 113: write_data(0b0011,0b0000);
+"113
+[e ( _write_data (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+[; ;LCD.h: 114: write_digits(adc_measurement);
+"114
+[e ( _write_digits (1 _adc_measurement ]
+"115
+}
+[; ;LCD.h: 115: }
+[e $U 130  ]
+"116
+[e :U 129 ]
+[; ;LCD.h: 116: else if(adc_measurement > 200 && adc_measurement < 400)
+[e $ ! && > _adc_measurement -> 200 `i < _adc_measurement -> 400 `i 131  ]
+[; ;LCD.h: 117: {
+"117
+{
+[; ;LCD.h: 118: write_data(0b0011,0b0001);
+"118
+[e ( _write_data (2 , -> -> 3 `i `uc -> -> 1 `i `uc ]
+[; ;LCD.h: 119: write_digits((adc_measurement-200));
+"119
+[e ( _write_digits (1 - _adc_measurement -> 200 `i ]
+"120
+}
+[; ;LCD.h: 120: }
+[e $U 132  ]
+"121
+[e :U 131 ]
+[; ;LCD.h: 121: else if(adc_measurement > 400 && adc_measurement < 600)
+[e $ ! && > _adc_measurement -> 400 `i < _adc_measurement -> 600 `i 133  ]
+[; ;LCD.h: 122: {
+"122
+{
+[; ;LCD.h: 123: write_data(0b0011,0b0010);
+"123
+[e ( _write_data (2 , -> -> 3 `i `uc -> -> 2 `i `uc ]
+[; ;LCD.h: 124: write_digits((adc_measurement-400));
+"124
+[e ( _write_digits (1 - _adc_measurement -> 400 `i ]
+"125
+}
+[; ;LCD.h: 125: }
+[e $U 134  ]
+"126
+[e :U 133 ]
+[; ;LCD.h: 126: else if(adc_measurement > 600 && adc_measurement < 800)
+[e $ ! && > _adc_measurement -> 600 `i < _adc_measurement -> 800 `i 135  ]
+[; ;LCD.h: 127: {
+"127
+{
+[; ;LCD.h: 128: write_data(0b0011,0b0011);
+"128
+[e ( _write_data (2 , -> -> 3 `i `uc -> -> 3 `i `uc ]
+[; ;LCD.h: 129: write_digits((adc_measurement-600));
+"129
+[e ( _write_digits (1 - _adc_measurement -> 600 `i ]
+"130
+}
+[; ;LCD.h: 130: }
+[e $U 136  ]
+"131
+[e :U 135 ]
+[; ;LCD.h: 131: else if(adc_measurement > 800 & adc_measurement < 1000)
+[e $ ! & > _adc_measurement -> 800 `i < _adc_measurement -> 1000 `i 137  ]
+[; ;LCD.h: 132: {
+"132
+{
+[; ;LCD.h: 133: write_data(0b0011,0b0100);
+"133
+[e ( _write_data (2 , -> -> 3 `i `uc -> -> 4 `i `uc ]
+[; ;LCD.h: 134: write_digits((adc_measurement-800));
+"134
+[e ( _write_digits (1 - _adc_measurement -> 800 `i ]
+"135
+}
+[; ;LCD.h: 135: }
+[e $U 138  ]
+"136
+[e :U 137 ]
+[; ;LCD.h: 136: else if(adc_measurement > 1000)
+[e $ ! > _adc_measurement -> 1000 `i 139  ]
+[; ;LCD.h: 137: {
+"137
+{
+[; ;LCD.h: 138: write_data(0b0011,0b0101);
+"138
+[e ( _write_data (2 , -> -> 3 `i `uc -> -> 5 `i `uc ]
+"139
+}
+[e :U 139 ]
+"140
+[e :U 138 ]
+[e :U 136 ]
+[e :U 134 ]
+[e :U 132 ]
+[e :U 130 ]
+[; ;LCD.h: 139: }
+[; ;LCD.h: 140: }
+[e :UE 128 ]
+}
+"6 C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\ADC.h
+[v _ADC_Init `(v  1 ef ]
+{
+[; ;ADC.h: 5: void ADC_Init()
+[; ;ADC.h: 6: {
+[e :U _ADC_Init ]
+[f ]
+[; ;ADC.h: 7: ADCON0 = 0x41;
+"7
+[e = _ADCON0 -> -> 65 `i `uc ]
+[; ;ADC.h: 8: ADCON1 = 0xC0;
+"8
+[e = _ADCON1 -> -> 192 `i `uc ]
+[; ;ADC.h: 10: }
+"10
+[e :UE 140 ]
+}
+"13
+[v _ADC_Read `(ui  1 ef1`uc ]
+{
+[; ;ADC.h: 12: unsigned int ADC_Read(unsigned char channel)
+[; ;ADC.h: 13: {
+[e :U _ADC_Read ]
+[v _channel `uc  1 r1 ]
+[f ]
+[; ;ADC.h: 14: ADCON0 &= 0xC5;
+"14
+[e =& _ADCON0 -> -> 197 `i `uc ]
+[; ;ADC.h: 15: ADCON0 |= channel<<3;
+"15
+[e =| _ADCON0 -> << -> _channel `i -> 3 `i `uc ]
+[; ;ADC.h: 16: _delay((unsigned long)((2)*(10/4000.0)));
+"16
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 10 `i `d .4000.0 `ul ]
+[; ;ADC.h: 17: GO_nDONE = 1;
+"17
+[e = _GO_nDONE -> -> 1 `i `b ]
+[; ;ADC.h: 18: while(GO_nDONE);
+"18
+[e $U 142  ]
+[e :U 143 ]
+[e :U 142 ]
+[e $ _GO_nDONE 143  ]
+[e :U 144 ]
+[; ;ADC.h: 19: return ((ADRESH<<8)+ADRESL);
+"19
+[e ) -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
+[e $UE 141  ]
+[; ;ADC.h: 20: }
+"20
+[e :UE 141 ]
+}
+[; ;main.c: 10: unsigned int a;
+"12 C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\main.c
 [v _main `(v  1 ef ]
 {
 [; ;main.c: 11: void main()
 [; ;main.c: 12: {
 [e :U _main ]
 [f ]
-[; ;main.c: 14: TRISB = 0;
-"14
-[e = _TRISB -> -> 0 `i `uc ]
-[; ;main.c: 15: PORTB = 0x9;
-"15
+[; ;main.c: 16: TRISB = 0x01;
+"16
+[e = _TRISB -> -> 1 `i `uc ]
+[; ;main.c: 17: PORTB = 0x9;
+"17
 [e = _PORTB -> -> 9 `i `uc ]
-[; ;main.c: 18: TRISA = 0b00010000;
-"18
-[e = _TRISA -> -> 16 `i `uc ]
-[; ;main.c: 21: TRISD = 0;
+[; ;main.c: 20: TRISC = 0;
+"20
+[e = _TRISC -> -> 0 `i `uc ]
+[; ;main.c: 21: PORTC = 0;
 "21
-[e = _TRISD -> -> 0 `i `uc ]
-[; ;main.c: 25: PORTA = 0x2;
-"25
-[e = _PORTA -> -> 2 `i `uc ]
-[; ;main.c: 26: PORTD = 0b0010;
-"26
-[e = _PORTD -> -> 2 `i `uc ]
-[; ;main.c: 27: PORTA = 0x00;
+[e = _PORTC -> -> 0 `i `uc ]
+[; ;main.c: 24: TRISA = 0b00010001;
+"24
+[e = _TRISA -> -> 17 `i `uc ]
+[; ;main.c: 27: TRISD = 0;
 "27
-[e = _PORTA -> -> 0 `i `uc ]
-[; ;main.c: 28: PORTA = 0x2;
-"28
-[e = _PORTA -> -> 2 `i `uc ]
-[; ;main.c: 29: PORTD = 0b1000;
-"29
-[e = _PORTD -> -> 8 `i `uc ]
-[; ;main.c: 30: PORTA = 0x00;
+[e = _TRISD -> -> 0 `i `uc ]
+[; ;main.c: 30: init_lcd();
 "30
-[e = _PORTA -> -> 0 `i `uc ]
-[; ;main.c: 31: _delay(20000);
-"31
-[e ( __delay (1 -> -> -> 20000 `i `l `ul ]
-[; ;main.c: 34: PORTA = 0x2;
-"34
-[e = _PORTA -> -> 2 `i `uc ]
-[; ;main.c: 35: PORTD = 0b0000;
-"35
-[e = _PORTD -> -> 0 `i `uc ]
-[; ;main.c: 36: PORTA = 0x00;
-"36
-[e = _PORTA -> -> 0 `i `uc ]
-[; ;main.c: 37: PORTA = 0x2;
-"37
-[e = _PORTA -> -> 2 `i `uc ]
-[; ;main.c: 38: PORTD = 0b1111;
-"38
-[e = _PORTD -> -> 15 `i `uc ]
-[; ;main.c: 39: PORTA = 0x00;
-"39
-[e = _PORTA -> -> 0 `i `uc ]
-[; ;main.c: 40: _delay(20000);
+[e ( _init_lcd ..  ]
+[; ;main.c: 33: ADC_Init();
+"33
+[e ( _ADC_Init ..  ]
 "40
-[e ( __delay (1 -> -> -> 20000 `i `l `ul ]
-[; ;main.c: 43: PORTA = 0x2;
-"43
-[e = _PORTA -> -> 2 `i `uc ]
-[; ;main.c: 44: PORTD = 0b1000;
-"44
-[e = _PORTD -> -> 8 `i `uc ]
-[; ;main.c: 45: PORTA = 0x00;
-"45
-[e = _PORTA -> -> 0 `i `uc ]
-[; ;main.c: 46: PORTA = 0x2;
-"46
-[e = _PORTA -> -> 2 `i `uc ]
-[; ;main.c: 47: PORTD = 0b0000;
-"47
-[e = _PORTD -> -> 0 `i `uc ]
-[; ;main.c: 48: PORTA = 0x00;
-"48
-[e = _PORTA -> -> 0 `i `uc ]
-[; ;main.c: 49: _delay(20000);
-"49
-[e ( __delay (1 -> -> -> 20000 `i `l `ul ]
-[; ;main.c: 52: PORTA = 0xA;
-"52
-[e = _PORTA -> -> 10 `i `uc ]
-[; ;main.c: 53: PORTD = 0b0100;
-"53
-[e = _PORTD -> -> 4 `i `uc ]
-[; ;main.c: 54: PORTA = 0x08;
-"54
-[e = _PORTA -> -> 8 `i `uc ]
-[; ;main.c: 56: PORTA = 0xA;
-"56
-[e = _PORTA -> -> 10 `i `uc ]
-[; ;main.c: 57: PORTD = 0b0001;
-"57
-[e = _PORTD -> -> 1 `i `uc ]
-[; ;main.c: 58: PORTA = 0x08;
-"58
-[e = _PORTA -> -> 8 `i `uc ]
-[; ;main.c: 60: _delay(20000);
-"60
-[e ( __delay (1 -> -> -> 20000 `i `l `ul ]
-"63
 [v _charWritten `i  1 a ]
-[; ;main.c: 63: int charWritten = 0;
+[; ;main.c: 40: int charWritten = 0;
 [e = _charWritten -> 0 `i ]
-[; ;main.c: 65: while(1)
-"65
-[e :U 103 ]
-[; ;main.c: 66: {
-"66
+[; ;main.c: 41: while(1)
+"41
+[e :U 147 ]
+[; ;main.c: 42: {
+"42
 {
-[; ;main.c: 67: if(RA4 == 0 && charWritten == 0)
-"67
-[e $ ! && == -> _RA4 `i -> 0 `i == _charWritten -> 0 `i 105  ]
-[; ;main.c: 68: {
-"68
+[; ;main.c: 44: if(RA4 == 0 && charWritten == 0)
+"44
+[e $ ! && == -> _RA4 `i -> 0 `i == _charWritten -> 0 `i 149  ]
+[; ;main.c: 45: {
+"45
 {
-[; ;main.c: 69: PORTA = 0xA;
-"69
-[e = _PORTA -> -> 10 `i `uc ]
-[; ;main.c: 70: PORTD = 0b0100;
-"70
-[e = _PORTD -> -> 4 `i `uc ]
-[; ;main.c: 71: PORTA = 0x08;
-"71
-[e = _PORTA -> -> 8 `i `uc ]
-[; ;main.c: 73: PORTA = 0xA;
-"73
-[e = _PORTA -> -> 10 `i `uc ]
-[; ;main.c: 74: PORTD = 0b0001;
-"74
-[e = _PORTD -> -> 1 `i `uc ]
-[; ;main.c: 75: PORTA = 0x08;
-"75
-[e = _PORTA -> -> 8 `i `uc ]
-[; ;main.c: 77: _delay(20000);
-"77
-[e ( __delay (1 -> -> -> 20000 `i `l `ul ]
-[; ;main.c: 79: charWritten = 1;
-"79
+[; ;main.c: 46: write_data(0b0100, 0b0011);
+"46
+[e ( _write_data (2 , -> -> 4 `i `uc -> -> 3 `i `uc ]
+[; ;main.c: 47: sound();
+"47
+[e ( _sound ..  ]
+[; ;main.c: 48: charWritten = 1;
+"48
 [e = _charWritten -> 1 `i ]
-"80
+"49
 }
-[e :U 105 ]
-[; ;main.c: 80: }
-[; ;main.c: 82: if(charWritten == 1 && RA4 == 1)
-"82
-[e $ ! && == _charWritten -> 1 `i == -> _RA4 `i -> 1 `i 106  ]
-[; ;main.c: 83: {
-"83
+[e :U 149 ]
+[; ;main.c: 49: }
+[; ;main.c: 51: if(charWritten == 1 && RA4 == 1)
+"51
+[e $ ! && == _charWritten -> 1 `i == -> _RA4 `i -> 1 `i 150  ]
+[; ;main.c: 52: {
+"52
 {
-[; ;main.c: 84: charWritten = 0;
-"84
+[; ;main.c: 53: charWritten = 0;
+"53
 [e = _charWritten -> 0 `i ]
-"85
+"54
 }
-[e :U 106 ]
-"86
-}
-[e :U 102 ]
+[e :U 150 ]
+[; ;main.c: 54: }
+[; ;main.c: 57: if(RB0 == 0)
+"57
+[e $ ! == -> _RB0 `i -> 0 `i 151  ]
+[; ;main.c: 58: {
+"58
+{
+[; ;main.c: 59: clear_display();
+"59
+[e ( _clear_display ..  ]
+[; ;main.c: 60: write_data(0b0101, 0b0110);
+"60
+[e ( _write_data (2 , -> -> 5 `i `uc -> -> 6 `i `uc ]
+[; ;main.c: 61: write_data(0b0100, 0b1111);
+"61
+[e ( _write_data (2 , -> -> 4 `i `uc -> -> 15 `i `uc ]
+[; ;main.c: 62: write_data(0b0100, 0b1100);
+"62
+[e ( _write_data (2 , -> -> 4 `i `uc -> -> 12 `i `uc ]
+[; ;main.c: 63: write_data(0b0101, 0b0100);
+"63
+[e ( _write_data (2 , -> -> 5 `i `uc -> -> 4 `i `uc ]
+[; ;main.c: 64: write_data(0b0100, 0b0001);
+"64
+[e ( _write_data (2 , -> -> 4 `i `uc -> -> 1 `i `uc ]
+[; ;main.c: 65: write_data(0b0100, 0b0111);
 "65
-[e $U 103  ]
-[e :U 104 ]
-[; ;main.c: 85: }
-[; ;main.c: 86: }
-[; ;main.c: 87: }
-"87
-[e :UE 101 ]
+[e ( _write_data (2 , -> -> 4 `i `uc -> -> 7 `i `uc ]
+[; ;main.c: 66: write_data(0b0100, 0b0101);
+"66
+[e ( _write_data (2 , -> -> 4 `i `uc -> -> 5 `i `uc ]
+[; ;main.c: 67: write_data(0b0011, 0b1101);
+"67
+[e ( _write_data (2 , -> -> 3 `i `uc -> -> 13 `i `uc ]
+[; ;main.c: 69: a = ADC_Read(0);
+"69
+[e = _a ( _ADC_Read (1 -> -> 0 `i `uc ]
+[; ;main.c: 71: write_voltage(a);
+"71
+[e ( _write_voltage (1 -> _a `i ]
+"72
+}
+[e :U 151 ]
+"74
+}
+[e :U 146 ]
+"41
+[e $U 147  ]
+[e :U 148 ]
+[; ;main.c: 72: }
+[; ;main.c: 74: }
+[; ;main.c: 88: }
+"88
+[e :UE 145 ]
 }

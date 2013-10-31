@@ -1,2 +1,10 @@
-_main: CODE, 1891 0 157
-Total: 157
+_write_data: CODE, 1180 0 25
+_write_digits: CODE, 1540 0 247
+_main: CODE, 1339 0 201
+_clear_display: CODE, 1159 0 21
+_sound: CODE, 1205 0 40
+_init_lcd: CODE, 1292 0 47
+_write_voltage: CODE, 1787 0 261
+_ADC_Read: CODE, 1245 0 47
+_ADC_Init: CODE, 1150 0 9
+Total: 898

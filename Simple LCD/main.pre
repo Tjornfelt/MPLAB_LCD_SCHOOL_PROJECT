@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\Mads\Desktop\MPLAB Projects\PIC16F877\Simple LCD\main.c"
+# 1 "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\main.c"
 
 # 12 "C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\stdio.h"
 typedef int ptrdiff_t;
@@ -1152,20 +1152,40 @@ extern void memcpyee(eeprom unsigned char *to, const unsigned char *from, unsign
 #pragma inline(_delay)
 extern void _delay(unsigned long);
 
-# 11 "C:\Users\Mads\Desktop\MPLAB Projects\PIC16F877\Simple LCD\main.c"
-void main()
+# 4 "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\sound.h"
+void sound(){
+
+int i = 0;
+
+
+while(i < 20)
 {
 
-TRISB = 0;
-PORTB = 0x9;
+RC2 = 1;
 
 
-TRISA = 0b00010000;
+_delay(6000);
 
+RC2 = 0;
+i++;
+}
+}
 
-TRISD = 0;
+# 10 "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.h"
+void clear_display()
+{
 
+PORTA = 0x2;
+PORTD = 0b0000;
+PORTA = 0x00;
+PORTA = 0x2;
+PORTD = 0b0001;
+PORTA = 0x00;
+_delay(20000);
+}
 
+void init_lcd()
+{
 
 PORTA = 0x2;
 PORTD = 0b0010;
@@ -1184,43 +1204,159 @@ PORTD = 0b1111;
 PORTA = 0x00;
 _delay(20000);
 
-
-PORTA = 0x2;
-PORTD = 0b1000;
-PORTA = 0x00;
-PORTA = 0x2;
-PORTD = 0b0000;
-PORTA = 0x00;
-_delay(20000);
+clear_display();
 
 
+}
+
+
+
+void write_data(char hb, char lb)
+{
 PORTA = 0xA;
-PORTD = 0b0100;
+PORTD = hb;
 PORTA = 0x08;
 
 PORTA = 0xA;
-PORTD = 0b0001;
+PORTD = lb;
 PORTA = 0x08;
 
 _delay(20000);
+}
+void write_digits(int adc_measurement)
+{
+write_data(0b0010,0b1100);
+
+if(adc_measurement > 180)
+{
+write_data(0b0011, 0b1001);
+}
+else if(adc_measurement > 160)
+{
+write_data(0b0011, 0b1000);
+}
+else if(adc_measurement > 140)
+{
+write_data(0b0011, 0b0111);
+}
+else if(adc_measurement > 120)
+{
+write_data(0b0011, 0b0110);
+}
+else if(adc_measurement > 100)
+{
+write_data(0b0011, 0b0101);
+}
+else if(adc_measurement > 80)
+{
+write_data(0b0011, 0b0100);
+}
+else if(adc_measurement > 60)
+{
+write_data(0b0011, 0b0011);
+}
+else if(adc_measurement > 40)
+{
+write_data(0b0011, 0b0010);
+}
+else if(adc_measurement > 20)
+{
+write_data(0b0011, 0b0001);
+}
+else if(adc_measurement >= 0)
+{
+write_data(0b0011, 0b0000);
+}
+}
+
+void write_voltage(int adc_measurement)
+{
 
 
+if(adc_measurement < 200)
+{
+write_data(0b0011,0b0000);
+write_digits(adc_measurement);
+}
+else if(adc_measurement > 200 && adc_measurement < 400)
+{
+write_data(0b0011,0b0001);
+write_digits((adc_measurement-200));
+}
+else if(adc_measurement > 400 && adc_measurement < 600)
+{
+write_data(0b0011,0b0010);
+write_digits((adc_measurement-400));
+}
+else if(adc_measurement > 600 && adc_measurement < 800)
+{
+write_data(0b0011,0b0011);
+write_digits((adc_measurement-600));
+}
+else if(adc_measurement > 800 & adc_measurement < 1000)
+{
+write_data(0b0011,0b0100);
+write_digits((adc_measurement-800));
+}
+else if(adc_measurement > 1000)
+{
+write_data(0b0011,0b0101);
+}
+}
+
+# 5 "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\ADC.h"
+void ADC_Init()
+{
+ADCON0 = 0x41;
+ADCON1 = 0xC0;
+
+}
+
+unsigned int ADC_Read(unsigned char channel)
+{
+ADCON0 &= 0xC5;
+ADCON0 |= channel<<3;
+_delay((unsigned long)((2)*(10/4000.0)));
+GO_nDONE = 1;
+while(GO_nDONE);
+return ((ADRESH<<8)+ADRESL);
+}
+
+# 10 "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\main.c"
+unsigned int a;
+void main()
+{
+
+
+
+TRISB = 0x01;
+PORTB = 0x9;
+
+
+TRISC = 0;
+PORTC = 0;
+
+
+TRISA = 0b00010001;
+
+
+TRISD = 0;
+
+
+init_lcd();
+
+
+ADC_Init();
+
+# 40
 int charWritten = 0;
-
 while(1)
 {
+
 if(RA4 == 0 && charWritten == 0)
 {
-PORTA = 0xA;
-PORTD = 0b0100;
-PORTA = 0x08;
-
-PORTA = 0xA;
-PORTD = 0b0001;
-PORTA = 0x08;
-
-_delay(20000);
-
+write_data(0b0100, 0b0011);
+sound();
 charWritten = 1;
 }
 
@@ -1228,5 +1364,26 @@ if(charWritten == 1 && RA4 == 1)
 {
 charWritten = 0;
 }
+
+
+if(RB0 == 0)
+{
+clear_display();
+write_data(0b0101, 0b0110);
+write_data(0b0100, 0b1111);
+write_data(0b0100, 0b1100);
+write_data(0b0101, 0b0100);
+write_data(0b0100, 0b0001);
+write_data(0b0100, 0b0111);
+write_data(0b0100, 0b0101);
+write_data(0b0011, 0b1101);
+
+a = ADC_Read(0);
+
+write_voltage(a);
 }
+
+}
+
+# 88
 }

@@ -497,8 +497,24 @@
 [v ___tmul `(um  1 e 3 0 ]
 "3 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\sources\wmul.c
 [v ___wmul `(ui  1 e 2 0 ]
-"12 C:\Users\Mads\Desktop\MPLAB Projects\PIC16F877\Simple LCD\main.c
+"6 C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\ADC.h
+[v _ADC_Init `(v  1 e 0 0 ]
+"13
+[v _ADC_Read `(ui  1 e 2 0 ]
+"11 C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.h
+[v _clear_display `(v  1 e 0 0 ]
+"23
+[v _init_lcd `(v  1 e 0 0 ]
+"50
+[v _write_data `(v  1 e 0 0 ]
+"62
+[v _write_digits `(v  1 e 0 0 ]
+"108
+[v _write_voltage `(v  1 e 0 0 ]
+"12 C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\main.c
 [v _main `(v  1 e 0 0 ]
+"4 C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\sound.h
+[v _sound `(v  1 e 0 0 ]
 "7 eeprom.c
 [v _eecpymem `(v  1 e 0 0 ]
 "25
@@ -1165,10 +1181,61 @@
 [v _EEADRHbits `VES192  1 e 1 @271 ]
 "1100
 [v _EECON1bits `VES1136  1 e 1 @396 ]
-"12 C:\Users\Mads\Desktop\MPLAB Projects\PIC16F877\Simple LCD\main.c
+"10 C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\main.c
+[v _a `ui  1 e 2 0 ]
+"12
 [v _main `(v  1 e 0 0 ]
 {
-"63
-[v main@charWritten `i  1 a 2 2 ]
-"87
+"40
+[v main@charWritten `i  1 a 2 11 ]
+"88
+} 0
+"108 C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.h
+[v _write_voltage `(v  1 e 0 0 ]
+{
+[v write_voltage@adc_measurement `i  1 p 2 7 ]
+"140
+} 0
+"62
+[v _write_digits `(v  1 e 0 0 ]
+{
+[v write_digits@adc_measurement `i  1 p 2 4 ]
+"105
+} 0
+"23
+[v _init_lcd `(v  1 e 0 0 ]
+{
+"45
+} 0
+"13 C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\ADC.h
+[v _ADC_Read `(ui  1 e 2 0 ]
+{
+[v ADC_Read@channel `uc  1 a 1 wreg ]
+[v ADC_Read@channel `uc  1 a 1 wreg ]
+"20
+} 0
+"50 C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.h
+[v _write_data `(v  1 e 0 0 ]
+{
+[v write_data@hb `uc  1 a 1 wreg ]
+[v write_data@hb `uc  1 a 1 wreg ]
+[v write_data@lb `uc  1 p 1 0 ]
+"60
+} 0
+"11
+[v _clear_display `(v  1 e 0 0 ]
+{
+"20
+} 0
+"4 C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\sound.h
+[v _sound `(v  1 e 0 0 ]
+{
+"6
+[v sound@i `i  1 a 2 2 ]
+"20
+} 0
+"6 C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\ADC.h
+[v _ADC_Init `(v  1 e 0 0 ]
+{
+"10
 } 0
