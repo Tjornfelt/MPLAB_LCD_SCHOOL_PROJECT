@@ -1,130 +1,5 @@
 
-# 1 "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\main.c"
-
-# 12 "C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\stdio.h"
-typedef int ptrdiff_t;
-typedef unsigned size_t;
-typedef unsigned short wchar_t;
-
-# 31 "C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\stdarg.h"
-typedef void * va_list[1];
-
-#pragma inline(__va_start)
-extern void * __va_start(void);
-
-#pragma inline(__va_arg)
-extern void * __va_arg(void *, ...);
-
-# 27 "C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\stdio.h"
-extern int errno;
-
-# 58
-struct __prbuf
-{
-char * ptr;
-void (* func)(char);
-};
-
-# 17 "C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\conio.h"
-extern int errno;
-
-
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern bit kbhit(void);
-
-# 31
-extern char * cgets(char *);
-extern void cputs(const char *);
-
-# 103 "C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\stdio.h"
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-
-# 195
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...);
-extern int sscanf(const char *, const char *, ...);
-extern int vprintf(const char *, va_list);
-extern int vsprintf(char *, const char *, va_list);
-extern int vscanf(const char *, va_list ap);
-extern int vsscanf(const char *, const char *, va_list);
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-
-# 27 "C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\stdlib.h"
-typedef struct {
-int rem;
-int quot;
-} div_t;
-typedef struct {
-unsigned rem;
-unsigned quot;
-} udiv_t;
-typedef struct {
-long quot;
-long rem;
-} ldiv_t;
-typedef struct {
-unsigned long quot;
-unsigned long rem;
-} uldiv_t;
-
-# 65
-extern double atof(const char *);
-extern double strtod(const char *, const char **);
-extern int atoi(const char *);
-extern unsigned xtoi(const char *);
-extern long atol(const char *);
-extern long strtol(const char *, char **, int);
-
-extern int rand(void);
-extern void srand(unsigned int);
-extern void * calloc(size_t, size_t);
-extern div_t div(int numer, int denom);
-extern udiv_t udiv(unsigned numer, unsigned denom);
-extern ldiv_t ldiv(long numer, long denom);
-extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
-extern unsigned long _lrotl(unsigned long value, unsigned int shift);
-extern unsigned long _lrotr(unsigned long value, unsigned int shift);
-extern unsigned int _rotl(unsigned int value, unsigned int shift);
-extern unsigned int _rotr(unsigned int value, unsigned int shift);
-
-# 106
-extern void * malloc(size_t);
-extern void free(void *);
-extern void * realloc(void *, size_t);
-
-# 122
-extern void abort(void);
-extern void exit(int);
-extern int atexit(void (*)(void));
-extern char * getenv(const char *);
-extern char ** environ;
-extern int system(char *);
-extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
-extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
-extern int abs(int);
-extern long labs(long);
-
-# 145
-extern char * itoa(char * buf, int val, int base);
-extern char * utoa(char * buf, unsigned val, int base);
-extern char * ltoa(char * buf, long val, int base);
-extern char * ultoa(char * buf, unsigned long val, int base);
+# 1 "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\ADC.c"
 
 # 82 "C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h"
 volatile unsigned char INDF @ 0x000;
@@ -1152,88 +1027,20 @@ extern void memcpyee(eeprom unsigned char *to, const unsigned char *from, unsign
 #pragma inline(_delay)
 extern void _delay(unsigned long);
 
-# 1 "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\Sound.h"
-void Sound();
-
-# 1 "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.h"
-void Clear_display();
-
-void Init_lcd();
-
-void Write_data(char hb, char lb);
-
-void Write_digits(int adc_measurement);
-
-void Write_voltage(int adc_measurement);
-
-# 1 "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\ADC.h"
-void ADC_Init();
-
-unsigned int ADC_Read(unsigned char channel);
-
-# 9 "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\main.c"
-unsigned int a;
-
-void main()
+# 6 "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\ADC.c"
+void ADC_Init()
 {
-
-
-
-TRISB = 0x01;
-PORTB = 0x9;
-
-
-TRISC = 0;
-PORTC = 0;
-
-
-TRISA = 0b00010001;
-
-
-TRISD = 0;
-
-
-Init_lcd();
-
-
-ADC_Init();
-
-# 39
-int charWritten = 0;
-while(1)
-{
-
-if(RA4 == 0 && charWritten == 0)
-{
-Write_data(0b0100, 0b0011);
-Sound();
-charWritten = 1;
-}
-
-if(charWritten == 1 && RA4 == 1)
-{
-charWritten = 0;
-}
-
-
-if(RB0 == 0)
-{
-Clear_display();
-Write_data(0b0101, 0b0110);
-Write_data(0b0100, 0b1111);
-Write_data(0b0100, 0b1100);
-Write_data(0b0101, 0b0100);
-Write_data(0b0100, 0b0001);
-Write_data(0b0100, 0b0111);
-Write_data(0b0100, 0b0101);
-Write_data(0b0011, 0b1101);
-
-a = ADC_Read(0);
-
-Write_voltage(a);
-}
+ADCON0 = 0x41;
+ADCON1 = 0xC0;
 
 }
 
-# 87
+unsigned int ADC_Read(unsigned char channel)
+{
+ADCON0 &= 0xC5;
+ADCON0 |= channel<<3;
+_delay((unsigned long)((2)*(4000000/4000.0)));
+GO_nDONE = 1;
+while(GO_nDONE);
+return ((ADRESH<<8)+ADRESL);
 }

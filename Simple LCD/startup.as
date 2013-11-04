@@ -8,9 +8,10 @@
 	; Compiler options:
 	;
 	; -oSimple LCD.cof -mSimple LCD.map --summary=default --output=default \
-	; main.p1 --chip=16F877 -P --runtime=default --opt=default -D__DEBUG=1 \
-	; -g --asmlist --errformat=Error   [%n] %f; %l.%c %s \
-	; --msgformat=Advisory[%n] %s --warnformat=Warning [%n] %f; %l.%c %s
+	; main.p1 ADC.p1 LCD.p1 Sound.p1 --chip=16F877 -P --runtime=default \
+	; --opt=default -D__DEBUG=1 -g --asmlist \
+	; --errformat=Error   [%n] %f; %l.%c %s --msgformat=Advisory[%n] %s \
+	; --warnformat=Warning [%n] %f; %l.%c %s
 	;
 
 

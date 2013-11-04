@@ -24,34 +24,34 @@ Machine type is 16F877
 
                 Name                               Link     Load   Length Selector   Space Scale
 startup.obj     end_init                              0        0        3        0       0
-Simple LCD.obj  text240                             47E      47E        9      8FC       0
-                text239                             4B5      4B5       28      96A       0
-                text238                             487      487       15      90E       0
-                text237                             49C      49C       19      938       0
-                text236                             4DD      4DD       2F      9BA       0
-                text235                             50C      50C       2F      A18       0
+Simple LCD.obj  text240                             475      475        9      8EA       0
+                text239                             493      493       19      926       0
+                text238                             4AC      4AC       28      958       0
+                text237                             47E      47E       15      8FC       0
+                text236                             503      503       38      A06       0
+                text235                             4D4      4D4       2F      9A8       0
                 text234                             604      604       F7      C08       0
                 text233                             6FB      6FB      105      DF6       0
                 maintext                            53B      53B       C9      A76       0
                 cstackCOMMON                         70       70        D       70       1
                 bssBANK0                             20       20        2       20       1
-                cinit                               478      478        6      8F0       0
+                cinit                               46F      46F        6      8DE       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   CONST          
 
         CLASS   CODE           
                 end_init                              0        0        3         0
-                text240                             47E      47E        9         0
-                text239                             4B5      4B5       28         0
-                text238                             487      487       15         0
-                text237                             49C      49C       19         0
-                text236                             4DD      4DD       2F         0
-                text235                             50C      50C       2F         0
+                text240                             475      475        9         0
+                text239                             493      493       19         0
+                text238                             4AC      4AC       28         0
+                text237                             47E      47E       15         0
+                text236                             503      503       38         0
+                text235                             4D4      4D4       2F         0
                 text234                             604      604       F7         0
                 text233                             6FB      6FB      105         0
                 maintext                            53B      53B       C9         0
-                cinit                               478      478        6         0
+                cinit                               46F      46F        6         0
 
         CLASS   STRCODE        
 
@@ -97,13 +97,13 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
                 bssBANK0                       000020  000002  000022        20       1  BANK0       1
                 cstackCOMMON                   000070  00000D  00007D        70       1  COMMON      1
-                cinit                          000478  000006  00047E       8F0       0  CODE        2
-                text240                        00047E  000009  000487       8FC       0  CODE        2
-                text238                        000487  000015  00049C       90E       0  CODE        2
-                text237                        00049C  000019  0004B5       938       0  CODE        2
-                text239                        0004B5  000028  0004DD       96A       0  CODE        2
-                text236                        0004DD  00002F  00050C       9BA       0  CODE        2
-                text235                        00050C  00002F  00053B       A18       0  CODE        2
+                cinit                          00046F  000006  000475       8DE       0  CODE        2
+                text240                        000475  000009  00047E       8EA       0  CODE        2
+                text237                        00047E  000015  000493       8FC       0  CODE        2
+                text239                        000493  000019  0004AC       926       0  CODE        2
+                text238                        0004AC  000028  0004D4       958       0  CODE        2
+                text235                        0004D4  00002F  000503       9A8       0  CODE        2
+                text236                        000503  000038  00053B       A06       0  CODE        2
                 maintext                       00053B  0000C9  000604       A76       0  CODE        2
                 text234                        000604  0000F7  0006FB       C08       0  CODE        2
                 text233                        0006FB  000105  000800       DF6       0  CODE        2
@@ -116,14 +116,14 @@ UNUSED ADDRESS RANGES
         BANK1            00A0-00EF             50           1
         BANK2            0110-016F             60           1
         BANK3            0190-01EF             60           1
-        CODE             0003-0477            475           2
+        CODE             0003-046E            46C           2
                          0800-1FFF            800
         COMMON           007D-007D              1           1
         CONFIG           2007-2007              1           2
-        CONST            0003-0477            100           2
+        CONST            0003-046E            100           2
                          0800-1FFF            100
         EEDATA           2100-21FF            100           2
-        ENTRY            0003-0477            100           2
+        ENTRY            0003-046E            100           2
                          0800-1FFF            100
         IDLOC            2000-2003              4           2
         RAM              0022-006F             4E           1
@@ -134,45 +134,52 @@ UNUSED ADDRESS RANGES
         SFR1             0080-009F             20           1
         SFR2             0100-010F             10           1
         SFR3             0180-018F             10           1
-        STRCODE          0003-0477            475           2
+        STRCODE          0003-046E            46C           2
                          0800-1FFF           1800
-        STRING           0003-0477            100           2
+        STRING           0003-046E            100           2
                          0800-1FFF            100
 
                                   Symbol Table
 
 ??_ADC_Init                   cstackCOMMON 0070
 ??_ADC_Read                   cstackCOMMON 0072
-??_clear_display              cstackCOMMON 0070
-??_init_lcd                   cstackCOMMON 0072
+??_Clear_display              cstackCOMMON 0070
+??_Init_lcd                   cstackCOMMON 0072
+??_Sound                      cstackCOMMON 0070
+??_Write_data                 cstackCOMMON 0071
+??_Write_digits               cstackCOMMON 0076
+??_Write_voltage              cstackCOMMON 0079
 ??_main                       cstackCOMMON 007A
-??_sound                      cstackCOMMON 0070
-??_write_data                 cstackCOMMON 0071
-??_write_digits               cstackCOMMON 0076
-??_write_voltage              cstackCOMMON 0079
 ?_ADC_Init                    cstackCOMMON 0070
 ?_ADC_Read                    cstackCOMMON 0070
-?_clear_display               cstackCOMMON 0070
-?_init_lcd                    cstackCOMMON 0070
+?_Clear_display               cstackCOMMON 0070
+?_Init_lcd                    cstackCOMMON 0070
+?_Sound                       cstackCOMMON 0070
+?_Write_data                  cstackCOMMON 0070
+?_Write_digits                cstackCOMMON 0074
+?_Write_voltage               cstackCOMMON 0077
 ?_main                        cstackCOMMON 0070
-?_sound                       cstackCOMMON 0070
-?_write_data                  cstackCOMMON 0070
-?_write_digits                cstackCOMMON 0074
-?_write_voltage               cstackCOMMON 0077
 ADC_Read@channel              cstackCOMMON 0074
+Sound@i                       cstackCOMMON 0072
+Write_data@hb                 cstackCOMMON 0073
+Write_data@lb                 cstackCOMMON 0070
+Write_digits@adc_measurement  cstackCOMMON 0074
+Write_voltage@adc_measurement cstackCOMMON 0077
 _ADCON0                       (abs)        001F
 _ADCON1                       (abs)        009F
-_ADC_Init                     text240      047E
-_ADC_Read                     text236      04DD
+_ADC_Init                     text240      0475
+_ADC_Read                     text236      0503
 _ADRESH                       (abs)        001E
 _ADRESL                       (abs)        009E
 _CARRY                        (abs)        0018
+_Clear_display                text237      047E
 _EEADR                        (abs)        010D
 _EECON1                       (abs)        018C
 _EECON2                       (abs)        018D
 _EEDATA                       (abs)        010C
 _GIE                          (abs)        005F
 _GO_nDONE                     (abs)        00FA
+_Init_lcd                     text235      04D4
 _PORTA                        (abs)        0005
 _PORTB                        (abs)        0006
 _PORTC                        (abs)        0007
@@ -181,12 +188,16 @@ _RA4                          (abs)        002C
 _RB0                          (abs)        0030
 _RC2                          (abs)        003A
 _RD                           (abs)        0C60
+_Sound                        text238      04AC
 _TRISA                        (abs)        0085
 _TRISB                        (abs)        0086
 _TRISC                        (abs)        0087
 _TRISD                        (abs)        0088
 _WR                           (abs)        0C61
 _WREN                         (abs)        0C62
+_Write_data                   text239      0493
+_Write_digits                 text234      0604
+_Write_voltage                text233      06FB
 __Habs1                       abs1         0000
 __Hbank0                      bank0        0000
 __Hbank1                      bank1        0000
@@ -246,48 +257,42 @@ __Ltext                       text         0000
 __S0                          (abs)        0800
 __S1                          (abs)        007D
 __S2                          (abs)        0000
-__end_of_ADC_Init             text240      0487
-__end_of_ADC_Read             text236      050C
-__end_of_clear_display        text238      049C
-__end_of_init_lcd             text235      053B
+__end_of_ADC_Init             text240      047E
+__end_of_ADC_Read             text236      053B
+__end_of_Clear_display        text237      0493
+__end_of_Init_lcd             text235      0503
+__end_of_Sound                text238      04D4
+__end_of_Write_data           text239      04AC
+__end_of_Write_digits         text234      06FB
+__end_of_Write_voltage        text233      0800
 __end_of_main                 maintext     0604
-__end_of_sound                text239      04DD
-__end_of_write_data           text237      04B5
-__end_of_write_digits         text234      06FB
-__end_of_write_voltage        text233      0800
 __pbssBANK0                   bssBANK0     0020
 __pcstackCOMMON               cstackCOMMON 0070
 __pmaintext                   maintext     053B
 __ptext232                    text232      0000
 __ptext233                    text233      06FB
 __ptext234                    text234      0604
-__ptext235                    text235      050C
-__ptext236                    text236      04DD
-__ptext237                    text237      049C
-__ptext238                    text238      0487
-__ptext239                    text239      04B5
-__ptext240                    text240      047E
+__ptext235                    text235      04D4
+__ptext236                    text236      0503
+__ptext237                    text237      047E
+__ptext238                    text238      04AC
+__ptext239                    text239      0493
+__ptext240                    text240      0475
 __ptext241                    text241      0000
 __size_of_ADC_Init            (abs)        0000
 __size_of_ADC_Read            (abs)        0000
-__size_of_clear_display       (abs)        0000
-__size_of_init_lcd            (abs)        0000
+__size_of_Clear_display       (abs)        0000
+__size_of_Init_lcd            (abs)        0000
+__size_of_Sound               (abs)        0000
+__size_of_Write_data          (abs)        0000
+__size_of_Write_digits        (abs)        0000
+__size_of_Write_voltage       (abs)        0000
 __size_of_main                (abs)        0000
-__size_of_sound               (abs)        0000
-__size_of_write_data          (abs)        0000
-__size_of_write_digits        (abs)        0000
-__size_of_write_voltage       (abs)        0000
 _a                            bssBANK0     0020
-_clear_display                text238      0487
 _exit                         init         0000
-_init_lcd                     text235      050C
 _main                         maintext     053B
-_sound                        text239      04B5
-_write_data                   text237      049C
-_write_digits                 text234      0604
-_write_voltage                text233      06FB
 btemp                         (abs)        007E
-end_of_initialization         cinit        047A
+end_of_initialization         cinit        0471
 intlevel0                     functab      0000
 intlevel1                     functab      0000
 intlevel2                     functab      0000
@@ -296,11 +301,6 @@ intlevel4                     functab      0000
 intlevel5                     functab      0000
 main@charWritten              cstackCOMMON 007B
 reset_vec                     reset_vec    0000
-sound@i                       cstackCOMMON 0072
 start                         init         0000
-start_initialization          cinit        0478
-write_data@hb                 cstackCOMMON 0073
-write_data@lb                 cstackCOMMON 0070
-write_digits@adc_measurement  cstackCOMMON 0074
-write_voltage@adc_measurement cstackCOMMON 0077
+start_initialization          cinit        046F
 wtemp0                        (abs)        007E

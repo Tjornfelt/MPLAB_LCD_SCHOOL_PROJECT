@@ -1,7 +1,7 @@
 
 
 HI-TECH Software PIC LITE Macro Assembler V9.83 build 10920 
-                                                                                               Thu Oct 31 13:03:17 2013
+                                                                                               Mon Nov 04 12:43:01 2013
 
 HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
      1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 10920"
@@ -45,17 +45,17 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
     39  0001                     c	equ	1
     40  0000                     z	equ	0
     41  000A                     pclath	equ	10
-    42                           	FNCALL	_main,_init_lcd
+    42                           	FNCALL	_main,_Init_lcd
     43                           	FNCALL	_main,_ADC_Init
-    44                           	FNCALL	_main,_write_data
-    45                           	FNCALL	_main,_sound
-    46                           	FNCALL	_main,_clear_display
+    44                           	FNCALL	_main,_Write_data
+    45                           	FNCALL	_main,_Sound
+    46                           	FNCALL	_main,_Clear_display
     47                           	FNCALL	_main,_ADC_Read
-    48                           	FNCALL	_main,_write_voltage
-    49                           	FNCALL	_write_voltage,_write_data
-    50                           	FNCALL	_write_voltage,_write_digits
-    51                           	FNCALL	_write_digits,_write_data
-    52                           	FNCALL	_init_lcd,_clear_display
+    48                           	FNCALL	_main,_Write_voltage
+    49                           	FNCALL	_Write_voltage,_Write_data
+    50                           	FNCALL	_Write_voltage,_Write_digits
+    51                           	FNCALL	_Write_digits,_Write_data
+    52                           	FNCALL	_Init_lcd,_Clear_display
     53                           	FNROOT	_main
     54                           	global	_a
     55                           	global	_ADCON0
@@ -115,7 +115,7 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
    109                           	line	#
    110                           psect cinit,class=CODE,delta=2
    111                           global start_initialization
-   112  0478                     start_initialization:
+   112  046F                     start_initialization:
    113                           
    114                           psect	bssBANK0,class=BANK0,space=1
    115                           global __pbssBANK0
@@ -125,72 +125,72 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
    119                           
    120                           ; Clear objects allocated to BANK0
    121                           psect cinit,class=CODE,delta=2
-   122  0478  01A0               	clrf	((__pbssBANK0)+0)&07Fh
-   123  0479  01A1               	clrf	((__pbssBANK0)+1)&07Fh
+   122  046F  01A0               	clrf	((__pbssBANK0)+0)&07Fh
+   123  0470  01A1               	clrf	((__pbssBANK0)+1)&07Fh
    124                           psect cinit,class=CODE,delta=2
    125                           global end_of_initialization
    126                           
    127                           ;End of C runtime variable initialization code
    128                           
-   129  047A                     end_of_initialization:
-   130  047A  0183               clrf status
-   131  047B  120A  118A  2D3B   ljmp _main	;jump to C main() function
+   129  0471                     end_of_initialization:
+   130  0471  0183               clrf status
+   131  0472  120A  118A  2D3B   ljmp _main	;jump to C main() function
    132                           psect	cstackCOMMON,class=COMMON,space=1
    133                           global __pcstackCOMMON
    134  0070                     __pcstackCOMMON:
-   135                           	global	?_sound
-   136  0070                     ?_sound:	; 0 bytes @ 0x0
-   137                           	global	??_sound
-   138  0070                     ??_sound:	; 0 bytes @ 0x0
-   139                           	global	?_clear_display
-   140  0070                     ?_clear_display:	; 0 bytes @ 0x0
-   141                           	global	??_clear_display
-   142  0070                     ??_clear_display:	; 0 bytes @ 0x0
-   143                           	global	?_init_lcd
-   144  0070                     ?_init_lcd:	; 0 bytes @ 0x0
-   145                           	global	?_write_data
-   146  0070                     ?_write_data:	; 0 bytes @ 0x0
-   147                           	global	?_ADC_Init
-   148  0070                     ?_ADC_Init:	; 0 bytes @ 0x0
-   149                           	global	??_ADC_Init
-   150  0070                     ??_ADC_Init:	; 0 bytes @ 0x0
+   135                           	global	?_Init_lcd
+   136  0070                     ?_Init_lcd:	; 0 bytes @ 0x0
+   137                           	global	?_ADC_Init
+   138  0070                     ?_ADC_Init:	; 0 bytes @ 0x0
+   139                           	global	??_ADC_Init
+   140  0070                     ??_ADC_Init:	; 0 bytes @ 0x0
+   141                           	global	?_Write_data
+   142  0070                     ?_Write_data:	; 0 bytes @ 0x0
+   143                           	global	?_Sound
+   144  0070                     ?_Sound:	; 0 bytes @ 0x0
+   145                           	global	??_Sound
+   146  0070                     ??_Sound:	; 0 bytes @ 0x0
+   147                           	global	?_Clear_display
+   148  0070                     ?_Clear_display:	; 0 bytes @ 0x0
+   149                           	global	??_Clear_display
+   150  0070                     ??_Clear_display:	; 0 bytes @ 0x0
    151                           	global	?_main
    152  0070                     ?_main:	; 0 bytes @ 0x0
    153                           	global	?_ADC_Read
    154  0070                     ?_ADC_Read:	; 2 bytes @ 0x0
-   155                           	global	write_data@lb
-   156  0070                     write_data@lb:	; 1 bytes @ 0x0
+   155                           	global	Write_data@lb
+   156  0070                     Write_data@lb:	; 1 bytes @ 0x0
    157  0070                     	ds	1
-   158                           	global	??_write_data
-   159  0071                     ??_write_data:	; 0 bytes @ 0x1
+   158                           	global	??_Write_data
+   159  0071                     ??_Write_data:	; 0 bytes @ 0x1
    160  0071                     	ds	1
-   161                           	global	??_init_lcd
-   162  0072                     ??_init_lcd:	; 0 bytes @ 0x2
+   161                           	global	??_Init_lcd
+   162  0072                     ??_Init_lcd:	; 0 bytes @ 0x2
    163                           	global	??_ADC_Read
    164  0072                     ??_ADC_Read:	; 0 bytes @ 0x2
-   165                           	global	sound@i
-   166  0072                     sound@i:	; 2 bytes @ 0x2
+   165                           	global	Sound@i
+   166  0072                     Sound@i:	; 2 bytes @ 0x2
    167  0072                     	ds	1
-   168                           	global	write_data@hb
-   169  0073                     write_data@hb:	; 1 bytes @ 0x3
+   168                           	global	Write_data@hb
+   169  0073                     Write_data@hb:	; 1 bytes @ 0x3
    170  0073                     	ds	1
-   171                           	global	?_write_digits
-   172  0074                     ?_write_digits:	; 0 bytes @ 0x4
+   171                           	global	?_Write_digits
+   172  0074                     ?_Write_digits:	; 0 bytes @ 0x4
    173                           	global	ADC_Read@channel
    174  0074                     ADC_Read@channel:	; 1 bytes @ 0x4
-   175                           	global	write_digits@adc_measurement
-   176  0074                     write_digits@adc_measurement:	; 2 bytes @ 0x4
+   175                           	global	Write_digits@adc_measurement
+   176  0074                     Write_digits@adc_measurement:	; 2 bytes @ 0x4
    177  0074                     	ds	2
-   178                           	global	??_write_digits
-   179  0076                     ??_write_digits:	; 0 bytes @ 0x6
+   178                           	global	??_Write_digits
+   179  0076                     ??_Write_digits:	; 0 bytes @ 0x6
    180  0076                     	ds	1
-   181                           	global	?_write_voltage
-   182  0077                     ?_write_voltage:	; 0 bytes @ 0x7
-   183                           	global	write_voltage@adc_measurement
-   184  0077                     write_voltage@adc_measurement:	; 2 bytes @ 0x7
+   181                           	global	?_Write_voltage
+   182  0077                     ?_Write_voltage:	; 0 bytes @ 0x7
+   183                           	global	Write_voltage@adc_measurement
+   184  0077                     Write_voltage@adc_measurement:	; 2 bytes @ 0x7
    185  0077                     	ds	2
-   186                           	global	??_write_voltage
-   187  0079                     ??_write_voltage:	; 0 bytes @ 0x9
+   186                           	global	??_Write_voltage
+   187  0079                     ??_Write_voltage:	; 0 bytes @ 0x9
    188  0079                     	ds	1
    189                           	global	??_main
    190  007A                     ??_main:	; 0 bytes @ 0xA
@@ -216,10 +216,10 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
    210 ;;
    211 ;; Critical Paths under _main in COMMON
    212 ;;
-   213 ;;   _main->_write_voltage
-   214 ;;   _write_voltage->_write_digits
-   215 ;;   _write_digits->_write_data
-   216 ;;   _init_lcd->_clear_display
+   213 ;;   _main->_Write_voltage
+   214 ;;   _Write_voltage->_Write_digits
+   215 ;;   _Write_digits->_Write_data
+   216 ;;   _Init_lcd->_Clear_display
    217 ;;
    218 ;; Critical Paths under _main in BANK0
    219 ;;
@@ -249,38 +249,38 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
    243 ;; ---------------------------------------------------------------------------------
    244 ;; (0) _main                                                 3     3      0     775
    245 ;;                                             10 COMMON     3     3      0
-   246 ;;                           _init_lcd
+   246 ;;                           _Init_lcd
    247 ;;                           _ADC_Init
-   248 ;;                         _write_data
-   249 ;;                              _sound
-   250 ;;                      _clear_display
+   248 ;;                         _Write_data
+   249 ;;                              _Sound
+   250 ;;                      _Clear_display
    251 ;;                           _ADC_Read
-   252 ;;                      _write_voltage
+   252 ;;                      _Write_voltage
    253 ;; ---------------------------------------------------------------------------------
-   254 ;; (1) _write_voltage                                        3     1      2     638
+   254 ;; (1) _Write_voltage                                        3     1      2     638
    255 ;;                                              7 COMMON     3     1      2
-   256 ;;                         _write_data
-   257 ;;                       _write_digits
+   256 ;;                         _Write_data
+   257 ;;                       _Write_digits
    258 ;; ---------------------------------------------------------------------------------
-   259 ;; (2) _write_digits                                         3     1      2     264
+   259 ;; (2) _Write_digits                                         3     1      2     264
    260 ;;                                              4 COMMON     3     1      2
-   261 ;;                         _write_data
+   261 ;;                         _Write_data
    262 ;; ---------------------------------------------------------------------------------
-   263 ;; (1) _init_lcd                                             2     2      0       0
+   263 ;; (1) _Init_lcd                                             2     2      0       0
    264 ;;                                              2 COMMON     2     2      0
-   265 ;;                      _clear_display
+   265 ;;                      _Clear_display
    266 ;; ---------------------------------------------------------------------------------
    267 ;; (1) _ADC_Read                                             5     3      2      22
    268 ;;                                              0 COMMON     5     3      2
    269 ;; ---------------------------------------------------------------------------------
-   270 ;; (3) _write_data                                           4     3      1      44
-   271 ;;                                              0 COMMON     4     3      1
+   270 ;; (1) _Clear_display                                        2     2      0       0
+   271 ;;                                              0 COMMON     2     2      0
    272 ;; ---------------------------------------------------------------------------------
-   273 ;; (1) _clear_display                                        2     2      0       0
-   274 ;;                                              0 COMMON     2     2      0
+   273 ;; (1) _Sound                                                4     4      0      24
+   274 ;;                                              0 COMMON     4     4      0
    275 ;; ---------------------------------------------------------------------------------
-   276 ;; (1) _sound                                                4     4      0      24
-   277 ;;                                              0 COMMON     4     4      0
+   276 ;; (3) _Write_data                                           4     3      1      44
+   277 ;;                                              0 COMMON     4     3      1
    278 ;; ---------------------------------------------------------------------------------
    279 ;; (1) _ADC_Init                                             0     0      0       0
    280 ;; ---------------------------------------------------------------------------------
@@ -290,17 +290,17 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
    284 ;; Call Graph Graphs:
    285                           
    286 ;; _main (ROOT)
-   287 ;;   _init_lcd
-   288 ;;     _clear_display
+   287 ;;   _Init_lcd
+   288 ;;     _Clear_display
    289 ;;   _ADC_Init
-   290 ;;   _write_data
-   291 ;;   _sound
-   292 ;;   _clear_display
+   290 ;;   _Write_data
+   291 ;;   _Sound
+   292 ;;   _Clear_display
    293 ;;   _ADC_Read
-   294 ;;   _write_voltage
-   295 ;;     _write_data
-   296 ;;     _write_digits
-   297 ;;       _write_data
+   294 ;;   _Write_voltage
+   295 ;;     _Write_data
+   296 ;;     _Write_digits
+   297 ;;       _Write_data
    298 ;;
    299                           
    300 ;; Address spaces:
@@ -359,13 +359,13 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
    353 ;;Total ram usage:        3 bytes
    354 ;; Hardware stack levels required when called:    3
    355 ;; This function calls:
-   356 ;;		_init_lcd
+   356 ;;		_Init_lcd
    357 ;;		_ADC_Init
-   358 ;;		_write_data
-   359 ;;		_sound
-   360 ;;		_clear_display
+   358 ;;		_Write_data
+   359 ;;		_Sound
+   360 ;;		_Clear_display
    361 ;;		_ADC_Read
-   362 ;;		_write_voltage
+   362 ;;		_Write_voltage
    363 ;; This function is called by:
    364 ;;		Startup code after reset
    365 ;; This function uses a non-reentrant model
@@ -381,7 +381,7 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
    375                           ; Regs used in _main: [wreg+status,2+status,0+btemp+1+pclath+cstack]
    376                           	line	16
    377                           	
-   378  053B                     l2882:	
+   378  053B                     l4814:	
    379                           ;main.c: 16: TRISB = 0x01;
    380  053B  3001               	movlw	(01h)
    381  053C  1683               	bsf	status, 5	;RP0=1, select bank1
@@ -395,14 +395,14 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
    389  0542  0086               	movwf	(6)	;volatile
    390                           	line	20
    391                           	
-   392  0543                     l2884:	
+   392  0543                     l4816:	
    393                           ;main.c: 20: TRISC = 0;
    394  0543  1683               	bsf	status, 5	;RP0=1, select bank1
    395  0544  1303               	bcf	status, 6	;RP1=0, select bank1
    396  0545  0187               	clrf	(135)^080h	;volatile
    397                           	line	21
    398                           	
-   399  0546                     l2886:	
+   399  0546                     l4818:	
    400                           ;main.c: 21: PORTC = 0;
    401  0546  1283               	bcf	status, 5	;RP0=0, select bank0
    402  0547  1303               	bcf	status, 6	;RP1=0, select bank0
@@ -415,90 +415,90 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
    409  054C  0085               	movwf	(133)^080h	;volatile
    410                           	line	27
    411                           	
-   412  054D                     l2888:	
+   412  054D                     l4820:	
    413                           ;main.c: 27: TRISD = 0;
    414  054D  0188               	clrf	(136)^080h	;volatile
    415                           	line	30
    416                           	
-   417  054E                     l2890:	
-   418                           ;main.c: 30: init_lcd();
-   419  054E  120A  118A  250C   	fcall	_init_lcd
+   417  054E                     l4822:	
+   418                           ;main.c: 30: Init_lcd();
+   419  054E  120A  118A  24D4   	fcall	_Init_lcd
               120A  118A         
    420                           	line	33
    421                           	
-   422  0553                     l2892:	
+   422  0553                     l4824:	
    423                           ;main.c: 33: ADC_Init();
-   424  0553  120A  118A  247E   	fcall	_ADC_Init
+   424  0553  120A  118A  2475   	fcall	_ADC_Init
               120A  118A         
-   425                           	line	40
+   425                           	line	39
    426                           	
-   427  0558                     l2894:	
-   428                           ;main.c: 40: int charWritten = 0;
+   427  0558                     l4826:	
+   428                           ;main.c: 39: int charWritten = 0;
    429  0558  01FB               	clrf	(main@charWritten)
    430  0559  01FC               	clrf	(main@charWritten+1)
-   431  055A  2D5B               	goto	l2896
-   432                           	line	41
-   433                           ;main.c: 41: while(1)
+   431  055A  2D5B               	goto	l4828
+   432                           	line	40
+   433                           ;main.c: 40: while(1)
    434                           	
-   435  055B                     l705:	
-   436                           	line	44
+   435  055B                     l657:	
+   436                           	line	43
    437                           	
-   438  055B                     l2896:	
-   439                           ;main.c: 42: {
-   440                           ;main.c: 44: if(RA4 == 0 && charWritten == 0)
+   438  055B                     l4828:	
+   439                           ;main.c: 41: {
+   440                           ;main.c: 43: if(RA4 == 0 && charWritten == 0)
    441  055B  1283               	bcf	status, 5	;RP0=0, select bank0
    442  055C  1303               	bcf	status, 6	;RP1=0, select bank0
    443  055D  1A05               	btfsc	(44/8),(44)&7
    444  055E  2D60               	goto	u2731
    445  055F  2D61               	goto	u2730
    446  0560                     u2731:
-   447  0560  2D7B               	goto	l2906
+   447  0560  2D7B               	goto	l4838
    448  0561                     u2730:
    449                           	
-   450  0561                     l2898:	
+   450  0561                     l4830:	
    451  0561  087C               	movf	((main@charWritten+1)),w
    452  0562  047B               	iorwf	((main@charWritten)),w
    453  0563  1D03               	skipz
    454  0564  2D66               	goto	u2741
    455  0565  2D67               	goto	u2740
    456  0566                     u2741:
-   457  0566  2D7B               	goto	l2906
+   457  0566  2D7B               	goto	l4838
    458  0567                     u2740:
-   459                           	line	46
+   459                           	line	45
    460                           	
-   461  0567                     l2900:	
-   462                           ;main.c: 45: {
-   463                           ;main.c: 46: write_data(0b0100, 0b0011);
+   461  0567                     l4832:	
+   462                           ;main.c: 44: {
+   463                           ;main.c: 45: Write_data(0b0100, 0b0011);
    464  0567  3003               	movlw	(03h)
    465  0568  00FA               	movwf	(??_main+0)+0
    466  0569  087A               	movf	(??_main+0)+0,w
-   467  056A  00F0               	movwf	(?_write_data)
+   467  056A  00F0               	movwf	(?_Write_data)
    468  056B  3004               	movlw	(04h)
-   469  056C  120A  118A  249C   	fcall	_write_data
+   469  056C  120A  118A  2493   	fcall	_Write_data
               120A  118A         
-   470                           	line	47
+   470                           	line	46
    471                           	
-   472  0571                     l2902:	
-   473                           ;main.c: 47: sound();
-   474  0571  120A  118A  24B5   	fcall	_sound
+   472  0571                     l4834:	
+   473                           ;main.c: 46: Sound();
+   474  0571  120A  118A  24AC   	fcall	_Sound
               120A  118A         
-   475                           	line	48
+   475                           	line	47
    476                           	
-   477  0576                     l2904:	
-   478                           ;main.c: 48: charWritten = 1;
+   477  0576                     l4836:	
+   478                           ;main.c: 47: charWritten = 1;
    479  0576  3001               	movlw	low(01h)
    480  0577  00FB               	movwf	(main@charWritten)
    481  0578  3000               	movlw	high(01h)
    482  0579  00FC               	movwf	((main@charWritten))+1
-   483  057A  2D7B               	goto	l2906
-   484                           	line	49
+   483  057A  2D7B               	goto	l4838
+   484                           	line	48
    485                           	
-   486  057B                     l706:	
-   487                           	line	51
+   486  057B                     l658:	
+   487                           	line	50
    488                           	
-   489  057B                     l2906:	
-   490                           ;main.c: 49: }
-   491                           ;main.c: 51: if(charWritten == 1 && RA4 == 1)
+   489  057B                     l4838:	
+   490                           ;main.c: 48: }
+   491                           ;main.c: 50: if(charWritten == 1 && RA4 == 1)
    492  057B  3001               	movlw	01h
    493  057C  067B               	xorwf	(main@charWritten),w
    494  057D  047C               	iorwf	(main@charWritten+1),w
@@ -506,126 +506,126 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
    496  057F  2D81               	goto	u2751
    497  0580  2D82               	goto	u2750
    498  0581                     u2751:
-   499  0581  2D8B               	goto	l2912
+   499  0581  2D8B               	goto	l4844
    500  0582                     u2750:
    501                           	
-   502  0582                     l2908:	
+   502  0582                     l4840:	
    503  0582  1283               	bcf	status, 5	;RP0=0, select bank0
    504  0583  1303               	bcf	status, 6	;RP1=0, select bank0
    505  0584  1E05               	btfss	(44/8),(44)&7
    506  0585  2D87               	goto	u2761
    507  0586  2D88               	goto	u2760
    508  0587                     u2761:
-   509  0587  2D8B               	goto	l2912
+   509  0587  2D8B               	goto	l4844
    510  0588                     u2760:
-   511                           	line	53
+   511                           	line	52
    512                           	
-   513  0588                     l2910:	
-   514                           ;main.c: 52: {
-   515                           ;main.c: 53: charWritten = 0;
+   513  0588                     l4842:	
+   514                           ;main.c: 51: {
+   515                           ;main.c: 52: charWritten = 0;
    516  0588  01FB               	clrf	(main@charWritten)
    517  0589  01FC               	clrf	(main@charWritten+1)
-   518  058A  2D8B               	goto	l2912
-   519                           	line	54
+   518  058A  2D8B               	goto	l4844
+   519                           	line	53
    520                           	
-   521  058B                     l707:	
-   522                           	line	57
+   521  058B                     l659:	
+   522                           	line	56
    523                           	
-   524  058B                     l2912:	
-   525                           ;main.c: 54: }
-   526                           ;main.c: 57: if(RB0 == 0)
+   524  058B                     l4844:	
+   525                           ;main.c: 53: }
+   526                           ;main.c: 56: if(RB0 == 0)
    527  058B  1283               	bcf	status, 5	;RP0=0, select bank0
    528  058C  1303               	bcf	status, 6	;RP1=0, select bank0
    529  058D  1806               	btfsc	(48/8),(48)&7
    530  058E  2D90               	goto	u2771
    531  058F  2D91               	goto	u2770
    532  0590                     u2771:
-   533  0590  2D5B               	goto	l2896
+   533  0590  2D5B               	goto	l4828
    534  0591                     u2770:
-   535                           	line	59
+   535                           	line	58
    536                           	
-   537  0591                     l2914:	
-   538                           ;main.c: 58: {
-   539                           ;main.c: 59: clear_display();
-   540  0591  120A  118A  2487   	fcall	_clear_display
+   537  0591                     l4846:	
+   538                           ;main.c: 57: {
+   539                           ;main.c: 58: Clear_display();
+   540  0591  120A  118A  247E   	fcall	_Clear_display
               120A  118A         
-   541                           	line	60
-   542                           ;main.c: 60: write_data(0b0101, 0b0110);
+   541                           	line	59
+   542                           ;main.c: 59: Write_data(0b0101, 0b0110);
    543  0596  3006               	movlw	(06h)
    544  0597  00FA               	movwf	(??_main+0)+0
    545  0598  087A               	movf	(??_main+0)+0,w
-   546  0599  00F0               	movwf	(?_write_data)
+   546  0599  00F0               	movwf	(?_Write_data)
    547  059A  3005               	movlw	(05h)
-   548  059B  120A  118A  249C   	fcall	_write_data
+   548  059B  120A  118A  2493   	fcall	_Write_data
               120A  118A         
-   549                           	line	61
-   550                           ;main.c: 61: write_data(0b0100, 0b1111);
+   549                           	line	60
+   550                           ;main.c: 60: Write_data(0b0100, 0b1111);
    551  05A0  300F               	movlw	(0Fh)
    552  05A1  00FA               	movwf	(??_main+0)+0
    553  05A2  087A               	movf	(??_main+0)+0,w
-   554  05A3  00F0               	movwf	(?_write_data)
+   554  05A3  00F0               	movwf	(?_Write_data)
    555  05A4  3004               	movlw	(04h)
-   556  05A5  120A  118A  249C   	fcall	_write_data
+   556  05A5  120A  118A  2493   	fcall	_Write_data
               120A  118A         
-   557                           	line	62
-   558                           ;main.c: 62: write_data(0b0100, 0b1100);
+   557                           	line	61
+   558                           ;main.c: 61: Write_data(0b0100, 0b1100);
    559  05AA  300C               	movlw	(0Ch)
    560  05AB  00FA               	movwf	(??_main+0)+0
    561  05AC  087A               	movf	(??_main+0)+0,w
-   562  05AD  00F0               	movwf	(?_write_data)
+   562  05AD  00F0               	movwf	(?_Write_data)
    563  05AE  3004               	movlw	(04h)
-   564  05AF  120A  118A  249C   	fcall	_write_data
+   564  05AF  120A  118A  2493   	fcall	_Write_data
               120A  118A         
-   565                           	line	63
-   566                           ;main.c: 63: write_data(0b0101, 0b0100);
+   565                           	line	62
+   566                           ;main.c: 62: Write_data(0b0101, 0b0100);
    567  05B4  3004               	movlw	(04h)
    568  05B5  00FA               	movwf	(??_main+0)+0
    569  05B6  087A               	movf	(??_main+0)+0,w
-   570  05B7  00F0               	movwf	(?_write_data)
+   570  05B7  00F0               	movwf	(?_Write_data)
    571  05B8  3005               	movlw	(05h)
-   572  05B9  120A  118A  249C   	fcall	_write_data
+   572  05B9  120A  118A  2493   	fcall	_Write_data
               120A  118A         
-   573                           	line	64
-   574                           ;main.c: 64: write_data(0b0100, 0b0001);
-   575  05BE  01F0               	clrf	(?_write_data)
+   573                           	line	63
+   574                           ;main.c: 63: Write_data(0b0100, 0b0001);
+   575  05BE  01F0               	clrf	(?_Write_data)
    576  05BF  1403               	bsf	status,0
-   577  05C0  0DF0               	rlf	(?_write_data),f
+   577  05C0  0DF0               	rlf	(?_Write_data),f
    578  05C1  3004               	movlw	(04h)
-   579  05C2  120A  118A  249C   	fcall	_write_data
+   579  05C2  120A  118A  2493   	fcall	_Write_data
               120A  118A         
-   580                           	line	65
-   581                           ;main.c: 65: write_data(0b0100, 0b0111);
+   580                           	line	64
+   581                           ;main.c: 64: Write_data(0b0100, 0b0111);
    582  05C7  3007               	movlw	(07h)
    583  05C8  00FA               	movwf	(??_main+0)+0
    584  05C9  087A               	movf	(??_main+0)+0,w
-   585  05CA  00F0               	movwf	(?_write_data)
+   585  05CA  00F0               	movwf	(?_Write_data)
    586  05CB  3004               	movlw	(04h)
-   587  05CC  120A  118A  249C   	fcall	_write_data
+   587  05CC  120A  118A  2493   	fcall	_Write_data
               120A  118A         
-   588                           	line	66
-   589                           ;main.c: 66: write_data(0b0100, 0b0101);
+   588                           	line	65
+   589                           ;main.c: 65: Write_data(0b0100, 0b0101);
    590  05D1  3005               	movlw	(05h)
    591  05D2  00FA               	movwf	(??_main+0)+0
    592  05D3  087A               	movf	(??_main+0)+0,w
-   593  05D4  00F0               	movwf	(?_write_data)
+   593  05D4  00F0               	movwf	(?_Write_data)
    594  05D5  3004               	movlw	(04h)
-   595  05D6  120A  118A  249C   	fcall	_write_data
+   595  05D6  120A  118A  2493   	fcall	_Write_data
               120A  118A         
-   596                           	line	67
-   597                           ;main.c: 67: write_data(0b0011, 0b1101);
+   596                           	line	66
+   597                           ;main.c: 66: Write_data(0b0011, 0b1101);
    598  05DB  300D               	movlw	(0Dh)
    599  05DC  00FA               	movwf	(??_main+0)+0
    600  05DD  087A               	movf	(??_main+0)+0,w
-   601  05DE  00F0               	movwf	(?_write_data)
+   601  05DE  00F0               	movwf	(?_Write_data)
    602  05DF  3003               	movlw	(03h)
-   603  05E0  120A  118A  249C   	fcall	_write_data
+   603  05E0  120A  118A  2493   	fcall	_Write_data
               120A  118A         
-   604                           	line	69
+   604                           	line	68
    605                           	
-   606  05E5                     l2916:	
-   607                           ;main.c: 69: a = ADC_Read(0);
+   606  05E5                     l4848:	
+   607                           ;main.c: 68: a = ADC_Read(0);
    608  05E5  3000               	movlw	(0)
-   609  05E6  120A  118A  24DD   	fcall	_ADC_Read
+   609  05E6  120A  118A  2503   	fcall	_ADC_Read
               120A  118A         
    610  05EB  0871               	movf	(1+(?_ADC_Read)),w
    611  05EC  1283               	bcf	status, 5	;RP0=0, select bank0
@@ -636,34 +636,34 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
    616  05F1  01A0               	clrf	(_a)
    617  05F2  07A0               	addwf	(_a)
    618                           
-   619                           	line	71
+   619                           	line	70
    620                           	
-   621  05F3                     l2918:	
-   622                           ;main.c: 71: write_voltage(a);
+   621  05F3                     l4850:	
+   622                           ;main.c: 70: Write_voltage(a);
    623  05F3  0821               	movf	(_a+1),w
-   624  05F4  01F8               	clrf	(?_write_voltage+1)
-   625  05F5  07F8               	addwf	(?_write_voltage+1)
+   624  05F4  01F8               	clrf	(?_Write_voltage+1)
+   625  05F5  07F8               	addwf	(?_Write_voltage+1)
    626  05F6  0820               	movf	(_a),w
-   627  05F7  01F7               	clrf	(?_write_voltage)
-   628  05F8  07F7               	addwf	(?_write_voltage)
+   627  05F7  01F7               	clrf	(?_Write_voltage)
+   628  05F8  07F7               	addwf	(?_Write_voltage)
    629                           
-   630  05F9  120A  118A  26FB   	fcall	_write_voltage
+   630  05F9  120A  118A  26FB   	fcall	_Write_voltage
               120A  118A         
-   631  05FE  2D5B               	goto	l2896
-   632                           	line	72
+   631  05FE  2D5B               	goto	l4828
+   632                           	line	71
    633                           	
-   634  05FF                     l708:	
-   635  05FF  2D5B               	goto	l2896
-   636                           	line	74
+   634  05FF                     l660:	
+   635  05FF  2D5B               	goto	l4828
+   636                           	line	73
    637                           	
-   638  0600                     l709:	
-   639                           	line	41
-   640  0600  2D5B               	goto	l2896
+   638  0600                     l661:	
+   639                           	line	40
+   640  0600  2D5B               	goto	l4828
    641                           	
-   642  0601                     l710:	
-   643                           	line	88
+   642  0601                     l662:	
+   643                           	line	87
    644                           	
-   645  0601                     l711:	
+   645  0601                     l663:	
    646                           	global	start
    647  0601  120A  118A  2800   	ljmp	start
    648                           	opt stack 0
@@ -672,14 +672,14 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
    651 ;; =============== function _main ends ============
    652                           
    653                           	signat	_main,88
-   654                           	global	_write_voltage
+   654                           	global	_Write_voltage
    655                           psect	text233,local,class=CODE,delta=2
    656                           global __ptext233
    657  06FB                     __ptext233:
    658                           
-   659 ;; *************** function _write_voltage *****************
+   659 ;; *************** function _Write_voltage *****************
    660 ;; Defined at:
-   661 ;;		line 108 in file "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.h"
+   661 ;;		line 110 in file "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.c"
    662 ;; Parameters:    Size  Location     Type
    663 ;;  adc_measurem    2    7[COMMON] int 
    664 ;; Auto vars:     Size  Location     Type
@@ -701,26 +701,26 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
    680 ;; Hardware stack levels used:    1
    681 ;; Hardware stack levels required when called:    2
    682 ;; This function calls:
-   683 ;;		_write_data
-   684 ;;		_write_digits
+   683 ;;		_Write_data
+   684 ;;		_Write_digits
    685 ;; This function is called by:
    686 ;;		_main
    687 ;; This function uses a non-reentrant model
    688 ;;
    689                           psect	text233
-   690                           	file	"C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.h"
-   691                           	line	108
-   692                           	global	__size_of_write_voltage
-   693  0105                     	__size_of_write_voltage	equ	__end_of_write_voltage-_write_voltage
+   690                           	file	"C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.c"
+   691                           	line	110
+   692                           	global	__size_of_Write_voltage
+   693  0105                     	__size_of_Write_voltage	equ	__end_of_Write_voltage-_Write_voltage
    694                           	
-   695  06FB                     _write_voltage:	
+   695  06FB                     _Write_voltage:	
    696                           	opt	stack 5
-   697                           ; Regs used in _write_voltage: [wreg+status,2+status,0+btemp+1+pclath+cstack]
-   698                           	line	111
+   697                           ; Regs used in _Write_voltage: [wreg+status,2+status,0+btemp+1+pclath+cstack]
+   698                           	line	115
    699                           	
-   700  06FB                     l2840:	
-   701                           ;LCD.h: 111: if(adc_measurement < 200)
-   702  06FB  0878               	movf	(write_voltage@adc_measurement+1),w
+   700  06FB                     l4772:	
+   701                           ;LCD.c: 115: if(adc_measurement < 200)
+   702  06FB  0878               	movf	(Write_voltage@adc_measurement+1),w
    703  06FC  3A80               	xorlw	80h
    704  06FD  00FF               	movwf	btemp+1
    705  06FE  3080               	movlw	(high(0C8h))^80h
@@ -728,47 +728,47 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
    707  0700  1D03               	skipz
    708  0701  2F04               	goto	u2635
    709  0702  30C8               	movlw	low(0C8h)
-   710  0703  0277               	subwf	(write_voltage@adc_measurement),w
+   710  0703  0277               	subwf	(Write_voltage@adc_measurement),w
    711  0704                     u2635:
    712                           
    713  0704  1803               	skipnc
    714  0705  2F07               	goto	u2631
    715  0706  2F08               	goto	u2630
    716  0707                     u2631:
-   717  0707  2F1B               	goto	l2846
+   717  0707  2F1B               	goto	l4778
    718  0708                     u2630:
-   719                           	line	113
+   719                           	line	117
    720                           	
-   721  0708                     l2842:	
-   722                           ;LCD.h: 112: {
-   723                           ;LCD.h: 113: write_data(0b0011,0b0000);
-   724  0708  01F0               	clrf	(?_write_data)
+   721  0708                     l4774:	
+   722                           ;LCD.c: 116: {
+   723                           ;LCD.c: 117: Write_data(0b0011,0b0000);
+   724  0708  01F0               	clrf	(?_Write_data)
    725  0709  3003               	movlw	(03h)
-   726  070A  120A  118A  249C   	fcall	_write_data
+   726  070A  120A  118A  2493   	fcall	_Write_data
               120A  118A         
-   727                           	line	114
+   727                           	line	118
    728                           	
-   729  070F                     l2844:	
-   730                           ;LCD.h: 114: write_digits(adc_measurement);
-   731  070F  0878               	movf	(write_voltage@adc_measurement+1),w
-   732  0710  01F5               	clrf	(?_write_digits+1)
-   733  0711  07F5               	addwf	(?_write_digits+1)
-   734  0712  0877               	movf	(write_voltage@adc_measurement),w
-   735  0713  01F4               	clrf	(?_write_digits)
-   736  0714  07F4               	addwf	(?_write_digits)
+   729  070F                     l4776:	
+   730                           ;LCD.c: 118: Write_digits(adc_measurement);
+   731  070F  0878               	movf	(Write_voltage@adc_measurement+1),w
+   732  0710  01F5               	clrf	(?_Write_digits+1)
+   733  0711  07F5               	addwf	(?_Write_digits+1)
+   734  0712  0877               	movf	(Write_voltage@adc_measurement),w
+   735  0713  01F4               	clrf	(?_Write_digits)
+   736  0714  07F4               	addwf	(?_Write_digits)
    737                           
-   738  0715  120A  118A  2604   	fcall	_write_digits
+   738  0715  120A  118A  2604   	fcall	_Write_digits
               120A  118A         
-   739                           	line	115
-   740                           ;LCD.h: 115: }
-   741  071A  2FFF               	goto	l693
-   742                           	line	116
+   739                           	line	119
+   740                           ;LCD.c: 119: }
+   741  071A  2FFF               	goto	l1997
+   742                           	line	120
    743                           	
-   744  071B                     l682:	
+   744  071B                     l1986:	
    745                           	
-   746  071B                     l2846:	
-   747                           ;LCD.h: 116: else if(adc_measurement > 200 && adc_measurement < 400)
-   748  071B  0878               	movf	(write_voltage@adc_measurement+1),w
+   746  071B                     l4778:	
+   747                           ;LCD.c: 120: else if(adc_measurement > 200 && adc_measurement < 400)
+   748  071B  0878               	movf	(Write_voltage@adc_measurement+1),w
    749  071C  3A80               	xorlw	80h
    750  071D  00FF               	movwf	btemp+1
    751  071E  3080               	movlw	(high(0C9h))^80h
@@ -776,18 +776,18 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
    753  0720  1D03               	skipz
    754  0721  2F24               	goto	u2645
    755  0722  30C9               	movlw	low(0C9h)
-   756  0723  0277               	subwf	(write_voltage@adc_measurement),w
+   756  0723  0277               	subwf	(Write_voltage@adc_measurement),w
    757  0724                     u2645:
    758                           
    759  0724  1C03               	skipc
    760  0725  2F27               	goto	u2641
    761  0726  2F28               	goto	u2640
    762  0727                     u2641:
-   763  0727  2F4C               	goto	l2854
+   763  0727  2F4C               	goto	l4786
    764  0728                     u2640:
    765                           	
-   766  0728                     l2848:	
-   767  0728  0878               	movf	(write_voltage@adc_measurement+1),w
+   766  0728                     l4780:	
+   767  0728  0878               	movf	(Write_voltage@adc_measurement+1),w
    768  0729  3A80               	xorlw	80h
    769  072A  00FF               	movwf	btemp+1
    770  072B  3081               	movlw	(high(0190h))^80h
@@ -795,50 +795,50 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
    772  072D  1D03               	skipz
    773  072E  2F31               	goto	u2655
    774  072F  3090               	movlw	low(0190h)
-   775  0730  0277               	subwf	(write_voltage@adc_measurement),w
+   775  0730  0277               	subwf	(Write_voltage@adc_measurement),w
    776  0731                     u2655:
    777                           
    778  0731  1803               	skipnc
    779  0732  2F34               	goto	u2651
    780  0733  2F35               	goto	u2650
    781  0734                     u2651:
-   782  0734  2F4C               	goto	l2854
+   782  0734  2F4C               	goto	l4786
    783  0735                     u2650:
-   784                           	line	118
+   784                           	line	122
    785                           	
-   786  0735                     l2850:	
-   787                           ;LCD.h: 117: {
-   788                           ;LCD.h: 118: write_data(0b0011,0b0001);
-   789  0735  01F0               	clrf	(?_write_data)
+   786  0735                     l4782:	
+   787                           ;LCD.c: 121: {
+   788                           ;LCD.c: 122: Write_data(0b0011,0b0001);
+   789  0735  01F0               	clrf	(?_Write_data)
    790  0736  1403               	bsf	status,0
-   791  0737  0DF0               	rlf	(?_write_data),f
+   791  0737  0DF0               	rlf	(?_Write_data),f
    792  0738  3003               	movlw	(03h)
-   793  0739  120A  118A  249C   	fcall	_write_data
+   793  0739  120A  118A  2493   	fcall	_Write_data
               120A  118A         
-   794                           	line	119
+   794                           	line	123
    795                           	
-   796  073E                     l2852:	
-   797                           ;LCD.h: 119: write_digits((adc_measurement-200));
-   798  073E  0877               	movf	(write_voltage@adc_measurement),w
+   796  073E                     l4784:	
+   797                           ;LCD.c: 123: Write_digits((adc_measurement-200));
+   798  073E  0877               	movf	(Write_voltage@adc_measurement),w
    799  073F  3E38               	addlw	low(-200)
-   800  0740  00F4               	movwf	(?_write_digits)
-   801  0741  0878               	movf	(write_voltage@adc_measurement+1),w
+   800  0740  00F4               	movwf	(?_Write_digits)
+   801  0741  0878               	movf	(Write_voltage@adc_measurement+1),w
    802  0742  1803               	skipnc
    803  0743  3E01               	addlw	1
    804  0744  3EFF               	addlw	high(-200)
-   805  0745  00F5               	movwf	1+(?_write_digits)
-   806  0746  120A  118A  2604   	fcall	_write_digits
+   805  0745  00F5               	movwf	1+(?_Write_digits)
+   806  0746  120A  118A  2604   	fcall	_Write_digits
               120A  118A         
-   807                           	line	120
-   808                           ;LCD.h: 120: }
-   809  074B  2FFF               	goto	l693
-   810                           	line	121
+   807                           	line	124
+   808                           ;LCD.c: 124: }
+   809  074B  2FFF               	goto	l1997
+   810                           	line	125
    811                           	
-   812  074C                     l684:	
+   812  074C                     l1988:	
    813                           	
-   814  074C                     l2854:	
-   815                           ;LCD.h: 121: else if(adc_measurement > 400 && adc_measurement < 600)
-   816  074C  0878               	movf	(write_voltage@adc_measurement+1),w
+   814  074C                     l4786:	
+   815                           ;LCD.c: 125: else if(adc_measurement > 400 && adc_measurement < 600)
+   816  074C  0878               	movf	(Write_voltage@adc_measurement+1),w
    817  074D  3A80               	xorlw	80h
    818  074E  00FF               	movwf	btemp+1
    819  074F  3081               	movlw	(high(0191h))^80h
@@ -846,18 +846,18 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
    821  0751  1D03               	skipz
    822  0752  2F55               	goto	u2665
    823  0753  3091               	movlw	low(0191h)
-   824  0754  0277               	subwf	(write_voltage@adc_measurement),w
+   824  0754  0277               	subwf	(Write_voltage@adc_measurement),w
    825  0755                     u2665:
    826                           
    827  0755  1C03               	skipc
    828  0756  2F58               	goto	u2661
    829  0757  2F59               	goto	u2660
    830  0758                     u2661:
-   831  0758  2F7E               	goto	l2862
+   831  0758  2F7E               	goto	l4794
    832  0759                     u2660:
    833                           	
-   834  0759                     l2856:	
-   835  0759  0878               	movf	(write_voltage@adc_measurement+1),w
+   834  0759                     l4788:	
+   835  0759  0878               	movf	(Write_voltage@adc_measurement+1),w
    836  075A  3A80               	xorlw	80h
    837  075B  00FF               	movwf	btemp+1
    838  075C  3082               	movlw	(high(0258h))^80h
@@ -865,51 +865,51 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
    840  075E  1D03               	skipz
    841  075F  2F62               	goto	u2675
    842  0760  3058               	movlw	low(0258h)
-   843  0761  0277               	subwf	(write_voltage@adc_measurement),w
+   843  0761  0277               	subwf	(Write_voltage@adc_measurement),w
    844  0762                     u2675:
    845                           
    846  0762  1803               	skipnc
    847  0763  2F65               	goto	u2671
    848  0764  2F66               	goto	u2670
    849  0765                     u2671:
-   850  0765  2F7E               	goto	l2862
+   850  0765  2F7E               	goto	l4794
    851  0766                     u2670:
-   852                           	line	123
+   852                           	line	127
    853                           	
-   854  0766                     l2858:	
-   855                           ;LCD.h: 122: {
-   856                           ;LCD.h: 123: write_data(0b0011,0b0010);
+   854  0766                     l4790:	
+   855                           ;LCD.c: 126: {
+   856                           ;LCD.c: 127: Write_data(0b0011,0b0010);
    857  0766  3002               	movlw	(02h)
-   858  0767  00F9               	movwf	(??_write_voltage+0)+0
-   859  0768  0879               	movf	(??_write_voltage+0)+0,w
-   860  0769  00F0               	movwf	(?_write_data)
+   858  0767  00F9               	movwf	(??_Write_voltage+0)+0
+   859  0768  0879               	movf	(??_Write_voltage+0)+0,w
+   860  0769  00F0               	movwf	(?_Write_data)
    861  076A  3003               	movlw	(03h)
-   862  076B  120A  118A  249C   	fcall	_write_data
+   862  076B  120A  118A  2493   	fcall	_Write_data
               120A  118A         
-   863                           	line	124
+   863                           	line	128
    864                           	
-   865  0770                     l2860:	
-   866                           ;LCD.h: 124: write_digits((adc_measurement-400));
-   867  0770  0877               	movf	(write_voltage@adc_measurement),w
+   865  0770                     l4792:	
+   866                           ;LCD.c: 128: Write_digits((adc_measurement-400));
+   867  0770  0877               	movf	(Write_voltage@adc_measurement),w
    868  0771  3E70               	addlw	low(-400)
-   869  0772  00F4               	movwf	(?_write_digits)
-   870  0773  0878               	movf	(write_voltage@adc_measurement+1),w
+   869  0772  00F4               	movwf	(?_Write_digits)
+   870  0773  0878               	movf	(Write_voltage@adc_measurement+1),w
    871  0774  1803               	skipnc
    872  0775  3E01               	addlw	1
    873  0776  3EFE               	addlw	high(-400)
-   874  0777  00F5               	movwf	1+(?_write_digits)
-   875  0778  120A  118A  2604   	fcall	_write_digits
+   874  0777  00F5               	movwf	1+(?_Write_digits)
+   875  0778  120A  118A  2604   	fcall	_Write_digits
               120A  118A         
-   876                           	line	125
-   877                           ;LCD.h: 125: }
-   878  077D  2FFF               	goto	l693
-   879                           	line	126
+   876                           	line	129
+   877                           ;LCD.c: 129: }
+   878  077D  2FFF               	goto	l1997
+   879                           	line	130
    880                           	
-   881  077E                     l686:	
+   881  077E                     l1990:	
    882                           	
-   883  077E                     l2862:	
-   884                           ;LCD.h: 126: else if(adc_measurement > 600 && adc_measurement < 800)
-   885  077E  0878               	movf	(write_voltage@adc_measurement+1),w
+   883  077E                     l4794:	
+   884                           ;LCD.c: 130: else if(adc_measurement > 600 && adc_measurement < 800)
+   885  077E  0878               	movf	(Write_voltage@adc_measurement+1),w
    886  077F  3A80               	xorlw	80h
    887  0780  00FF               	movwf	btemp+1
    888  0781  3082               	movlw	(high(0259h))^80h
@@ -917,18 +917,18 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
    890  0783  1D03               	skipz
    891  0784  2F87               	goto	u2685
    892  0785  3059               	movlw	low(0259h)
-   893  0786  0277               	subwf	(write_voltage@adc_measurement),w
+   893  0786  0277               	subwf	(Write_voltage@adc_measurement),w
    894  0787                     u2685:
    895                           
    896  0787  1C03               	skipc
    897  0788  2F8A               	goto	u2681
    898  0789  2F8B               	goto	u2680
    899  078A                     u2681:
-   900  078A  2FB0               	goto	l2870
+   900  078A  2FB0               	goto	l4802
    901  078B                     u2680:
    902                           	
-   903  078B                     l2864:	
-   904  078B  0878               	movf	(write_voltage@adc_measurement+1),w
+   903  078B                     l4796:	
+   904  078B  0878               	movf	(Write_voltage@adc_measurement+1),w
    905  078C  3A80               	xorlw	80h
    906  078D  00FF               	movwf	btemp+1
    907  078E  3083               	movlw	(high(0320h))^80h
@@ -936,51 +936,51 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
    909  0790  1D03               	skipz
    910  0791  2F94               	goto	u2695
    911  0792  3020               	movlw	low(0320h)
-   912  0793  0277               	subwf	(write_voltage@adc_measurement),w
+   912  0793  0277               	subwf	(Write_voltage@adc_measurement),w
    913  0794                     u2695:
    914                           
    915  0794  1803               	skipnc
    916  0795  2F97               	goto	u2691
    917  0796  2F98               	goto	u2690
    918  0797                     u2691:
-   919  0797  2FB0               	goto	l2870
+   919  0797  2FB0               	goto	l4802
    920  0798                     u2690:
-   921                           	line	128
+   921                           	line	132
    922                           	
-   923  0798                     l2866:	
-   924                           ;LCD.h: 127: {
-   925                           ;LCD.h: 128: write_data(0b0011,0b0011);
+   923  0798                     l4798:	
+   924                           ;LCD.c: 131: {
+   925                           ;LCD.c: 132: Write_data(0b0011,0b0011);
    926  0798  3003               	movlw	(03h)
-   927  0799  00F9               	movwf	(??_write_voltage+0)+0
-   928  079A  0879               	movf	(??_write_voltage+0)+0,w
-   929  079B  00F0               	movwf	(?_write_data)
+   927  0799  00F9               	movwf	(??_Write_voltage+0)+0
+   928  079A  0879               	movf	(??_Write_voltage+0)+0,w
+   929  079B  00F0               	movwf	(?_Write_data)
    930  079C  3003               	movlw	(03h)
-   931  079D  120A  118A  249C   	fcall	_write_data
+   931  079D  120A  118A  2493   	fcall	_Write_data
               120A  118A         
-   932                           	line	129
+   932                           	line	133
    933                           	
-   934  07A2                     l2868:	
-   935                           ;LCD.h: 129: write_digits((adc_measurement-600));
-   936  07A2  0877               	movf	(write_voltage@adc_measurement),w
+   934  07A2                     l4800:	
+   935                           ;LCD.c: 133: Write_digits((adc_measurement-600));
+   936  07A2  0877               	movf	(Write_voltage@adc_measurement),w
    937  07A3  3EA8               	addlw	low(-600)
-   938  07A4  00F4               	movwf	(?_write_digits)
-   939  07A5  0878               	movf	(write_voltage@adc_measurement+1),w
+   938  07A4  00F4               	movwf	(?_Write_digits)
+   939  07A5  0878               	movf	(Write_voltage@adc_measurement+1),w
    940  07A6  1803               	skipnc
    941  07A7  3E01               	addlw	1
    942  07A8  3EFD               	addlw	high(-600)
-   943  07A9  00F5               	movwf	1+(?_write_digits)
-   944  07AA  120A  118A  2604   	fcall	_write_digits
+   943  07A9  00F5               	movwf	1+(?_Write_digits)
+   944  07AA  120A  118A  2604   	fcall	_Write_digits
               120A  118A         
-   945                           	line	130
-   946                           ;LCD.h: 130: }
-   947  07AF  2FFF               	goto	l693
-   948                           	line	131
+   945                           	line	134
+   946                           ;LCD.c: 134: }
+   947  07AF  2FFF               	goto	l1997
+   948                           	line	135
    949                           	
-   950  07B0                     l688:	
+   950  07B0                     l1992:	
    951                           	
-   952  07B0                     l2870:	
-   953                           ;LCD.h: 131: else if(adc_measurement > 800 & adc_measurement < 1000)
-   954  07B0  0878               	movf	(write_voltage@adc_measurement+1),w
+   952  07B0                     l4802:	
+   953                           ;LCD.c: 135: else if(adc_measurement > 800 & adc_measurement < 1000)
+   954  07B0  0878               	movf	(Write_voltage@adc_measurement+1),w
    955  07B1  3A80               	xorlw	80h
    956  07B2  00FF               	movwf	btemp+1
    957  07B3  3083               	movlw	(high(0321h))^80h
@@ -988,18 +988,18 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
    959  07B5  1D03               	skipz
    960  07B6  2FB9               	goto	u2705
    961  07B7  3021               	movlw	low(0321h)
-   962  07B8  0277               	subwf	(write_voltage@adc_measurement),w
+   962  07B8  0277               	subwf	(Write_voltage@adc_measurement),w
    963  07B9                     u2705:
    964                           
    965  07B9  1C03               	skipc
    966  07BA  2FBC               	goto	u2701
    967  07BB  2FBD               	goto	u2700
    968  07BC                     u2701:
-   969  07BC  2FE2               	goto	l2878
+   969  07BC  2FE2               	goto	l4810
    970  07BD                     u2700:
    971                           	
-   972  07BD                     l2872:	
-   973  07BD  0878               	movf	(write_voltage@adc_measurement+1),w
+   972  07BD                     l4804:	
+   973  07BD  0878               	movf	(Write_voltage@adc_measurement+1),w
    974  07BE  3A80               	xorlw	80h
    975  07BF  00FF               	movwf	btemp+1
    976  07C0  3083               	movlw	(high(03E8h))^80h
@@ -1007,51 +1007,51 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
    978  07C2  1D03               	skipz
    979  07C3  2FC6               	goto	u2715
    980  07C4  30E8               	movlw	low(03E8h)
-   981  07C5  0277               	subwf	(write_voltage@adc_measurement),w
+   981  07C5  0277               	subwf	(Write_voltage@adc_measurement),w
    982  07C6                     u2715:
    983                           
    984  07C6  1803               	skipnc
    985  07C7  2FC9               	goto	u2711
    986  07C8  2FCA               	goto	u2710
    987  07C9                     u2711:
-   988  07C9  2FE2               	goto	l2878
+   988  07C9  2FE2               	goto	l4810
    989  07CA                     u2710:
-   990                           	line	133
+   990                           	line	137
    991                           	
-   992  07CA                     l2874:	
-   993                           ;LCD.h: 132: {
-   994                           ;LCD.h: 133: write_data(0b0011,0b0100);
+   992  07CA                     l4806:	
+   993                           ;LCD.c: 136: {
+   994                           ;LCD.c: 137: Write_data(0b0011,0b0100);
    995  07CA  3004               	movlw	(04h)
-   996  07CB  00F9               	movwf	(??_write_voltage+0)+0
-   997  07CC  0879               	movf	(??_write_voltage+0)+0,w
-   998  07CD  00F0               	movwf	(?_write_data)
+   996  07CB  00F9               	movwf	(??_Write_voltage+0)+0
+   997  07CC  0879               	movf	(??_Write_voltage+0)+0,w
+   998  07CD  00F0               	movwf	(?_Write_data)
    999  07CE  3003               	movlw	(03h)
-  1000  07CF  120A  118A  249C   	fcall	_write_data
+  1000  07CF  120A  118A  2493   	fcall	_Write_data
               120A  118A         
-  1001                           	line	134
+  1001                           	line	138
   1002                           	
-  1003  07D4                     l2876:	
-  1004                           ;LCD.h: 134: write_digits((adc_measurement-800));
-  1005  07D4  0877               	movf	(write_voltage@adc_measurement),w
+  1003  07D4                     l4808:	
+  1004                           ;LCD.c: 138: Write_digits((adc_measurement-800));
+  1005  07D4  0877               	movf	(Write_voltage@adc_measurement),w
   1006  07D5  3EE0               	addlw	low(-800)
-  1007  07D6  00F4               	movwf	(?_write_digits)
-  1008  07D7  0878               	movf	(write_voltage@adc_measurement+1),w
+  1007  07D6  00F4               	movwf	(?_Write_digits)
+  1008  07D7  0878               	movf	(Write_voltage@adc_measurement+1),w
   1009  07D8  1803               	skipnc
   1010  07D9  3E01               	addlw	1
   1011  07DA  3EFC               	addlw	high(-800)
-  1012  07DB  00F5               	movwf	1+(?_write_digits)
-  1013  07DC  120A  118A  2604   	fcall	_write_digits
+  1012  07DB  00F5               	movwf	1+(?_Write_digits)
+  1013  07DC  120A  118A  2604   	fcall	_Write_digits
               120A  118A         
-  1014                           	line	135
-  1015                           ;LCD.h: 135: }
-  1016  07E1  2FFF               	goto	l693
-  1017                           	line	136
+  1014                           	line	139
+  1015                           ;LCD.c: 139: }
+  1016  07E1  2FFF               	goto	l1997
+  1017                           	line	140
   1018                           	
-  1019  07E2                     l690:	
+  1019  07E2                     l1994:	
   1020                           	
-  1021  07E2                     l2878:	
-  1022                           ;LCD.h: 136: else if(adc_measurement > 1000)
-  1023  07E2  0878               	movf	(write_voltage@adc_measurement+1),w
+  1021  07E2                     l4810:	
+  1022                           ;LCD.c: 140: else if(adc_measurement > 1000)
+  1023  07E2  0878               	movf	(Write_voltage@adc_measurement+1),w
   1024  07E3  3A80               	xorlw	80h
   1025  07E4  00FF               	movwf	btemp+1
   1026  07E5  3083               	movlw	(high(03E9h))^80h
@@ -1059,64 +1059,64 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
   1028  07E7  1D03               	skipz
   1029  07E8  2FEB               	goto	u2725
   1030  07E9  30E9               	movlw	low(03E9h)
-  1031  07EA  0277               	subwf	(write_voltage@adc_measurement),w
+  1031  07EA  0277               	subwf	(Write_voltage@adc_measurement),w
   1032  07EB                     u2725:
   1033                           
   1034  07EB  1C03               	skipc
   1035  07EC  2FEE               	goto	u2721
   1036  07ED  2FEF               	goto	u2720
   1037  07EE                     u2721:
-  1038  07EE  2FFF               	goto	l693
+  1038  07EE  2FFF               	goto	l1997
   1039  07EF                     u2720:
-  1040                           	line	138
+  1040                           	line	142
   1041                           	
-  1042  07EF                     l2880:	
-  1043                           ;LCD.h: 137: {
-  1044                           ;LCD.h: 138: write_data(0b0011,0b0101);
+  1042  07EF                     l4812:	
+  1043                           ;LCD.c: 141: {
+  1044                           ;LCD.c: 142: Write_data(0b0011,0b0101);
   1045  07EF  3005               	movlw	(05h)
-  1046  07F0  00F9               	movwf	(??_write_voltage+0)+0
-  1047  07F1  0879               	movf	(??_write_voltage+0)+0,w
-  1048  07F2  00F0               	movwf	(?_write_data)
+  1046  07F0  00F9               	movwf	(??_Write_voltage+0)+0
+  1047  07F1  0879               	movf	(??_Write_voltage+0)+0,w
+  1048  07F2  00F0               	movwf	(?_Write_data)
   1049  07F3  3003               	movlw	(03h)
-  1050  07F4  120A  118A  249C   	fcall	_write_data
+  1050  07F4  120A  118A  2493   	fcall	_Write_data
               120A  118A         
-  1051  07F9  2FFF               	goto	l693
-  1052                           	line	139
+  1051  07F9  2FFF               	goto	l1997
+  1052                           	line	143
   1053                           	
-  1054  07FA                     l692:	
-  1055  07FA  2FFF               	goto	l693
-  1056                           	line	140
+  1054  07FA                     l1996:	
+  1055  07FA  2FFF               	goto	l1997
+  1056                           	line	144
   1057                           	
-  1058  07FB                     l691:	
-  1059  07FB  2FFF               	goto	l693
+  1058  07FB                     l1995:	
+  1059  07FB  2FFF               	goto	l1997
   1060                           	
-  1061  07FC                     l689:	
-  1062  07FC  2FFF               	goto	l693
+  1061  07FC                     l1993:	
+  1062  07FC  2FFF               	goto	l1997
   1063                           	
-  1064  07FD                     l687:	
-  1065  07FD  2FFF               	goto	l693
+  1064  07FD                     l1991:	
+  1065  07FD  2FFF               	goto	l1997
   1066                           	
-  1067  07FE                     l685:	
-  1068  07FE  2FFF               	goto	l693
+  1067  07FE                     l1989:	
+  1068  07FE  2FFF               	goto	l1997
   1069                           	
-  1070  07FF                     l683:	
+  1070  07FF                     l1987:	
   1071                           	
-  1072  07FF                     l693:	
+  1072  07FF                     l1997:	
   1073  07FF  0008               	return
   1074                           	opt stack 0
-  1075                           GLOBAL	__end_of_write_voltage
-  1076  0800                     	__end_of_write_voltage:
-  1077 ;; =============== function _write_voltage ends ============
+  1075                           GLOBAL	__end_of_Write_voltage
+  1076  0800                     	__end_of_Write_voltage:
+  1077 ;; =============== function _Write_voltage ends ============
   1078                           
-  1079                           	signat	_write_voltage,4216
-  1080                           	global	_write_digits
+  1079                           	signat	_Write_voltage,4216
+  1080                           	global	_Write_digits
   1081                           psect	text234,local,class=CODE,delta=2
   1082                           global __ptext234
   1083  0604                     __ptext234:
   1084                           
-  1085 ;; *************** function _write_digits *****************
+  1085 ;; *************** function _Write_digits *****************
   1086 ;; Defined at:
-  1087 ;;		line 62 in file "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.h"
+  1087 ;;		line 64 in file "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.c"
   1088 ;; Parameters:    Size  Location     Type
   1089 ;;  adc_measurem    2    4[COMMON] int 
   1090 ;; Auto vars:     Size  Location     Type
@@ -1138,36 +1138,36 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
   1106 ;; Hardware stack levels used:    1
   1107 ;; Hardware stack levels required when called:    1
   1108 ;; This function calls:
-  1109 ;;		_write_data
+  1109 ;;		_Write_data
   1110 ;; This function is called by:
-  1111 ;;		_write_voltage
+  1111 ;;		_Write_voltage
   1112 ;; This function uses a non-reentrant model
   1113 ;;
   1114                           psect	text234
-  1115                           	file	"C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.h"
-  1116                           	line	62
-  1117                           	global	__size_of_write_digits
-  1118  00F7                     	__size_of_write_digits	equ	__end_of_write_digits-_write_digits
+  1115                           	file	"C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.c"
+  1116                           	line	64
+  1117                           	global	__size_of_Write_digits
+  1118  00F7                     	__size_of_Write_digits	equ	__end_of_Write_digits-_Write_digits
   1119                           	
-  1120  0604                     _write_digits:	
+  1120  0604                     _Write_digits:	
   1121                           	opt	stack 5
-  1122                           ; Regs used in _write_digits: [wreg+status,2+status,0+btemp+1+pclath+cstack]
-  1123                           	line	63
+  1122                           ; Regs used in _Write_digits: [wreg+status,2+status,0+btemp+1+pclath+cstack]
+  1123                           	line	65
   1124                           	
-  1125  0604                     l2800:	
-  1126                           ;LCD.h: 63: write_data(0b0010,0b1100);
+  1125  0604                     l4732:	
+  1126                           ;LCD.c: 65: Write_data(0b0010,0b1100);
   1127  0604  300C               	movlw	(0Ch)
-  1128  0605  00F6               	movwf	(??_write_digits+0)+0
-  1129  0606  0876               	movf	(??_write_digits+0)+0,w
-  1130  0607  00F0               	movwf	(?_write_data)
+  1128  0605  00F6               	movwf	(??_Write_digits+0)+0
+  1129  0606  0876               	movf	(??_Write_digits+0)+0,w
+  1130  0607  00F0               	movwf	(?_Write_data)
   1131  0608  3002               	movlw	(02h)
-  1132  0609  120A  118A  249C   	fcall	_write_data
+  1132  0609  120A  118A  2493   	fcall	_Write_data
               120A  118A         
-  1133                           	line	65
+  1133                           	line	67
   1134                           	
-  1135  060E                     l2802:	
-  1136                           ;LCD.h: 65: if(adc_measurement > 180)
-  1137  060E  0875               	movf	(write_digits@adc_measurement+1),w
+  1135  060E                     l4734:	
+  1136                           ;LCD.c: 67: if(adc_measurement > 180)
+  1137  060E  0875               	movf	(Write_digits@adc_measurement+1),w
   1138  060F  3A80               	xorlw	80h
   1139  0610  00FF               	movwf	btemp+1
   1140  0611  3080               	movlw	(high(0B5h))^80h
@@ -1175,37 +1175,37 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
   1142  0613  1D03               	skipz
   1143  0614  2E17               	goto	u2535
   1144  0615  30B5               	movlw	low(0B5h)
-  1145  0616  0274               	subwf	(write_digits@adc_measurement),w
+  1145  0616  0274               	subwf	(Write_digits@adc_measurement),w
   1146  0617                     u2535:
   1147                           
   1148  0617  1C03               	skipc
   1149  0618  2E1A               	goto	u2531
   1150  0619  2E1B               	goto	u2530
   1151  061A                     u2531:
-  1152  061A  2E26               	goto	l2806
+  1152  061A  2E26               	goto	l4738
   1153  061B                     u2530:
-  1154                           	line	67
+  1154                           	line	69
   1155                           	
-  1156  061B                     l2804:	
-  1157                           ;LCD.h: 66: {
-  1158                           ;LCD.h: 67: write_data(0b0011, 0b1001);
+  1156  061B                     l4736:	
+  1157                           ;LCD.c: 68: {
+  1158                           ;LCD.c: 69: Write_data(0b0011, 0b1001);
   1159  061B  3009               	movlw	(09h)
-  1160  061C  00F6               	movwf	(??_write_digits+0)+0
-  1161  061D  0876               	movf	(??_write_digits+0)+0,w
-  1162  061E  00F0               	movwf	(?_write_data)
+  1160  061C  00F6               	movwf	(??_Write_digits+0)+0
+  1161  061D  0876               	movf	(??_Write_digits+0)+0,w
+  1162  061E  00F0               	movwf	(?_Write_data)
   1163  061F  3003               	movlw	(03h)
-  1164  0620  120A  118A  249C   	fcall	_write_data
+  1164  0620  120A  118A  2493   	fcall	_Write_data
               120A  118A         
-  1165                           	line	68
-  1166                           ;LCD.h: 68: }
-  1167  0625  2EFA               	goto	l679
-  1168                           	line	69
+  1165                           	line	70
+  1166                           ;LCD.c: 70: }
+  1167  0625  2EFA               	goto	l1983
+  1168                           	line	71
   1169                           	
-  1170  0626                     l660:	
+  1170  0626                     l1964:	
   1171                           	
-  1172  0626                     l2806:	
-  1173                           ;LCD.h: 69: else if(adc_measurement > 160)
-  1174  0626  0875               	movf	(write_digits@adc_measurement+1),w
+  1172  0626                     l4738:	
+  1173                           ;LCD.c: 71: else if(adc_measurement > 160)
+  1174  0626  0875               	movf	(Write_digits@adc_measurement+1),w
   1175  0627  3A80               	xorlw	80h
   1176  0628  00FF               	movwf	btemp+1
   1177  0629  3080               	movlw	(high(0A1h))^80h
@@ -1213,37 +1213,37 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
   1179  062B  1D03               	skipz
   1180  062C  2E2F               	goto	u2545
   1181  062D  30A1               	movlw	low(0A1h)
-  1182  062E  0274               	subwf	(write_digits@adc_measurement),w
+  1182  062E  0274               	subwf	(Write_digits@adc_measurement),w
   1183  062F                     u2545:
   1184                           
   1185  062F  1C03               	skipc
   1186  0630  2E32               	goto	u2541
   1187  0631  2E33               	goto	u2540
   1188  0632                     u2541:
-  1189  0632  2E3E               	goto	l2810
+  1189  0632  2E3E               	goto	l4742
   1190  0633                     u2540:
-  1191                           	line	71
+  1191                           	line	73
   1192                           	
-  1193  0633                     l2808:	
-  1194                           ;LCD.h: 70: {
-  1195                           ;LCD.h: 71: write_data(0b0011, 0b1000);
+  1193  0633                     l4740:	
+  1194                           ;LCD.c: 72: {
+  1195                           ;LCD.c: 73: Write_data(0b0011, 0b1000);
   1196  0633  3008               	movlw	(08h)
-  1197  0634  00F6               	movwf	(??_write_digits+0)+0
-  1198  0635  0876               	movf	(??_write_digits+0)+0,w
-  1199  0636  00F0               	movwf	(?_write_data)
+  1197  0634  00F6               	movwf	(??_Write_digits+0)+0
+  1198  0635  0876               	movf	(??_Write_digits+0)+0,w
+  1199  0636  00F0               	movwf	(?_Write_data)
   1200  0637  3003               	movlw	(03h)
-  1201  0638  120A  118A  249C   	fcall	_write_data
+  1201  0638  120A  118A  2493   	fcall	_Write_data
               120A  118A         
-  1202                           	line	72
-  1203                           ;LCD.h: 72: }
-  1204  063D  2EFA               	goto	l679
-  1205                           	line	73
+  1202                           	line	74
+  1203                           ;LCD.c: 74: }
+  1204  063D  2EFA               	goto	l1983
+  1205                           	line	75
   1206                           	
-  1207  063E                     l662:	
+  1207  063E                     l1966:	
   1208                           	
-  1209  063E                     l2810:	
-  1210                           ;LCD.h: 73: else if(adc_measurement > 140)
-  1211  063E  0875               	movf	(write_digits@adc_measurement+1),w
+  1209  063E                     l4742:	
+  1210                           ;LCD.c: 75: else if(adc_measurement > 140)
+  1211  063E  0875               	movf	(Write_digits@adc_measurement+1),w
   1212  063F  3A80               	xorlw	80h
   1213  0640  00FF               	movwf	btemp+1
   1214  0641  3080               	movlw	(high(08Dh))^80h
@@ -1251,37 +1251,37 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
   1216  0643  1D03               	skipz
   1217  0644  2E47               	goto	u2555
   1218  0645  308D               	movlw	low(08Dh)
-  1219  0646  0274               	subwf	(write_digits@adc_measurement),w
+  1219  0646  0274               	subwf	(Write_digits@adc_measurement),w
   1220  0647                     u2555:
   1221                           
   1222  0647  1C03               	skipc
   1223  0648  2E4A               	goto	u2551
   1224  0649  2E4B               	goto	u2550
   1225  064A                     u2551:
-  1226  064A  2E56               	goto	l2814
+  1226  064A  2E56               	goto	l4746
   1227  064B                     u2550:
-  1228                           	line	75
+  1228                           	line	77
   1229                           	
-  1230  064B                     l2812:	
-  1231                           ;LCD.h: 74: {
-  1232                           ;LCD.h: 75: write_data(0b0011, 0b0111);
+  1230  064B                     l4744:	
+  1231                           ;LCD.c: 76: {
+  1232                           ;LCD.c: 77: Write_data(0b0011, 0b0111);
   1233  064B  3007               	movlw	(07h)
-  1234  064C  00F6               	movwf	(??_write_digits+0)+0
-  1235  064D  0876               	movf	(??_write_digits+0)+0,w
-  1236  064E  00F0               	movwf	(?_write_data)
+  1234  064C  00F6               	movwf	(??_Write_digits+0)+0
+  1235  064D  0876               	movf	(??_Write_digits+0)+0,w
+  1236  064E  00F0               	movwf	(?_Write_data)
   1237  064F  3003               	movlw	(03h)
-  1238  0650  120A  118A  249C   	fcall	_write_data
+  1238  0650  120A  118A  2493   	fcall	_Write_data
               120A  118A         
-  1239                           	line	76
-  1240                           ;LCD.h: 76: }
-  1241  0655  2EFA               	goto	l679
-  1242                           	line	77
+  1239                           	line	78
+  1240                           ;LCD.c: 78: }
+  1241  0655  2EFA               	goto	l1983
+  1242                           	line	79
   1243                           	
-  1244  0656                     l664:	
+  1244  0656                     l1968:	
   1245                           	
-  1246  0656                     l2814:	
-  1247                           ;LCD.h: 77: else if(adc_measurement > 120)
-  1248  0656  0875               	movf	(write_digits@adc_measurement+1),w
+  1246  0656                     l4746:	
+  1247                           ;LCD.c: 79: else if(adc_measurement > 120)
+  1248  0656  0875               	movf	(Write_digits@adc_measurement+1),w
   1249  0657  3A80               	xorlw	80h
   1250  0658  00FF               	movwf	btemp+1
   1251  0659  3080               	movlw	(high(079h))^80h
@@ -1289,37 +1289,37 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
   1253  065B  1D03               	skipz
   1254  065C  2E5F               	goto	u2565
   1255  065D  3079               	movlw	low(079h)
-  1256  065E  0274               	subwf	(write_digits@adc_measurement),w
+  1256  065E  0274               	subwf	(Write_digits@adc_measurement),w
   1257  065F                     u2565:
   1258                           
   1259  065F  1C03               	skipc
   1260  0660  2E62               	goto	u2561
   1261  0661  2E63               	goto	u2560
   1262  0662                     u2561:
-  1263  0662  2E6E               	goto	l2818
+  1263  0662  2E6E               	goto	l4750
   1264  0663                     u2560:
-  1265                           	line	79
+  1265                           	line	81
   1266                           	
-  1267  0663                     l2816:	
-  1268                           ;LCD.h: 78: {
-  1269                           ;LCD.h: 79: write_data(0b0011, 0b0110);
+  1267  0663                     l4748:	
+  1268                           ;LCD.c: 80: {
+  1269                           ;LCD.c: 81: Write_data(0b0011, 0b0110);
   1270  0663  3006               	movlw	(06h)
-  1271  0664  00F6               	movwf	(??_write_digits+0)+0
-  1272  0665  0876               	movf	(??_write_digits+0)+0,w
-  1273  0666  00F0               	movwf	(?_write_data)
+  1271  0664  00F6               	movwf	(??_Write_digits+0)+0
+  1272  0665  0876               	movf	(??_Write_digits+0)+0,w
+  1273  0666  00F0               	movwf	(?_Write_data)
   1274  0667  3003               	movlw	(03h)
-  1275  0668  120A  118A  249C   	fcall	_write_data
+  1275  0668  120A  118A  2493   	fcall	_Write_data
               120A  118A         
-  1276                           	line	80
-  1277                           ;LCD.h: 80: }
-  1278  066D  2EFA               	goto	l679
-  1279                           	line	81
+  1276                           	line	82
+  1277                           ;LCD.c: 82: }
+  1278  066D  2EFA               	goto	l1983
+  1279                           	line	83
   1280                           	
-  1281  066E                     l666:	
+  1281  066E                     l1970:	
   1282                           	
-  1283  066E                     l2818:	
-  1284                           ;LCD.h: 81: else if(adc_measurement > 100)
-  1285  066E  0875               	movf	(write_digits@adc_measurement+1),w
+  1283  066E                     l4750:	
+  1284                           ;LCD.c: 83: else if(adc_measurement > 100)
+  1285  066E  0875               	movf	(Write_digits@adc_measurement+1),w
   1286  066F  3A80               	xorlw	80h
   1287  0670  00FF               	movwf	btemp+1
   1288  0671  3080               	movlw	(high(065h))^80h
@@ -1327,37 +1327,37 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
   1290  0673  1D03               	skipz
   1291  0674  2E77               	goto	u2575
   1292  0675  3065               	movlw	low(065h)
-  1293  0676  0274               	subwf	(write_digits@adc_measurement),w
+  1293  0676  0274               	subwf	(Write_digits@adc_measurement),w
   1294  0677                     u2575:
   1295                           
   1296  0677  1C03               	skipc
   1297  0678  2E7A               	goto	u2571
   1298  0679  2E7B               	goto	u2570
   1299  067A                     u2571:
-  1300  067A  2E86               	goto	l2822
+  1300  067A  2E86               	goto	l4754
   1301  067B                     u2570:
-  1302                           	line	83
+  1302                           	line	85
   1303                           	
-  1304  067B                     l2820:	
-  1305                           ;LCD.h: 82: {
-  1306                           ;LCD.h: 83: write_data(0b0011, 0b0101);
+  1304  067B                     l4752:	
+  1305                           ;LCD.c: 84: {
+  1306                           ;LCD.c: 85: Write_data(0b0011, 0b0101);
   1307  067B  3005               	movlw	(05h)
-  1308  067C  00F6               	movwf	(??_write_digits+0)+0
-  1309  067D  0876               	movf	(??_write_digits+0)+0,w
-  1310  067E  00F0               	movwf	(?_write_data)
+  1308  067C  00F6               	movwf	(??_Write_digits+0)+0
+  1309  067D  0876               	movf	(??_Write_digits+0)+0,w
+  1310  067E  00F0               	movwf	(?_Write_data)
   1311  067F  3003               	movlw	(03h)
-  1312  0680  120A  118A  249C   	fcall	_write_data
+  1312  0680  120A  118A  2493   	fcall	_Write_data
               120A  118A         
-  1313                           	line	84
-  1314                           ;LCD.h: 84: }
-  1315  0685  2EFA               	goto	l679
-  1316                           	line	85
+  1313                           	line	86
+  1314                           ;LCD.c: 86: }
+  1315  0685  2EFA               	goto	l1983
+  1316                           	line	87
   1317                           	
-  1318  0686                     l668:	
+  1318  0686                     l1972:	
   1319                           	
-  1320  0686                     l2822:	
-  1321                           ;LCD.h: 85: else if(adc_measurement > 80)
-  1322  0686  0875               	movf	(write_digits@adc_measurement+1),w
+  1320  0686                     l4754:	
+  1321                           ;LCD.c: 87: else if(adc_measurement > 80)
+  1322  0686  0875               	movf	(Write_digits@adc_measurement+1),w
   1323  0687  3A80               	xorlw	80h
   1324  0688  00FF               	movwf	btemp+1
   1325  0689  3080               	movlw	(high(051h))^80h
@@ -1365,37 +1365,37 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
   1327  068B  1D03               	skipz
   1328  068C  2E8F               	goto	u2585
   1329  068D  3051               	movlw	low(051h)
-  1330  068E  0274               	subwf	(write_digits@adc_measurement),w
+  1330  068E  0274               	subwf	(Write_digits@adc_measurement),w
   1331  068F                     u2585:
   1332                           
   1333  068F  1C03               	skipc
   1334  0690  2E92               	goto	u2581
   1335  0691  2E93               	goto	u2580
   1336  0692                     u2581:
-  1337  0692  2E9E               	goto	l2826
+  1337  0692  2E9E               	goto	l4758
   1338  0693                     u2580:
-  1339                           	line	87
+  1339                           	line	89
   1340                           	
-  1341  0693                     l2824:	
-  1342                           ;LCD.h: 86: {
-  1343                           ;LCD.h: 87: write_data(0b0011, 0b0100);
+  1341  0693                     l4756:	
+  1342                           ;LCD.c: 88: {
+  1343                           ;LCD.c: 89: Write_data(0b0011, 0b0100);
   1344  0693  3004               	movlw	(04h)
-  1345  0694  00F6               	movwf	(??_write_digits+0)+0
-  1346  0695  0876               	movf	(??_write_digits+0)+0,w
-  1347  0696  00F0               	movwf	(?_write_data)
+  1345  0694  00F6               	movwf	(??_Write_digits+0)+0
+  1346  0695  0876               	movf	(??_Write_digits+0)+0,w
+  1347  0696  00F0               	movwf	(?_Write_data)
   1348  0697  3003               	movlw	(03h)
-  1349  0698  120A  118A  249C   	fcall	_write_data
+  1349  0698  120A  118A  2493   	fcall	_Write_data
               120A  118A         
-  1350                           	line	88
-  1351                           ;LCD.h: 88: }
-  1352  069D  2EFA               	goto	l679
-  1353                           	line	89
+  1350                           	line	90
+  1351                           ;LCD.c: 90: }
+  1352  069D  2EFA               	goto	l1983
+  1353                           	line	91
   1354                           	
-  1355  069E                     l670:	
+  1355  069E                     l1974:	
   1356                           	
-  1357  069E                     l2826:	
-  1358                           ;LCD.h: 89: else if(adc_measurement > 60)
-  1359  069E  0875               	movf	(write_digits@adc_measurement+1),w
+  1357  069E                     l4758:	
+  1358                           ;LCD.c: 91: else if(adc_measurement > 60)
+  1359  069E  0875               	movf	(Write_digits@adc_measurement+1),w
   1360  069F  3A80               	xorlw	80h
   1361  06A0  00FF               	movwf	btemp+1
   1362  06A1  3080               	movlw	(high(03Dh))^80h
@@ -1403,37 +1403,37 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
   1364  06A3  1D03               	skipz
   1365  06A4  2EA7               	goto	u2595
   1366  06A5  303D               	movlw	low(03Dh)
-  1367  06A6  0274               	subwf	(write_digits@adc_measurement),w
+  1367  06A6  0274               	subwf	(Write_digits@adc_measurement),w
   1368  06A7                     u2595:
   1369                           
   1370  06A7  1C03               	skipc
   1371  06A8  2EAA               	goto	u2591
   1372  06A9  2EAB               	goto	u2590
   1373  06AA                     u2591:
-  1374  06AA  2EB6               	goto	l2830
+  1374  06AA  2EB6               	goto	l4762
   1375  06AB                     u2590:
-  1376                           	line	91
+  1376                           	line	93
   1377                           	
-  1378  06AB                     l2828:	
-  1379                           ;LCD.h: 90: {
-  1380                           ;LCD.h: 91: write_data(0b0011, 0b0011);
+  1378  06AB                     l4760:	
+  1379                           ;LCD.c: 92: {
+  1380                           ;LCD.c: 93: Write_data(0b0011, 0b0011);
   1381  06AB  3003               	movlw	(03h)
-  1382  06AC  00F6               	movwf	(??_write_digits+0)+0
-  1383  06AD  0876               	movf	(??_write_digits+0)+0,w
-  1384  06AE  00F0               	movwf	(?_write_data)
+  1382  06AC  00F6               	movwf	(??_Write_digits+0)+0
+  1383  06AD  0876               	movf	(??_Write_digits+0)+0,w
+  1384  06AE  00F0               	movwf	(?_Write_data)
   1385  06AF  3003               	movlw	(03h)
-  1386  06B0  120A  118A  249C   	fcall	_write_data
+  1386  06B0  120A  118A  2493   	fcall	_Write_data
               120A  118A         
-  1387                           	line	92
-  1388                           ;LCD.h: 92: }
-  1389  06B5  2EFA               	goto	l679
-  1390                           	line	93
+  1387                           	line	94
+  1388                           ;LCD.c: 94: }
+  1389  06B5  2EFA               	goto	l1983
+  1390                           	line	95
   1391                           	
-  1392  06B6                     l672:	
+  1392  06B6                     l1976:	
   1393                           	
-  1394  06B6                     l2830:	
-  1395                           ;LCD.h: 93: else if(adc_measurement > 40)
-  1396  06B6  0875               	movf	(write_digits@adc_measurement+1),w
+  1394  06B6                     l4762:	
+  1395                           ;LCD.c: 95: else if(adc_measurement > 40)
+  1396  06B6  0875               	movf	(Write_digits@adc_measurement+1),w
   1397  06B7  3A80               	xorlw	80h
   1398  06B8  00FF               	movwf	btemp+1
   1399  06B9  3080               	movlw	(high(029h))^80h
@@ -1441,37 +1441,37 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
   1401  06BB  1D03               	skipz
   1402  06BC  2EBF               	goto	u2605
   1403  06BD  3029               	movlw	low(029h)
-  1404  06BE  0274               	subwf	(write_digits@adc_measurement),w
+  1404  06BE  0274               	subwf	(Write_digits@adc_measurement),w
   1405  06BF                     u2605:
   1406                           
   1407  06BF  1C03               	skipc
   1408  06C0  2EC2               	goto	u2601
   1409  06C1  2EC3               	goto	u2600
   1410  06C2                     u2601:
-  1411  06C2  2ECE               	goto	l2834
+  1411  06C2  2ECE               	goto	l4766
   1412  06C3                     u2600:
-  1413                           	line	95
+  1413                           	line	97
   1414                           	
-  1415  06C3                     l2832:	
-  1416                           ;LCD.h: 94: {
-  1417                           ;LCD.h: 95: write_data(0b0011, 0b0010);
+  1415  06C3                     l4764:	
+  1416                           ;LCD.c: 96: {
+  1417                           ;LCD.c: 97: Write_data(0b0011, 0b0010);
   1418  06C3  3002               	movlw	(02h)
-  1419  06C4  00F6               	movwf	(??_write_digits+0)+0
-  1420  06C5  0876               	movf	(??_write_digits+0)+0,w
-  1421  06C6  00F0               	movwf	(?_write_data)
+  1419  06C4  00F6               	movwf	(??_Write_digits+0)+0
+  1420  06C5  0876               	movf	(??_Write_digits+0)+0,w
+  1421  06C6  00F0               	movwf	(?_Write_data)
   1422  06C7  3003               	movlw	(03h)
-  1423  06C8  120A  118A  249C   	fcall	_write_data
+  1423  06C8  120A  118A  2493   	fcall	_Write_data
               120A  118A         
-  1424                           	line	96
-  1425                           ;LCD.h: 96: }
-  1426  06CD  2EFA               	goto	l679
-  1427                           	line	97
+  1424                           	line	98
+  1425                           ;LCD.c: 98: }
+  1426  06CD  2EFA               	goto	l1983
+  1427                           	line	99
   1428                           	
-  1429  06CE                     l674:	
+  1429  06CE                     l1978:	
   1430                           	
-  1431  06CE                     l2834:	
-  1432                           ;LCD.h: 97: else if(adc_measurement > 20)
-  1433  06CE  0875               	movf	(write_digits@adc_measurement+1),w
+  1431  06CE                     l4766:	
+  1432                           ;LCD.c: 99: else if(adc_measurement > 20)
+  1433  06CE  0875               	movf	(Write_digits@adc_measurement+1),w
   1434  06CF  3A80               	xorlw	80h
   1435  06D0  00FF               	movwf	btemp+1
   1436  06D1  3080               	movlw	(high(015h))^80h
@@ -1479,97 +1479,97 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
   1438  06D3  1D03               	skipz
   1439  06D4  2ED7               	goto	u2615
   1440  06D5  3015               	movlw	low(015h)
-  1441  06D6  0274               	subwf	(write_digits@adc_measurement),w
+  1441  06D6  0274               	subwf	(Write_digits@adc_measurement),w
   1442  06D7                     u2615:
   1443                           
   1444  06D7  1C03               	skipc
   1445  06D8  2EDA               	goto	u2611
   1446  06D9  2EDB               	goto	u2610
   1447  06DA                     u2611:
-  1448  06DA  2EE5               	goto	l676
+  1448  06DA  2EE5               	goto	l1980
   1449  06DB                     u2610:
-  1450                           	line	99
+  1450                           	line	101
   1451                           	
-  1452  06DB                     l2836:	
-  1453                           ;LCD.h: 98: {
-  1454                           ;LCD.h: 99: write_data(0b0011, 0b0001);
-  1455  06DB  01F0               	clrf	(?_write_data)
+  1452  06DB                     l4768:	
+  1453                           ;LCD.c: 100: {
+  1454                           ;LCD.c: 101: Write_data(0b0011, 0b0001);
+  1455  06DB  01F0               	clrf	(?_Write_data)
   1456  06DC  1403               	bsf	status,0
-  1457  06DD  0DF0               	rlf	(?_write_data),f
+  1457  06DD  0DF0               	rlf	(?_Write_data),f
   1458  06DE  3003               	movlw	(03h)
-  1459  06DF  120A  118A  249C   	fcall	_write_data
+  1459  06DF  120A  118A  2493   	fcall	_Write_data
               120A  118A         
-  1460                           	line	100
-  1461                           ;LCD.h: 100: }
-  1462  06E4  2EFA               	goto	l679
-  1463                           	line	101
+  1460                           	line	102
+  1461                           ;LCD.c: 102: }
+  1462  06E4  2EFA               	goto	l1983
+  1463                           	line	103
   1464                           	
-  1465  06E5                     l676:	
-  1466                           ;LCD.h: 101: else if(adc_measurement >= 0)
-  1467  06E5  1BF5               	btfsc	(write_digits@adc_measurement+1),7
+  1465  06E5                     l1980:	
+  1466                           ;LCD.c: 103: else if(adc_measurement >= 0)
+  1467  06E5  1BF5               	btfsc	(Write_digits@adc_measurement+1),7
   1468  06E6  2EE8               	goto	u2621
   1469  06E7  2EE9               	goto	u2620
   1470  06E8                     u2621:
-  1471  06E8  2EFA               	goto	l679
+  1471  06E8  2EFA               	goto	l1983
   1472  06E9                     u2620:
-  1473                           	line	103
+  1473                           	line	105
   1474                           	
-  1475  06E9                     l2838:	
-  1476                           ;LCD.h: 102: {
-  1477                           ;LCD.h: 103: write_data(0b0011, 0b0000);
-  1478  06E9  01F0               	clrf	(?_write_data)
+  1475  06E9                     l4770:	
+  1476                           ;LCD.c: 104: {
+  1477                           ;LCD.c: 105: Write_data(0b0011, 0b0000);
+  1478  06E9  01F0               	clrf	(?_Write_data)
   1479  06EA  3003               	movlw	(03h)
-  1480  06EB  120A  118A  249C   	fcall	_write_data
+  1480  06EB  120A  118A  2493   	fcall	_Write_data
               120A  118A         
-  1481  06F0  2EFA               	goto	l679
-  1482                           	line	104
+  1481  06F0  2EFA               	goto	l1983
+  1482                           	line	106
   1483                           	
-  1484  06F1                     l678:	
-  1485  06F1  2EFA               	goto	l679
-  1486                           	line	105
+  1484  06F1                     l1982:	
+  1485  06F1  2EFA               	goto	l1983
+  1486                           	line	107
   1487                           	
-  1488  06F2                     l677:	
-  1489  06F2  2EFA               	goto	l679
+  1488  06F2                     l1981:	
+  1489  06F2  2EFA               	goto	l1983
   1490                           	
-  1491  06F3                     l675:	
-  1492  06F3  2EFA               	goto	l679
+  1491  06F3                     l1979:	
+  1492  06F3  2EFA               	goto	l1983
   1493                           	
-  1494  06F4                     l673:	
-  1495  06F4  2EFA               	goto	l679
+  1494  06F4                     l1977:	
+  1495  06F4  2EFA               	goto	l1983
   1496                           	
-  1497  06F5                     l671:	
-  1498  06F5  2EFA               	goto	l679
+  1497  06F5                     l1975:	
+  1498  06F5  2EFA               	goto	l1983
   1499                           	
-  1500  06F6                     l669:	
-  1501  06F6  2EFA               	goto	l679
+  1500  06F6                     l1973:	
+  1501  06F6  2EFA               	goto	l1983
   1502                           	
-  1503  06F7                     l667:	
-  1504  06F7  2EFA               	goto	l679
+  1503  06F7                     l1971:	
+  1504  06F7  2EFA               	goto	l1983
   1505                           	
-  1506  06F8                     l665:	
-  1507  06F8  2EFA               	goto	l679
+  1506  06F8                     l1969:	
+  1507  06F8  2EFA               	goto	l1983
   1508                           	
-  1509  06F9                     l663:	
-  1510  06F9  2EFA               	goto	l679
+  1509  06F9                     l1967:	
+  1510  06F9  2EFA               	goto	l1983
   1511                           	
-  1512  06FA                     l661:	
+  1512  06FA                     l1965:	
   1513                           	
-  1514  06FA                     l679:	
+  1514  06FA                     l1983:	
   1515  06FA  0008               	return
   1516                           	opt stack 0
-  1517                           GLOBAL	__end_of_write_digits
-  1518  06FB                     	__end_of_write_digits:
-  1519 ;; =============== function _write_digits ends ============
+  1517                           GLOBAL	__end_of_Write_digits
+  1518  06FB                     	__end_of_Write_digits:
+  1519 ;; =============== function _Write_digits ends ============
   1520                           
-  1521                           	signat	_write_digits,4216
-  1522                           	global	_init_lcd
+  1521                           	signat	_Write_digits,4216
+  1522                           	global	_Init_lcd
   1523                           psect	text235,local,class=CODE,delta=2
   1524                           global __ptext235
-  1525  050C                     __ptext235:
+  1525  04D4                     __ptext235:
   1526                           
-  1527 ;; *************** function _init_lcd *****************
+  1527 ;; *************** function _Init_lcd *****************
   1528 ;; Defined at:
-  1529 ;;		line 23 in file "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.h"
+  1529 ;;		line 25 in file "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.c"
   1530 ;; Parameters:    Size  Location     Type
   1531 ;;		None
   1532 ;; Auto vars:     Size  Location     Type
@@ -1591,139 +1591,139 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
   1548 ;; Hardware stack levels used:    1
   1549 ;; Hardware stack levels required when called:    1
   1550 ;; This function calls:
-  1551 ;;		_clear_display
+  1551 ;;		_Clear_display
   1552 ;; This function is called by:
   1553 ;;		_main
   1554 ;; This function uses a non-reentrant model
   1555 ;;
   1556                           psect	text235
-  1557                           	file	"C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.h"
-  1558                           	line	23
-  1559                           	global	__size_of_init_lcd
-  1560  002F                     	__size_of_init_lcd	equ	__end_of_init_lcd-_init_lcd
+  1557                           	file	"C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.c"
+  1558                           	line	25
+  1559                           	global	__size_of_Init_lcd
+  1560  002F                     	__size_of_Init_lcd	equ	__end_of_Init_lcd-_Init_lcd
   1561                           	
-  1562  050C                     _init_lcd:	
+  1562  04D4                     _Init_lcd:	
   1563                           	opt	stack 6
-  1564                           ; Regs used in _init_lcd: [wreg+status,2+status,0+pclath+cstack]
-  1565                           	line	25
+  1564                           ; Regs used in _Init_lcd: [wreg+status,2+status,0+pclath+cstack]
+  1565                           	line	27
   1566                           	
-  1567  050C                     l2780:	
-  1568                           ;LCD.h: 25: PORTA = 0x2;
-  1569  050C  3002               	movlw	(02h)
-  1570  050D  1283               	bcf	status, 5	;RP0=0, select bank0
-  1571  050E  1303               	bcf	status, 6	;RP1=0, select bank0
-  1572  050F  0085               	movwf	(5)	;volatile
-  1573                           	line	26
-  1574                           ;LCD.h: 26: PORTD = 0b0010;
-  1575  0510  3002               	movlw	(02h)
-  1576  0511  0088               	movwf	(8)	;volatile
-  1577                           	line	27
+  1567  04D4                     l4712:	
+  1568                           ;LCD.c: 27: PORTA = 0x2;
+  1569  04D4  3002               	movlw	(02h)
+  1570  04D5  1283               	bcf	status, 5	;RP0=0, select bank0
+  1571  04D6  1303               	bcf	status, 6	;RP1=0, select bank0
+  1572  04D7  0085               	movwf	(5)	;volatile
+  1573                           	line	28
+  1574                           ;LCD.c: 28: PORTD = 0b0010;
+  1575  04D8  3002               	movlw	(02h)
+  1576  04D9  0088               	movwf	(8)	;volatile
+  1577                           	line	29
   1578                           	
-  1579  0512                     l2782:	
-  1580                           ;LCD.h: 27: PORTA = 0x00;
-  1581  0512  0185               	clrf	(5)	;volatile
-  1582                           	line	28
+  1579  04DA                     l4714:	
+  1580                           ;LCD.c: 29: PORTA = 0x00;
+  1581  04DA  0185               	clrf	(5)	;volatile
+  1582                           	line	30
   1583                           	
-  1584  0513                     l2784:	
-  1585                           ;LCD.h: 28: PORTA = 0x2;
-  1586  0513  3002               	movlw	(02h)
-  1587  0514  0085               	movwf	(5)	;volatile
-  1588                           	line	29
+  1584  04DB                     l4716:	
+  1585                           ;LCD.c: 30: PORTA = 0x2;
+  1586  04DB  3002               	movlw	(02h)
+  1587  04DC  0085               	movwf	(5)	;volatile
+  1588                           	line	31
   1589                           	
-  1590  0515                     l2786:	
-  1591                           ;LCD.h: 29: PORTD = 0b1000;
-  1592  0515  3008               	movlw	(08h)
-  1593  0516  0088               	movwf	(8)	;volatile
-  1594                           	line	30
+  1590  04DD                     l4718:	
+  1591                           ;LCD.c: 31: PORTD = 0b1000;
+  1592  04DD  3008               	movlw	(08h)
+  1593  04DE  0088               	movwf	(8)	;volatile
+  1594                           	line	32
   1595                           	
-  1596  0517                     l2788:	
-  1597                           ;LCD.h: 30: PORTA = 0x00;
-  1598  0517  0185               	clrf	(5)	;volatile
-  1599                           	line	31
-  1600                           ;LCD.h: 31: _delay(20000);
+  1596  04DF                     l4720:	
+  1597                           ;LCD.c: 32: PORTA = 0x00;
+  1598  04DF  0185               	clrf	(5)	;volatile
+  1599                           	line	33
+  1600                           ;LCD.c: 33: _delay(20000);
   1601                           	opt asmopt_off
-  1602  0518  301A               movlw	26
-  1603  0519  00F3               movwf	((??_init_lcd+0)+0+1),f
-  1604  051A  30F8               	movlw	248
-  1605  051B  00F2               movwf	((??_init_lcd+0)+0),f
-  1606  051C                     u2787:
-  1607  051C  0BF2               	decfsz	((??_init_lcd+0)+0),f
-  1608  051D  2D1C               	goto	u2787
-  1609  051E  0BF3               	decfsz	((??_init_lcd+0)+0+1),f
-  1610  051F  2D1C               	goto	u2787
-  1611  0520  0064               	clrwdt
+  1602  04E0  301A               movlw	26
+  1603  04E1  00F3               movwf	((??_Init_lcd+0)+0+1),f
+  1604  04E2  30F8               	movlw	248
+  1605  04E3  00F2               movwf	((??_Init_lcd+0)+0),f
+  1606  04E4                     u2787:
+  1607  04E4  0BF2               	decfsz	((??_Init_lcd+0)+0),f
+  1608  04E5  2CE4               	goto	u2787
+  1609  04E6  0BF3               	decfsz	((??_Init_lcd+0)+0+1),f
+  1610  04E7  2CE4               	goto	u2787
+  1611  04E8  0064               	clrwdt
   1612                           opt asmopt_on
   1613                           
-  1614                           	line	34
-  1615                           ;LCD.h: 34: PORTA = 0x2;
-  1616  0521  3002               	movlw	(02h)
-  1617  0522  1283               	bcf	status, 5	;RP0=0, select bank0
-  1618  0523  1303               	bcf	status, 6	;RP1=0, select bank0
-  1619  0524  0085               	movwf	(5)	;volatile
-  1620                           	line	35
+  1614                           	line	36
+  1615                           ;LCD.c: 36: PORTA = 0x2;
+  1616  04E9  3002               	movlw	(02h)
+  1617  04EA  1283               	bcf	status, 5	;RP0=0, select bank0
+  1618  04EB  1303               	bcf	status, 6	;RP1=0, select bank0
+  1619  04EC  0085               	movwf	(5)	;volatile
+  1620                           	line	37
   1621                           	
-  1622  0525                     l2790:	
-  1623                           ;LCD.h: 35: PORTD = 0b0000;
-  1624  0525  0188               	clrf	(8)	;volatile
-  1625                           	line	36
+  1622  04ED                     l4722:	
+  1623                           ;LCD.c: 37: PORTD = 0b0000;
+  1624  04ED  0188               	clrf	(8)	;volatile
+  1625                           	line	38
   1626                           	
-  1627  0526                     l2792:	
-  1628                           ;LCD.h: 36: PORTA = 0x00;
-  1629  0526  0185               	clrf	(5)	;volatile
-  1630                           	line	37
-  1631                           ;LCD.h: 37: PORTA = 0x2;
-  1632  0527  3002               	movlw	(02h)
-  1633  0528  0085               	movwf	(5)	;volatile
-  1634                           	line	38
-  1635                           ;LCD.h: 38: PORTD = 0b1111;
-  1636  0529  300F               	movlw	(0Fh)
-  1637  052A  0088               	movwf	(8)	;volatile
-  1638                           	line	39
+  1627  04EE                     l4724:	
+  1628                           ;LCD.c: 38: PORTA = 0x00;
+  1629  04EE  0185               	clrf	(5)	;volatile
+  1630                           	line	39
+  1631                           ;LCD.c: 39: PORTA = 0x2;
+  1632  04EF  3002               	movlw	(02h)
+  1633  04F0  0085               	movwf	(5)	;volatile
+  1634                           	line	40
+  1635                           ;LCD.c: 40: PORTD = 0b1111;
+  1636  04F1  300F               	movlw	(0Fh)
+  1637  04F2  0088               	movwf	(8)	;volatile
+  1638                           	line	41
   1639                           	
-  1640  052B                     l2794:	
-  1641                           ;LCD.h: 39: PORTA = 0x00;
-  1642  052B  0185               	clrf	(5)	;volatile
-  1643                           	line	40
+  1640  04F3                     l4726:	
+  1641                           ;LCD.c: 41: PORTA = 0x00;
+  1642  04F3  0185               	clrf	(5)	;volatile
+  1643                           	line	42
   1644                           	
-  1645  052C                     l2796:	
-  1646                           ;LCD.h: 40: _delay(20000);
+  1645  04F4                     l4728:	
+  1646                           ;LCD.c: 42: _delay(20000);
   1647                           	opt asmopt_off
-  1648  052C  301A               movlw	26
-  1649  052D  00F3               movwf	((??_init_lcd+0)+0+1),f
-  1650  052E  30F8               	movlw	248
-  1651  052F  00F2               movwf	((??_init_lcd+0)+0),f
-  1652  0530                     u2797:
-  1653  0530  0BF2               	decfsz	((??_init_lcd+0)+0),f
-  1654  0531  2D30               	goto	u2797
-  1655  0532  0BF3               	decfsz	((??_init_lcd+0)+0+1),f
-  1656  0533  2D30               	goto	u2797
-  1657  0534  0064               	clrwdt
+  1648  04F4  301A               movlw	26
+  1649  04F5  00F3               movwf	((??_Init_lcd+0)+0+1),f
+  1650  04F6  30F8               	movlw	248
+  1651  04F7  00F2               movwf	((??_Init_lcd+0)+0),f
+  1652  04F8                     u2797:
+  1653  04F8  0BF2               	decfsz	((??_Init_lcd+0)+0),f
+  1654  04F9  2CF8               	goto	u2797
+  1655  04FA  0BF3               	decfsz	((??_Init_lcd+0)+0+1),f
+  1656  04FB  2CF8               	goto	u2797
+  1657  04FC  0064               	clrwdt
   1658                           opt asmopt_on
   1659                           
-  1660                           	line	42
+  1660                           	line	44
   1661                           	
-  1662  0535                     l2798:	
-  1663                           ;LCD.h: 42: clear_display();
-  1664  0535  120A  118A  2487   	fcall	_clear_display
+  1662  04FD                     l4730:	
+  1663                           ;LCD.c: 44: Clear_display();
+  1664  04FD  120A  118A  247E   	fcall	_Clear_display
               120A  118A         
-  1665                           	line	45
+  1665                           	line	47
   1666                           	
-  1667  053A                     l654:	
-  1668  053A  0008               	return
+  1667  0502                     l1958:	
+  1668  0502  0008               	return
   1669                           	opt stack 0
-  1670                           GLOBAL	__end_of_init_lcd
-  1671  053B                     	__end_of_init_lcd:
-  1672 ;; =============== function _init_lcd ends ============
+  1670                           GLOBAL	__end_of_Init_lcd
+  1671  0503                     	__end_of_Init_lcd:
+  1672 ;; =============== function _Init_lcd ends ============
   1673                           
-  1674                           	signat	_init_lcd,88
+  1674                           	signat	_Init_lcd,88
   1675                           	global	_ADC_Read
   1676                           psect	text236,local,class=CODE,delta=2
   1677                           global __ptext236
-  1678  04DD                     __ptext236:
+  1678  0503                     __ptext236:
   1679                           
   1680 ;; *************** function _ADC_Read *****************
   1681 ;; Defined at:
-  1682 ;;		line 13 in file "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\ADC.h"
+  1682 ;;		line 14 in file "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\ADC.c"
   1683 ;; Parameters:    Size  Location     Type
   1684 ;;  channel         1    wreg     unsigned char 
   1685 ;; Auto vars:     Size  Location     Type
@@ -1750,614 +1750,626 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
   1706 ;; This function uses a non-reentrant model
   1707 ;;
   1708                           psect	text236
-  1709                           	file	"C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\ADC.h"
-  1710                           	line	13
+  1709                           	file	"C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\ADC.c"
+  1710                           	line	14
   1711                           	global	__size_of_ADC_Read
-  1712  002F                     	__size_of_ADC_Read	equ	__end_of_ADC_Read-_ADC_Read
+  1712  0038                     	__size_of_ADC_Read	equ	__end_of_ADC_Read-_ADC_Read
   1713                           	
-  1714  04DD                     _ADC_Read:	
+  1714  0503                     _ADC_Read:	
   1715                           	opt	stack 7
   1716                           ; Regs used in _ADC_Read: [wreg+status,2+status,0+btemp+1]
   1717                           ;ADC_Read@channel stored from wreg
-  1718  04DD  00F4               	movwf	(ADC_Read@channel)
-  1719                           	line	14
+  1718  0503  00F4               	movwf	(ADC_Read@channel)
+  1719                           	line	15
   1720                           	
-  1721  04DE                     l2770:	
-  1722                           ;ADC.h: 14: ADCON0 &= 0xC5;
-  1723  04DE  30C5               	movlw	(0C5h)
-  1724  04DF  00F2               	movwf	(??_ADC_Read+0)+0
-  1725  04E0  0872               	movf	(??_ADC_Read+0)+0,w
-  1726  04E1  1283               	bcf	status, 5	;RP0=0, select bank0
-  1727  04E2  1303               	bcf	status, 6	;RP1=0, select bank0
-  1728  04E3  059F               	andwf	(31),f	;volatile
-  1729                           	line	15
-  1730                           ;ADC.h: 15: ADCON0 |= channel<<3;
-  1731  04E4  0874               	movf	(ADC_Read@channel),w
-  1732  04E5  00F2               	movwf	(??_ADC_Read+0)+0
-  1733  04E6  3002               	movlw	(03h)-1
-  1734  04E7                     u2515:
-  1735  04E7  1003               	clrc
-  1736  04E8  0DF2               	rlf	(??_ADC_Read+0)+0,f
-  1737  04E9  3EFF               	addlw	-1
-  1738  04EA  1D03               	skipz
-  1739  04EB  2CE7               	goto	u2515
-  1740  04EC  1003               	clrc
-  1741  04ED  0D72               	rlf	(??_ADC_Read+0)+0,w
-  1742  04EE  00F3               	movwf	(??_ADC_Read+1)+0
-  1743  04EF  0873               	movf	(??_ADC_Read+1)+0,w
-  1744  04F0  049F               	iorwf	(31),f	;volatile
-  1745                           	line	16
+  1721  0504                     l4702:	
+  1722                           ;ADC.c: 15: ADCON0 &= 0xC5;
+  1723  0504  30C5               	movlw	(0C5h)
+  1724  0505  00F2               	movwf	(??_ADC_Read+0)+0
+  1725  0506  0872               	movf	(??_ADC_Read+0)+0,w
+  1726  0507  1283               	bcf	status, 5	;RP0=0, select bank0
+  1727  0508  1303               	bcf	status, 6	;RP1=0, select bank0
+  1728  0509  059F               	andwf	(31),f	;volatile
+  1729                           	line	16
+  1730                           ;ADC.c: 16: ADCON0 |= channel<<3;
+  1731  050A  0874               	movf	(ADC_Read@channel),w
+  1732  050B  00F2               	movwf	(??_ADC_Read+0)+0
+  1733  050C  3002               	movlw	(03h)-1
+  1734  050D                     u2515:
+  1735  050D  1003               	clrc
+  1736  050E  0DF2               	rlf	(??_ADC_Read+0)+0,f
+  1737  050F  3EFF               	addlw	-1
+  1738  0510  1D03               	skipz
+  1739  0511  2D0D               	goto	u2515
+  1740  0512  1003               	clrc
+  1741  0513  0D72               	rlf	(??_ADC_Read+0)+0,w
+  1742  0514  00F3               	movwf	(??_ADC_Read+1)+0
+  1743  0515  0873               	movf	(??_ADC_Read+1)+0,w
+  1744  0516  049F               	iorwf	(31),f	;volatile
+  1745                           	line	17
   1746                           	
-  1747  04F1                     l2772:	
-  1748                           ;ADC.h: 16: _delay((unsigned long)((2)*(10/4000.0)));
-  1749                           	
-  1750                           	line	17
-  1751                           	
-  1752  04F1                     l2774:	
-  1753                           ;ADC.h: 17: GO_nDONE = 1;
-  1754  04F1  1283               	bcf	status, 5	;RP0=0, select bank0
-  1755  04F2  1303               	bcf	status, 6	;RP1=0, select bank0
-  1756  04F3  151F               	bsf	(250/8),(250)&7
-  1757                           	line	18
-  1758                           ;ADC.h: 18: while(GO_nDONE);
-  1759  04F4  2CF5               	goto	l699
-  1760                           	
-  1761  04F5                     l700:	
-  1762                           	
-  1763  04F5                     l699:	
-  1764  04F5  191F               	btfsc	(250/8),(250)&7
-  1765  04F6  2CF8               	goto	u2521
-  1766  04F7  2CF9               	goto	u2520
-  1767  04F8                     u2521:
-  1768  04F8  2CF5               	goto	l699
-  1769  04F9                     u2520:
-  1770  04F9  2CFA               	goto	l2776
-  1771                           	
-  1772  04FA                     l701:	
-  1773                           	line	19
+  1747  0517                     l4704:	
+  1748                           ;ADC.c: 17: _delay((unsigned long)((2)*(4000000/4000.0)));
+  1749                           	opt asmopt_off
+  1750  0517  3003               movlw	3
+  1751  0518  00F3               movwf	((??_ADC_Read+0)+0+1),f
+  1752  0519  3097               	movlw	151
+  1753  051A  00F2               movwf	((??_ADC_Read+0)+0),f
+  1754  051B                     u2807:
+  1755  051B  0BF2               	decfsz	((??_ADC_Read+0)+0),f
+  1756  051C  2D1B               	goto	u2807
+  1757  051D  0BF3               	decfsz	((??_ADC_Read+0)+0+1),f
+  1758  051E  2D1B               	goto	u2807
+  1759  051F  2D20               	nop2
+  1760                           opt asmopt_on
+  1761                           
+  1762                           	line	18
+  1763                           	
+  1764  0520                     l4706:	
+  1765                           ;ADC.c: 18: GO_nDONE = 1;
+  1766  0520  1283               	bcf	status, 5	;RP0=0, select bank0
+  1767  0521  1303               	bcf	status, 6	;RP1=0, select bank0
+  1768  0522  151F               	bsf	(250/8),(250)&7
+  1769                           	line	19
+  1770                           ;ADC.c: 19: while(GO_nDONE);
+  1771  0523  2D24               	goto	l1309
+  1772                           	
+  1773  0524                     l1310:	
   1774                           	
-  1775  04FA                     l2776:	
-  1776                           ;ADC.h: 19: return ((ADRESH<<8)+ADRESL);
-  1777  04FA  081E               	movf	(30),w	;volatile
-  1778  04FB  00F2               	movwf	(??_ADC_Read+0)+0
-  1779  04FC  01F3               	clrf	(??_ADC_Read+0)+0+1
-  1780  04FD  0872               	movf	(??_ADC_Read+0)+0,w
-  1781  04FE  00F3               	movwf	(??_ADC_Read+0)+1
-  1782  04FF  01F2               	clrf	(??_ADC_Read+0)+0
-  1783  0500  1683               	bsf	status, 5	;RP0=1, select bank1
-  1784  0501  1303               	bcf	status, 6	;RP1=0, select bank1
-  1785  0502  081E               	movf	(158)^080h,w	;volatile
-  1786  0503  0772               	addwf	0+(??_ADC_Read+0)+0,w
-  1787  0504  00F0               	movwf	(?_ADC_Read)
-  1788  0505  3000               	movlw	0
-  1789  0506  1803               	skipnc
-  1790  0507  3001               	movlw	1
-  1791  0508  0773               	addwf	1+(??_ADC_Read+0)+0,w
-  1792  0509  00F1               	movwf	1+(?_ADC_Read)
-  1793  050A  2D0B               	goto	l702
-  1794                           	
-  1795  050B                     l2778:	
-  1796                           	line	20
-  1797                           	
-  1798  050B                     l702:	
-  1799  050B  0008               	return
-  1800                           	opt stack 0
-  1801                           GLOBAL	__end_of_ADC_Read
-  1802  050C                     	__end_of_ADC_Read:
-  1803 ;; =============== function _ADC_Read ends ============
-  1804                           
-  1805                           	signat	_ADC_Read,4218
-  1806                           	global	_write_data
-  1807                           psect	text237,local,class=CODE,delta=2
-  1808                           global __ptext237
-  1809  049C                     __ptext237:
-  1810                           
-  1811 ;; *************** function _write_data *****************
-  1812 ;; Defined at:
-  1813 ;;		line 50 in file "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.h"
-  1814 ;; Parameters:    Size  Location     Type
-  1815 ;;  hb              1    wreg     unsigned char 
-  1816 ;;  lb              1    0[COMMON] unsigned char 
-  1817 ;; Auto vars:     Size  Location     Type
-  1818 ;;  hb              1    3[COMMON] unsigned char 
-  1819 ;; Return value:  Size  Location     Type
-  1820 ;;		None               void
-  1821 ;; Registers used:
-  1822 ;;		wreg
-  1823 ;; Tracked objects:
-  1824 ;;		On entry : 0/0
-  1825 ;;		On exit  : 0/0
-  1826 ;;		Unchanged: 0/0
-  1827 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1828 ;;      Params:         1       0       0       0       0
-  1829 ;;      Locals:         1       0       0       0       0
-  1830 ;;      Temps:          2       0       0       0       0
-  1831 ;;      Totals:         4       0       0       0       0
-  1832 ;;Total ram usage:        4 bytes
-  1833 ;; Hardware stack levels used:    1
-  1834 ;; This function calls:
-  1835 ;;		Nothing
-  1836 ;; This function is called by:
-  1837 ;;		_write_digits
-  1838 ;;		_write_voltage
-  1839 ;;		_main
-  1840 ;; This function uses a non-reentrant model
-  1841 ;;
-  1842                           psect	text237
-  1843                           	file	"C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.h"
-  1844                           	line	50
-  1845                           	global	__size_of_write_data
-  1846  0019                     	__size_of_write_data	equ	__end_of_write_data-_write_data
-  1847                           	
-  1848  049C                     _write_data:	
-  1849                           	opt	stack 5
-  1850                           ; Regs used in _write_data: [wreg]
-  1851                           ;write_data@hb stored from wreg
-  1852  049C  00F3               	movwf	(write_data@hb)
-  1853                           	line	51
-  1854                           	
-  1855  049D                     l2768:	
-  1856                           ;LCD.h: 51: PORTA = 0xA;
-  1857  049D  300A               	movlw	(0Ah)
-  1858  049E  1283               	bcf	status, 5	;RP0=0, select bank0
-  1859  049F  1303               	bcf	status, 6	;RP1=0, select bank0
-  1860  04A0  0085               	movwf	(5)	;volatile
-  1861                           	line	52
-  1862                           ;LCD.h: 52: PORTD = hb;
-  1863  04A1  0873               	movf	(write_data@hb),w
-  1864  04A2  0088               	movwf	(8)	;volatile
-  1865                           	line	53
-  1866                           ;LCD.h: 53: PORTA = 0x08;
-  1867  04A3  3008               	movlw	(08h)
-  1868  04A4  0085               	movwf	(5)	;volatile
-  1869                           	line	55
-  1870                           ;LCD.h: 55: PORTA = 0xA;
-  1871  04A5  300A               	movlw	(0Ah)
-  1872  04A6  0085               	movwf	(5)	;volatile
-  1873                           	line	56
-  1874                           ;LCD.h: 56: PORTD = lb;
-  1875  04A7  0870               	movf	(write_data@lb),w
-  1876  04A8  0088               	movwf	(8)	;volatile
-  1877                           	line	57
-  1878                           ;LCD.h: 57: PORTA = 0x08;
-  1879  04A9  3008               	movlw	(08h)
-  1880  04AA  0085               	movwf	(5)	;volatile
-  1881                           	line	59
-  1882                           ;LCD.h: 59: _delay(20000);
-  1883                           	opt asmopt_off
-  1884  04AB  301A               movlw	26
-  1885  04AC  00F2               movwf	((??_write_data+0)+0+1),f
-  1886  04AD  30F8               	movlw	248
-  1887  04AE  00F1               movwf	((??_write_data+0)+0),f
-  1888  04AF                     u2807:
-  1889  04AF  0BF1               	decfsz	((??_write_data+0)+0),f
-  1890  04B0  2CAF               	goto	u2807
-  1891  04B1  0BF2               	decfsz	((??_write_data+0)+0+1),f
-  1892  04B2  2CAF               	goto	u2807
-  1893  04B3  0064               	clrwdt
-  1894                           opt asmopt_on
-  1895                           
-  1896                           	line	60
-  1897                           	
-  1898  04B4                     l657:	
-  1899  04B4  0008               	return
-  1900                           	opt stack 0
-  1901                           GLOBAL	__end_of_write_data
-  1902  04B5                     	__end_of_write_data:
-  1903 ;; =============== function _write_data ends ============
-  1904                           
-  1905                           	signat	_write_data,8312
-  1906                           	global	_clear_display
-  1907                           psect	text238,local,class=CODE,delta=2
-  1908                           global __ptext238
-  1909  0487                     __ptext238:
-  1910                           
-  1911 ;; *************** function _clear_display *****************
-  1912 ;; Defined at:
-  1913 ;;		line 11 in file "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.h"
-  1914 ;; Parameters:    Size  Location     Type
-  1915 ;;		None
-  1916 ;; Auto vars:     Size  Location     Type
-  1917 ;;		None
-  1918 ;; Return value:  Size  Location     Type
-  1919 ;;		None               void
-  1920 ;; Registers used:
-  1921 ;;		wreg, status,2
-  1922 ;; Tracked objects:
-  1923 ;;		On entry : 0/0
-  1924 ;;		On exit  : 0/0
-  1925 ;;		Unchanged: 0/0
-  1926 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1927 ;;      Params:         0       0       0       0       0
-  1928 ;;      Locals:         0       0       0       0       0
-  1929 ;;      Temps:          2       0       0       0       0
-  1930 ;;      Totals:         2       0       0       0       0
-  1931 ;;Total ram usage:        2 bytes
-  1932 ;; Hardware stack levels used:    1
-  1933 ;; This function calls:
-  1934 ;;		Nothing
-  1935 ;; This function is called by:
-  1936 ;;		_init_lcd
-  1937 ;;		_main
-  1938 ;; This function uses a non-reentrant model
-  1939 ;;
-  1940                           psect	text238
-  1941                           	file	"C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.h"
-  1942                           	line	11
-  1943                           	global	__size_of_clear_display
-  1944  0015                     	__size_of_clear_display	equ	__end_of_clear_display-_clear_display
-  1945                           	
-  1946  0487                     _clear_display:	
-  1947                           	opt	stack 7
-  1948                           ; Regs used in _clear_display: [wreg+status,2]
-  1949                           	line	13
-  1950                           	
-  1951  0487                     l2758:	
-  1952                           ;LCD.h: 13: PORTA = 0x2;
-  1953  0487  3002               	movlw	(02h)
-  1954  0488  1283               	bcf	status, 5	;RP0=0, select bank0
-  1955  0489  1303               	bcf	status, 6	;RP1=0, select bank0
-  1956  048A  0085               	movwf	(5)	;volatile
-  1957                           	line	14
-  1958                           	
-  1959  048B                     l2760:	
-  1960                           ;LCD.h: 14: PORTD = 0b0000;
-  1961  048B  0188               	clrf	(8)	;volatile
-  1962                           	line	15
-  1963                           	
-  1964  048C                     l2762:	
-  1965                           ;LCD.h: 15: PORTA = 0x00;
-  1966  048C  0185               	clrf	(5)	;volatile
-  1967                           	line	16
-  1968                           ;LCD.h: 16: PORTA = 0x2;
-  1969  048D  3002               	movlw	(02h)
-  1970  048E  0085               	movwf	(5)	;volatile
-  1971                           	line	17
-  1972                           ;LCD.h: 17: PORTD = 0b0001;
-  1973  048F  3001               	movlw	(01h)
-  1974  0490  0088               	movwf	(8)	;volatile
-  1975                           	line	18
-  1976                           	
-  1977  0491                     l2764:	
-  1978                           ;LCD.h: 18: PORTA = 0x00;
-  1979  0491  0185               	clrf	(5)	;volatile
-  1980                           	line	19
-  1981                           	
-  1982  0492                     l2766:	
-  1983                           ;LCD.h: 19: _delay(20000);
-  1984                           	opt asmopt_off
-  1985  0492  301A               movlw	26
-  1986  0493  00F1               movwf	((??_clear_display+0)+0+1),f
-  1987  0494  30F8               	movlw	248
-  1988  0495  00F0               movwf	((??_clear_display+0)+0),f
-  1989  0496                     u2817:
-  1990  0496  0BF0               	decfsz	((??_clear_display+0)+0),f
-  1991  0497  2C96               	goto	u2817
-  1992  0498  0BF1               	decfsz	((??_clear_display+0)+0+1),f
-  1993  0499  2C96               	goto	u2817
-  1994  049A  0064               	clrwdt
-  1995                           opt asmopt_on
-  1996                           
-  1997                           	line	20
-  1998                           	
-  1999  049B                     l651:	
-  2000  049B  0008               	return
-  2001                           	opt stack 0
-  2002                           GLOBAL	__end_of_clear_display
-  2003  049C                     	__end_of_clear_display:
-  2004 ;; =============== function _clear_display ends ============
-  2005                           
-  2006                           	signat	_clear_display,88
-  2007                           	global	_sound
-  2008                           psect	text239,local,class=CODE,delta=2
-  2009                           global __ptext239
-  2010  04B5                     __ptext239:
-  2011                           
-  2012 ;; *************** function _sound *****************
-  2013 ;; Defined at:
-  2014 ;;		line 4 in file "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\sound.h"
-  2015 ;; Parameters:    Size  Location     Type
-  2016 ;;		None
-  2017 ;; Auto vars:     Size  Location     Type
-  2018 ;;  i               2    2[COMMON] int 
-  2019 ;; Return value:  Size  Location     Type
-  2020 ;;		None               void
-  2021 ;; Registers used:
-  2022 ;;		wreg, status,2, btemp+1
-  2023 ;; Tracked objects:
-  2024 ;;		On entry : 0/0
-  2025 ;;		On exit  : 0/0
-  2026 ;;		Unchanged: 0/0
-  2027 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  2028 ;;      Params:         0       0       0       0       0
-  2029 ;;      Locals:         2       0       0       0       0
-  2030 ;;      Temps:          2       0       0       0       0
-  2031 ;;      Totals:         4       0       0       0       0
-  2032 ;;Total ram usage:        4 bytes
-  2033 ;; Hardware stack levels used:    1
-  2034 ;; This function calls:
-  2035 ;;		Nothing
-  2036 ;; This function is called by:
-  2037 ;;		_main
-  2038 ;; This function uses a non-reentrant model
-  2039 ;;
-  2040                           psect	text239
-  2041                           	file	"C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\sound.h"
-  2042                           	line	4
-  2043                           	global	__size_of_sound
-  2044  0028                     	__size_of_sound	equ	__end_of_sound-_sound
-  2045                           	
-  2046  04B5                     _sound:	
-  2047                           	opt	stack 7
-  2048                           ; Regs used in _sound: [wreg+status,2+btemp+1]
-  2049                           	line	6
-  2050                           	
-  2051  04B5                     l2750:	
-  2052                           ;sound.h: 6: int i = 0;
-  2053  04B5  01F2               	clrf	(sound@i)
-  2054  04B6  01F3               	clrf	(sound@i+1)
-  2055                           	line	9
-  2056                           ;sound.h: 9: while(i < 20)
-  2057  04B7  2CCE               	goto	l2756
-  2058                           	
-  2059  04B8                     l646:	
-  2060                           	line	12
-  2061                           ;sound.h: 10: {
-  2062                           ;sound.h: 12: RC2 = 1;
-  2063  04B8  1283               	bcf	status, 5	;RP0=0, select bank0
-  2064  04B9  1303               	bcf	status, 6	;RP1=0, select bank0
-  2065  04BA  1507               	bsf	(58/8),(58)&7
-  2066                           	line	15
-  2067                           	
-  2068  04BB                     l2752:	
-  2069                           ;sound.h: 15: _delay(6000);
-  2070                           	opt asmopt_off
-  2071  04BB  3008               movlw	8
-  2072  04BC  00F1               movwf	((??_sound+0)+0+1),f
-  2073  04BD  30C9               	movlw	201
-  2074  04BE  00F0               movwf	((??_sound+0)+0),f
-  2075  04BF                     u2827:
-  2076  04BF  0BF0               	decfsz	((??_sound+0)+0),f
-  2077  04C0  2CBF               	goto	u2827
-  2078  04C1  0BF1               	decfsz	((??_sound+0)+0+1),f
-  2079  04C2  2CBF               	goto	u2827
-  2080  04C3  2CC4               	nop2
-  2081                           opt asmopt_on
-  2082                           
-  2083                           	line	17
-  2084                           	
-  2085  04C4                     l2754:	
-  2086                           ;sound.h: 17: RC2 = 0;
-  2087  04C4  1283               	bcf	status, 5	;RP0=0, select bank0
-  2088  04C5  1303               	bcf	status, 6	;RP1=0, select bank0
-  2089  04C6  1107               	bcf	(58/8),(58)&7
-  2090                           	line	18
-  2091                           ;sound.h: 18: i++;
-  2092  04C7  3001               	movlw	low(01h)
-  2093  04C8  07F2               	addwf	(sound@i),f
-  2094  04C9  1803               	skipnc
-  2095  04CA  0AF3               	incf	(sound@i+1),f
-  2096  04CB  3000               	movlw	high(01h)
-  2097  04CC  07F3               	addwf	(sound@i+1),f
-  2098  04CD  2CCE               	goto	l2756
-  2099                           	line	19
-  2100                           	
-  2101  04CE                     l645:	
-  2102                           	line	9
-  2103                           	
-  2104  04CE                     l2756:	
-  2105  04CE  0873               	movf	(sound@i+1),w
-  2106  04CF  3A80               	xorlw	80h
-  2107  04D0  00FF               	movwf	btemp+1
-  2108  04D1  3080               	movlw	(high(014h))^80h
-  2109  04D2  027F               	subwf	btemp+1,w
-  2110  04D3  1D03               	skipz
-  2111  04D4  2CD7               	goto	u2505
-  2112  04D5  3014               	movlw	low(014h)
-  2113  04D6  0272               	subwf	(sound@i),w
-  2114  04D7                     u2505:
-  2115                           
-  2116  04D7  1C03               	skipc
-  2117  04D8  2CDA               	goto	u2501
-  2118  04D9  2CDB               	goto	u2500
-  2119  04DA                     u2501:
-  2120  04DA  2CB8               	goto	l646
-  2121  04DB                     u2500:
-  2122  04DB  2CDC               	goto	l648
-  2123                           	
-  2124  04DC                     l647:	
-  2125                           	line	20
-  2126                           	
-  2127  04DC                     l648:	
-  2128  04DC  0008               	return
-  2129                           	opt stack 0
-  2130                           GLOBAL	__end_of_sound
-  2131  04DD                     	__end_of_sound:
-  2132 ;; =============== function _sound ends ============
-  2133                           
-  2134                           	signat	_sound,88
-  2135                           	global	_ADC_Init
-  2136                           psect	text240,local,class=CODE,delta=2
-  2137                           global __ptext240
-  2138  047E                     __ptext240:
-  2139                           
-  2140 ;; *************** function _ADC_Init *****************
-  2141 ;; Defined at:
-  2142 ;;		line 6 in file "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\ADC.h"
-  2143 ;; Parameters:    Size  Location     Type
-  2144 ;;		None
-  2145 ;; Auto vars:     Size  Location     Type
-  2146 ;;		None
-  2147 ;; Return value:  Size  Location     Type
-  2148 ;;		None               void
-  2149 ;; Registers used:
-  2150 ;;		wreg
-  2151 ;; Tracked objects:
-  2152 ;;		On entry : 0/0
-  2153 ;;		On exit  : 0/0
-  2154 ;;		Unchanged: 0/0
-  2155 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  2156 ;;      Params:         0       0       0       0       0
-  2157 ;;      Locals:         0       0       0       0       0
-  2158 ;;      Temps:          0       0       0       0       0
-  2159 ;;      Totals:         0       0       0       0       0
-  2160 ;;Total ram usage:        0 bytes
-  2161 ;; Hardware stack levels used:    1
-  2162 ;; This function calls:
-  2163 ;;		Nothing
-  2164 ;; This function is called by:
-  2165 ;;		_main
-  2166 ;; This function uses a non-reentrant model
-  2167 ;;
-  2168                           psect	text240
-  2169                           	file	"C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\ADC.h"
-  2170                           	line	6
-  2171                           	global	__size_of_ADC_Init
-  2172  0009                     	__size_of_ADC_Init	equ	__end_of_ADC_Init-_ADC_Init
-  2173                           	
-  2174  047E                     _ADC_Init:	
-  2175                           	opt	stack 7
-  2176                           ; Regs used in _ADC_Init: [wreg]
-  2177                           	line	7
-  2178                           	
-  2179  047E                     l2748:	
-  2180                           ;ADC.h: 7: ADCON0 = 0x41;
-  2181  047E  3041               	movlw	(041h)
-  2182  047F  1283               	bcf	status, 5	;RP0=0, select bank0
-  2183  0480  1303               	bcf	status, 6	;RP1=0, select bank0
-  2184  0481  009F               	movwf	(31)	;volatile
-  2185                           	line	8
-  2186                           ;ADC.h: 8: ADCON1 = 0xC0;
-  2187  0482  30C0               	movlw	(0C0h)
-  2188  0483  1683               	bsf	status, 5	;RP0=1, select bank1
-  2189  0484  1303               	bcf	status, 6	;RP1=0, select bank1
-  2190  0485  009F               	movwf	(159)^080h	;volatile
-  2191                           	line	10
-  2192                           	
-  2193  0486                     l696:	
-  2194  0486  0008               	return
-  2195                           	opt stack 0
-  2196                           GLOBAL	__end_of_ADC_Init
-  2197  0487                     	__end_of_ADC_Init:
-  2198 ;; =============== function _ADC_Init ends ============
-  2199                           
-  2200                           	signat	_ADC_Init,88
-  2201                           psect	text241,local,class=CODE,delta=2
-  2202                           global __ptext241
-  2203  0000                     __ptext241:
-  2204                           	global	btemp
-  2205  007E                     	btemp set 07Eh
-  2206                           
-  2207                           	DABS	1,126,2	;btemp
-  2208                           	global	wtemp0
-  2209  007E                     	wtemp0 set btemp
+  1775  0524                     l1309:	
+  1776  0524  191F               	btfsc	(250/8),(250)&7
+  1777  0525  2D27               	goto	u2521
+  1778  0526  2D28               	goto	u2520
+  1779  0527                     u2521:
+  1780  0527  2D24               	goto	l1309
+  1781  0528                     u2520:
+  1782  0528  2D29               	goto	l4708
+  1783                           	
+  1784  0529                     l1311:	
+  1785                           	line	20
+  1786                           	
+  1787  0529                     l4708:	
+  1788                           ;ADC.c: 20: return ((ADRESH<<8)+ADRESL);
+  1789  0529  081E               	movf	(30),w	;volatile
+  1790  052A  00F2               	movwf	(??_ADC_Read+0)+0
+  1791  052B  01F3               	clrf	(??_ADC_Read+0)+0+1
+  1792  052C  0872               	movf	(??_ADC_Read+0)+0,w
+  1793  052D  00F3               	movwf	(??_ADC_Read+0)+1
+  1794  052E  01F2               	clrf	(??_ADC_Read+0)+0
+  1795  052F  1683               	bsf	status, 5	;RP0=1, select bank1
+  1796  0530  1303               	bcf	status, 6	;RP1=0, select bank1
+  1797  0531  081E               	movf	(158)^080h,w	;volatile
+  1798  0532  0772               	addwf	0+(??_ADC_Read+0)+0,w
+  1799  0533  00F0               	movwf	(?_ADC_Read)
+  1800  0534  3000               	movlw	0
+  1801  0535  1803               	skipnc
+  1802  0536  3001               	movlw	1
+  1803  0537  0773               	addwf	1+(??_ADC_Read+0)+0,w
+  1804  0538  00F1               	movwf	1+(?_ADC_Read)
+  1805  0539  2D3A               	goto	l1312
+  1806                           	
+  1807  053A                     l4710:	
+  1808                           	line	21
+  1809                           	
+  1810  053A                     l1312:	
+  1811  053A  0008               	return
+  1812                           	opt stack 0
+  1813                           GLOBAL	__end_of_ADC_Read
+  1814  053B                     	__end_of_ADC_Read:
+  1815 ;; =============== function _ADC_Read ends ============
+  1816                           
+  1817                           	signat	_ADC_Read,4218
+  1818                           	global	_Clear_display
+  1819                           psect	text237,local,class=CODE,delta=2
+  1820                           global __ptext237
+  1821  047E                     __ptext237:
+  1822                           
+  1823 ;; *************** function _Clear_display *****************
+  1824 ;; Defined at:
+  1825 ;;		line 13 in file "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.c"
+  1826 ;; Parameters:    Size  Location     Type
+  1827 ;;		None
+  1828 ;; Auto vars:     Size  Location     Type
+  1829 ;;		None
+  1830 ;; Return value:  Size  Location     Type
+  1831 ;;		None               void
+  1832 ;; Registers used:
+  1833 ;;		wreg, status,2
+  1834 ;; Tracked objects:
+  1835 ;;		On entry : 0/0
+  1836 ;;		On exit  : 0/0
+  1837 ;;		Unchanged: 0/0
+  1838 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1839 ;;      Params:         0       0       0       0       0
+  1840 ;;      Locals:         0       0       0       0       0
+  1841 ;;      Temps:          2       0       0       0       0
+  1842 ;;      Totals:         2       0       0       0       0
+  1843 ;;Total ram usage:        2 bytes
+  1844 ;; Hardware stack levels used:    1
+  1845 ;; This function calls:
+  1846 ;;		Nothing
+  1847 ;; This function is called by:
+  1848 ;;		_main
+  1849 ;;		_Init_lcd
+  1850 ;; This function uses a non-reentrant model
+  1851 ;;
+  1852                           psect	text237
+  1853                           	file	"C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.c"
+  1854                           	line	13
+  1855                           	global	__size_of_Clear_display
+  1856  0015                     	__size_of_Clear_display	equ	__end_of_Clear_display-_Clear_display
+  1857                           	
+  1858  047E                     _Clear_display:	
+  1859                           	opt	stack 7
+  1860                           ; Regs used in _Clear_display: [wreg+status,2]
+  1861                           	line	15
+  1862                           	
+  1863  047E                     l4692:	
+  1864                           ;LCD.c: 15: PORTA = 0x2;
+  1865  047E  3002               	movlw	(02h)
+  1866  047F  1283               	bcf	status, 5	;RP0=0, select bank0
+  1867  0480  1303               	bcf	status, 6	;RP1=0, select bank0
+  1868  0481  0085               	movwf	(5)	;volatile
+  1869                           	line	16
+  1870                           	
+  1871  0482                     l4694:	
+  1872                           ;LCD.c: 16: PORTD = 0b0000;
+  1873  0482  0188               	clrf	(8)	;volatile
+  1874                           	line	17
+  1875                           	
+  1876  0483                     l4696:	
+  1877                           ;LCD.c: 17: PORTA = 0x00;
+  1878  0483  0185               	clrf	(5)	;volatile
+  1879                           	line	18
+  1880                           ;LCD.c: 18: PORTA = 0x2;
+  1881  0484  3002               	movlw	(02h)
+  1882  0485  0085               	movwf	(5)	;volatile
+  1883                           	line	19
+  1884                           ;LCD.c: 19: PORTD = 0b0001;
+  1885  0486  3001               	movlw	(01h)
+  1886  0487  0088               	movwf	(8)	;volatile
+  1887                           	line	20
+  1888                           	
+  1889  0488                     l4698:	
+  1890                           ;LCD.c: 20: PORTA = 0x00;
+  1891  0488  0185               	clrf	(5)	;volatile
+  1892                           	line	21
+  1893                           	
+  1894  0489                     l4700:	
+  1895                           ;LCD.c: 21: _delay(20000);
+  1896                           	opt asmopt_off
+  1897  0489  301A               movlw	26
+  1898  048A  00F1               movwf	((??_Clear_display+0)+0+1),f
+  1899  048B  30F8               	movlw	248
+  1900  048C  00F0               movwf	((??_Clear_display+0)+0),f
+  1901  048D                     u2817:
+  1902  048D  0BF0               	decfsz	((??_Clear_display+0)+0),f
+  1903  048E  2C8D               	goto	u2817
+  1904  048F  0BF1               	decfsz	((??_Clear_display+0)+0+1),f
+  1905  0490  2C8D               	goto	u2817
+  1906  0491  0064               	clrwdt
+  1907                           opt asmopt_on
+  1908                           
+  1909                           	line	22
+  1910                           	
+  1911  0492                     l1955:	
+  1912  0492  0008               	return
+  1913                           	opt stack 0
+  1914                           GLOBAL	__end_of_Clear_display
+  1915  0493                     	__end_of_Clear_display:
+  1916 ;; =============== function _Clear_display ends ============
+  1917                           
+  1918                           	signat	_Clear_display,88
+  1919                           	global	_Sound
+  1920                           psect	text238,local,class=CODE,delta=2
+  1921                           global __ptext238
+  1922  04AC                     __ptext238:
+  1923                           
+  1924 ;; *************** function _Sound *****************
+  1925 ;; Defined at:
+  1926 ;;		line 6 in file "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\Sound.c"
+  1927 ;; Parameters:    Size  Location     Type
+  1928 ;;		None
+  1929 ;; Auto vars:     Size  Location     Type
+  1930 ;;  i               2    2[COMMON] int 
+  1931 ;; Return value:  Size  Location     Type
+  1932 ;;		None               void
+  1933 ;; Registers used:
+  1934 ;;		wreg, status,2, btemp+1
+  1935 ;; Tracked objects:
+  1936 ;;		On entry : 0/0
+  1937 ;;		On exit  : 0/0
+  1938 ;;		Unchanged: 0/0
+  1939 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1940 ;;      Params:         0       0       0       0       0
+  1941 ;;      Locals:         2       0       0       0       0
+  1942 ;;      Temps:          2       0       0       0       0
+  1943 ;;      Totals:         4       0       0       0       0
+  1944 ;;Total ram usage:        4 bytes
+  1945 ;; Hardware stack levels used:    1
+  1946 ;; This function calls:
+  1947 ;;		Nothing
+  1948 ;; This function is called by:
+  1949 ;;		_main
+  1950 ;; This function uses a non-reentrant model
+  1951 ;;
+  1952                           psect	text238
+  1953                           	file	"C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\Sound.c"
+  1954                           	line	6
+  1955                           	global	__size_of_Sound
+  1956  0028                     	__size_of_Sound	equ	__end_of_Sound-_Sound
+  1957                           	
+  1958  04AC                     _Sound:	
+  1959                           	opt	stack 7
+  1960                           ; Regs used in _Sound: [wreg+status,2+btemp+1]
+  1961                           	line	8
+  1962                           	
+  1963  04AC                     l4684:	
+  1964                           ;Sound.c: 8: int i = 0;
+  1965  04AC  01F2               	clrf	(Sound@i)
+  1966  04AD  01F3               	clrf	(Sound@i+1)
+  1967                           	line	11
+  1968                           ;Sound.c: 11: while(i < 20)
+  1969  04AE  2CC5               	goto	l4690
+  1970                           	
+  1971  04AF                     l2641:	
+  1972                           	line	14
+  1973                           ;Sound.c: 12: {
+  1974                           ;Sound.c: 14: RC2 = 1;
+  1975  04AF  1283               	bcf	status, 5	;RP0=0, select bank0
+  1976  04B0  1303               	bcf	status, 6	;RP1=0, select bank0
+  1977  04B1  1507               	bsf	(58/8),(58)&7
+  1978                           	line	17
+  1979                           	
+  1980  04B2                     l4686:	
+  1981                           ;Sound.c: 17: _delay(6000);
+  1982                           	opt asmopt_off
+  1983  04B2  3008               movlw	8
+  1984  04B3  00F1               movwf	((??_Sound+0)+0+1),f
+  1985  04B4  30C9               	movlw	201
+  1986  04B5  00F0               movwf	((??_Sound+0)+0),f
+  1987  04B6                     u2827:
+  1988  04B6  0BF0               	decfsz	((??_Sound+0)+0),f
+  1989  04B7  2CB6               	goto	u2827
+  1990  04B8  0BF1               	decfsz	((??_Sound+0)+0+1),f
+  1991  04B9  2CB6               	goto	u2827
+  1992  04BA  2CBB               	nop2
+  1993                           opt asmopt_on
+  1994                           
+  1995                           	line	19
+  1996                           	
+  1997  04BB                     l4688:	
+  1998                           ;Sound.c: 19: RC2 = 0;
+  1999  04BB  1283               	bcf	status, 5	;RP0=0, select bank0
+  2000  04BC  1303               	bcf	status, 6	;RP1=0, select bank0
+  2001  04BD  1107               	bcf	(58/8),(58)&7
+  2002                           	line	20
+  2003                           ;Sound.c: 20: i++;
+  2004  04BE  3001               	movlw	low(01h)
+  2005  04BF  07F2               	addwf	(Sound@i),f
+  2006  04C0  1803               	skipnc
+  2007  04C1  0AF3               	incf	(Sound@i+1),f
+  2008  04C2  3000               	movlw	high(01h)
+  2009  04C3  07F3               	addwf	(Sound@i+1),f
+  2010  04C4  2CC5               	goto	l4690
+  2011                           	line	21
+  2012                           	
+  2013  04C5                     l2640:	
+  2014                           	line	11
+  2015                           	
+  2016  04C5                     l4690:	
+  2017  04C5  0873               	movf	(Sound@i+1),w
+  2018  04C6  3A80               	xorlw	80h
+  2019  04C7  00FF               	movwf	btemp+1
+  2020  04C8  3080               	movlw	(high(014h))^80h
+  2021  04C9  027F               	subwf	btemp+1,w
+  2022  04CA  1D03               	skipz
+  2023  04CB  2CCE               	goto	u2505
+  2024  04CC  3014               	movlw	low(014h)
+  2025  04CD  0272               	subwf	(Sound@i),w
+  2026  04CE                     u2505:
+  2027                           
+  2028  04CE  1C03               	skipc
+  2029  04CF  2CD1               	goto	u2501
+  2030  04D0  2CD2               	goto	u2500
+  2031  04D1                     u2501:
+  2032  04D1  2CAF               	goto	l2641
+  2033  04D2                     u2500:
+  2034  04D2  2CD3               	goto	l2643
+  2035                           	
+  2036  04D3                     l2642:	
+  2037                           	line	22
+  2038                           	
+  2039  04D3                     l2643:	
+  2040  04D3  0008               	return
+  2041                           	opt stack 0
+  2042                           GLOBAL	__end_of_Sound
+  2043  04D4                     	__end_of_Sound:
+  2044 ;; =============== function _Sound ends ============
+  2045                           
+  2046                           	signat	_Sound,88
+  2047                           	global	_Write_data
+  2048                           psect	text239,local,class=CODE,delta=2
+  2049                           global __ptext239
+  2050  0493                     __ptext239:
+  2051                           
+  2052 ;; *************** function _Write_data *****************
+  2053 ;; Defined at:
+  2054 ;;		line 52 in file "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.c"
+  2055 ;; Parameters:    Size  Location     Type
+  2056 ;;  hb              1    wreg     unsigned char 
+  2057 ;;  lb              1    0[COMMON] unsigned char 
+  2058 ;; Auto vars:     Size  Location     Type
+  2059 ;;  hb              1    3[COMMON] unsigned char 
+  2060 ;; Return value:  Size  Location     Type
+  2061 ;;		None               void
+  2062 ;; Registers used:
+  2063 ;;		wreg
+  2064 ;; Tracked objects:
+  2065 ;;		On entry : 0/0
+  2066 ;;		On exit  : 0/0
+  2067 ;;		Unchanged: 0/0
+  2068 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2069 ;;      Params:         1       0       0       0       0
+  2070 ;;      Locals:         1       0       0       0       0
+  2071 ;;      Temps:          2       0       0       0       0
+  2072 ;;      Totals:         4       0       0       0       0
+  2073 ;;Total ram usage:        4 bytes
+  2074 ;; Hardware stack levels used:    1
+  2075 ;; This function calls:
+  2076 ;;		Nothing
+  2077 ;; This function is called by:
+  2078 ;;		_main
+  2079 ;;		_Write_digits
+  2080 ;;		_Write_voltage
+  2081 ;; This function uses a non-reentrant model
+  2082 ;;
+  2083                           psect	text239
+  2084                           	file	"C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.c"
+  2085                           	line	52
+  2086                           	global	__size_of_Write_data
+  2087  0019                     	__size_of_Write_data	equ	__end_of_Write_data-_Write_data
+  2088                           	
+  2089  0493                     _Write_data:	
+  2090                           	opt	stack 5
+  2091                           ; Regs used in _Write_data: [wreg]
+  2092                           ;Write_data@hb stored from wreg
+  2093  0493  00F3               	movwf	(Write_data@hb)
+  2094                           	line	53
+  2095                           	
+  2096  0494                     l4682:	
+  2097                           ;LCD.c: 53: PORTA = 0xA;
+  2098  0494  300A               	movlw	(0Ah)
+  2099  0495  1283               	bcf	status, 5	;RP0=0, select bank0
+  2100  0496  1303               	bcf	status, 6	;RP1=0, select bank0
+  2101  0497  0085               	movwf	(5)	;volatile
+  2102                           	line	54
+  2103                           ;LCD.c: 54: PORTD = hb;
+  2104  0498  0873               	movf	(Write_data@hb),w
+  2105  0499  0088               	movwf	(8)	;volatile
+  2106                           	line	55
+  2107                           ;LCD.c: 55: PORTA = 0x08;
+  2108  049A  3008               	movlw	(08h)
+  2109  049B  0085               	movwf	(5)	;volatile
+  2110                           	line	57
+  2111                           ;LCD.c: 57: PORTA = 0xA;
+  2112  049C  300A               	movlw	(0Ah)
+  2113  049D  0085               	movwf	(5)	;volatile
+  2114                           	line	58
+  2115                           ;LCD.c: 58: PORTD = lb;
+  2116  049E  0870               	movf	(Write_data@lb),w
+  2117  049F  0088               	movwf	(8)	;volatile
+  2118                           	line	59
+  2119                           ;LCD.c: 59: PORTA = 0x08;
+  2120  04A0  3008               	movlw	(08h)
+  2121  04A1  0085               	movwf	(5)	;volatile
+  2122                           	line	61
+  2123                           ;LCD.c: 61: _delay(20000);
+  2124                           	opt asmopt_off
+  2125  04A2  301A               movlw	26
+  2126  04A3  00F2               movwf	((??_Write_data+0)+0+1),f
+  2127  04A4  30F8               	movlw	248
+  2128  04A5  00F1               movwf	((??_Write_data+0)+0),f
+  2129  04A6                     u2837:
+  2130  04A6  0BF1               	decfsz	((??_Write_data+0)+0),f
+  2131  04A7  2CA6               	goto	u2837
+  2132  04A8  0BF2               	decfsz	((??_Write_data+0)+0+1),f
+  2133  04A9  2CA6               	goto	u2837
+  2134  04AA  0064               	clrwdt
+  2135                           opt asmopt_on
+  2136                           
+  2137                           	line	62
+  2138                           	
+  2139  04AB                     l1961:	
+  2140  04AB  0008               	return
+  2141                           	opt stack 0
+  2142                           GLOBAL	__end_of_Write_data
+  2143  04AC                     	__end_of_Write_data:
+  2144 ;; =============== function _Write_data ends ============
+  2145                           
+  2146                           	signat	_Write_data,8312
+  2147                           	global	_ADC_Init
+  2148                           psect	text240,local,class=CODE,delta=2
+  2149                           global __ptext240
+  2150  0475                     __ptext240:
+  2151                           
+  2152 ;; *************** function _ADC_Init *****************
+  2153 ;; Defined at:
+  2154 ;;		line 7 in file "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\ADC.c"
+  2155 ;; Parameters:    Size  Location     Type
+  2156 ;;		None
+  2157 ;; Auto vars:     Size  Location     Type
+  2158 ;;		None
+  2159 ;; Return value:  Size  Location     Type
+  2160 ;;		None               void
+  2161 ;; Registers used:
+  2162 ;;		wreg
+  2163 ;; Tracked objects:
+  2164 ;;		On entry : 0/0
+  2165 ;;		On exit  : 0/0
+  2166 ;;		Unchanged: 0/0
+  2167 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  2168 ;;      Params:         0       0       0       0       0
+  2169 ;;      Locals:         0       0       0       0       0
+  2170 ;;      Temps:          0       0       0       0       0
+  2171 ;;      Totals:         0       0       0       0       0
+  2172 ;;Total ram usage:        0 bytes
+  2173 ;; Hardware stack levels used:    1
+  2174 ;; This function calls:
+  2175 ;;		Nothing
+  2176 ;; This function is called by:
+  2177 ;;		_main
+  2178 ;; This function uses a non-reentrant model
+  2179 ;;
+  2180                           psect	text240
+  2181                           	file	"C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\ADC.c"
+  2182                           	line	7
+  2183                           	global	__size_of_ADC_Init
+  2184  0009                     	__size_of_ADC_Init	equ	__end_of_ADC_Init-_ADC_Init
+  2185                           	
+  2186  0475                     _ADC_Init:	
+  2187                           	opt	stack 7
+  2188                           ; Regs used in _ADC_Init: [wreg]
+  2189                           	line	8
+  2190                           	
+  2191  0475                     l4680:	
+  2192                           ;ADC.c: 8: ADCON0 = 0x41;
+  2193  0475  3041               	movlw	(041h)
+  2194  0476  1283               	bcf	status, 5	;RP0=0, select bank0
+  2195  0477  1303               	bcf	status, 6	;RP1=0, select bank0
+  2196  0478  009F               	movwf	(31)	;volatile
+  2197                           	line	9
+  2198                           ;ADC.c: 9: ADCON1 = 0xC0;
+  2199  0479  30C0               	movlw	(0C0h)
+  2200  047A  1683               	bsf	status, 5	;RP0=1, select bank1
+  2201  047B  1303               	bcf	status, 6	;RP1=0, select bank1
+  2202  047C  009F               	movwf	(159)^080h	;volatile
+  2203                           	line	11
+  2204                           	
+  2205  047D                     l1306:	
+  2206  047D  0008               	return
+  2207                           	opt stack 0
+  2208                           GLOBAL	__end_of_ADC_Init
+  2209  047E                     	__end_of_ADC_Init:
+  2210 ;; =============== function _ADC_Init ends ============
+  2211                           
+  2212                           	signat	_ADC_Init,88
+  2213                           psect	text241,local,class=CODE,delta=2
+  2214                           global __ptext241
+  2215  0000                     __ptext241:
+  2216                           	global	btemp
+  2217  007E                     	btemp set 07Eh
+  2218                           
+  2219                           	DABS	1,126,2	;btemp
+  2220                           	global	wtemp0
+  2221  007E                     	wtemp0 set btemp
 
 
 HI-TECH Software PICC Macro Assembler V9.83 build 10920 
-Symbol Table                                                                                   Thu Oct 31 13:03:17 2013
+Symbol Table                                                                                   Mon Nov 04 12:43:01 2013
 
                            _a 0020                            _RD 0C60                            _WR 0C61  
-                         l700 04F5                           l701 04FA                           l702 050B  
-                         l710 0601                           l711 0601                           l705 055B  
-                         l706 057B                           l651 049B                           l707 058B  
-                         l660 0626                           l708 05FF                           l645 04CE  
-                         l661 06FA                           l709 0600                           l646 04B8  
-                         l654 053A                           l670 069E                           l662 063E  
-                         l647 04DC                           l663 06F9                           l671 06F5  
-                         l648 04DC                           l672 06B6                           l664 0656  
-                         l657 04B4                           l665 06F8                           l673 06F4  
-                         l674 06CE                           l666 066E                           l690 07E2  
-                         l682 071B                           l667 06F7                           l675 06F3  
-                         l683 07FF                           l691 07FB                           l676 06E5  
-                         l668 0686                           l692 07FA                           l684 074C  
-                         l669 06F6                           l677 06F2                           l685 07FE  
-                         l693 07FF                           l678 06F1                           l686 077E  
-                         l679 06FA                           l687 07FD                           l696 0486  
-                         l688 07B0                           l689 07FC                           l699 04F5  
-                         _GIE 005F                           _RB0 0030                           _RA4 002C  
-                         _RC2 003A                          l2800 0604                          l2810 063E  
-                        l2802 060E                          l2820 067B                          l2812 064B  
-                        l2804 061B                          l2900 0567                          l2750 04B5  
-                        l2830 06B6                          l2822 0686                          l2814 0656  
-                        l2806 0626                          l2910 0588                          l2902 0571  
-                        l2752 04BB                          l2760 048B                          l2832 06C3  
-                        l2824 0693                          l2816 0663                          l2808 0633  
-                        l2840 06FB                          l2912 058B                          l2904 0576  
-                        l2754 04C4                          l2762 048C                          l2770 04DE  
-                        l2834 06CE                          l2826 069E                          l2818 066E  
-                        l2850 0735                          l2842 0708                          l2914 0591  
-                        l2906 057B                          l2748 047E                          l2756 04CE  
-                        l2764 0491                          l2772 04F1                          l2780 050C  
-                        l2836 06DB                          l2828 06AB                          l2860 0770  
-                        l2852 073E                          l2844 070F                          l2916 05E5  
-                        l2908 0582                          l2766 0492                          l2758 0487  
-                        l2774 04F1                          l2790 0525                          l2782 0512  
-                        l2838 06E9                          l2870 07B0                          l2862 077E  
-                        l2854 074C                          l2846 071B                          l2918 05F3  
-                        l2768 049D                          l2776 04FA                          l2792 0526  
-                        l2784 0513                          l2880 07EF                          l2872 07BD  
-                        l2864 078B                          l2856 0759                          l2848 0728  
-                        l2778 050B                          l2794 052B                          l2786 0515  
-                        l2874 07CA                          l2866 0798                          l2858 0766  
-                        l2890 054E                          l2882 053B                          l2796 052C  
-                        l2788 0517                          l2876 07D4                          l2868 07A2  
-                        l2892 0553                          l2884 0543                          l2798 0535  
-                        l2878 07E2                          l2894 0558                          l2886 0546  
-                        l2896 055B                          l2888 054D                          l2898 0561  
-                        u2500 04DB                          u2501 04DA                          u2520 04F9  
-                        u2600 06C3                          u2505 04D7                          u2521 04F8  
-                        u2601 06C2                          u2610 06DB                          u2530 061B  
-                        u2515 04E7                          u2611 06DA                          u2531 061A  
-                        u2620 06E9                          u2540 0633                          u2700 07BD  
-                        u2621 06E8                          u2605 06BF                          u2541 0632  
-                        u2701 07BC                          u2550 064B                          u2710 07CA  
-                        u2630 0708                          u2615 06D7                          u2551 064A  
-                        u2535 0617                          u2711 07C9                          u2631 0707  
-                        u2560 0663                          u2720 07EF                          u2640 0728  
-                        u2561 0662                          u2545 062F                          u2721 07EE  
-                        u2705 07B9                          u2641 0727                          u2570 067B  
-                        u2650 0735                          u2730 0561                          u2571 067A  
-                        u2555 0647                          u2715 07C6                          u2651 0734  
-                        u2635 0704                          u2731 0560                          u2580 0693  
-                        u2660 0759                          u2740 0567                          u2581 0692  
-                        u2565 065F                          u2725 07EB                          u2661 0758  
-                        u2645 0724                          u2741 0566                          u2590 06AB  
-                        u2670 0766                          u2750 0582                          u2807 04AF  
-                        u2591 06AA                          u2575 0677                          u2671 0765  
-                        u2655 0731                          u2751 0581                          u2680 078B  
-                        u2760 0588                          u2817 0496                          u2585 068F  
-                        u2681 078A                          u2665 0755                          u2761 0587  
-                        u2690 0798                          u2770 0591                          u2827 04BF  
-                        u2595 06A7                          u2691 0797                          u2675 0762  
-                        u2771 0590                          u2685 0787                          u2695 0794  
-                        u2787 051C                          u2797 0530                          _WREN 0C62  
-                        _main 053B                          btemp 007E              __end_of_ADC_Init 0487  
-            __end_of_ADC_Read 050C                          start 0000                         ?_main 0070  
+       __end_of_Clear_display 0493                           l660 05FF                           l661 0600  
+                         l662 0601                           l663 0601                           l657 055B  
+                         l658 057B                           l659 058B                           _GIE 005F  
+                         _RB0 0030                           _RA4 002C                           _RC2 003A  
+                        l1310 0524                          l1311 0529                          l1312 053A  
+                        l1306 047D                          l1309 0524                          l2640 04C5  
+                        l2641 04AF                          l2642 04D3                          l2643 04D3  
+                        l1961 04AB                          l1970 066E                          l1955 0492  
+                        l1971 06F7                          l4700 0489                          l1980 06E5  
+                        l1972 0686                          l1964 0626                          l1965 06FA  
+                        l1973 06F6                          l1981 06F2                          l4710 053A  
+                        l4702 0504                          l1958 0502                          l1982 06F1  
+                        l1974 069E                          l1966 063E                          l1990 077E  
+                        l1967 06F9                          l1975 06F5                          l1983 06FA  
+                        l1991 07FD                          l4704 0517                          l4720 04DF  
+                        l4712 04D4                          l1976 06B6                          l1968 0656  
+                        l1992 07B0                          l4800 07A2                          l1969 06F8  
+                        l1977 06F4                          l1993 07FC                          l4706 0520  
+                        l4730 04FD                          l4722 04ED                          l4714 04DA  
+                        l1978 06CE                          l1994 07E2                          l4810 07E2  
+                        l4802 07B0                          l1986 071B                          l1979 06F3  
+                        l1987 07FF                          l1995 07FB                          l4708 0529  
+                        l4724 04EE                          l4716 04DB                          l4740 0633  
+                        l4732 0604                          l1996 07FA                          l4812 07EF  
+                        l4804 07BD                          l1988 074C                          l4820 054D  
+                        l1989 07FE                          l1997 07FF                          l4726 04F3  
+                        l4718 04DD                          l4750 066E                          l4742 063E  
+                        l4734 060E                          l4806 07CA                          l4830 0561  
+                        l4822 054E                          l4814 053B                          l4680 0475  
+                        l4728 04F4                          l4760 06AB                          l4752 067B  
+                        l4744 064B                          l4736 061B                          l4808 07D4  
+                        l4840 0582                          l4832 0567                          l4824 0553  
+                        l4816 0543                          l4682 0494                          l4690 04C5  
+                        l4770 06E9                          l4762 06B6                          l4754 0686  
+                        l4746 0656                          l4738 0626                          l4850 05F3  
+                        l4842 0588                          l4834 0571                          l4826 0558  
+                        l4818 0546                          l4684 04AC                          l4692 047E  
+                        l4764 06C3                          l4756 0693                          l4748 0663  
+                        l4780 0728                          l4772 06FB                          l4844 058B  
+                        l4836 0576                          l4828 055B                          l4686 04B2  
+                        l4694 0482                          l4766 06CE                          l4758 069E  
+                        l4790 0766                          l4782 0735                          l4774 0708  
+                        l4846 0591                          l4838 057B                          l4688 04BB  
+                        l4696 0483                          l4768 06DB                          l4792 0770  
+                        l4784 073E                          l4776 070F                          l4848 05E5  
+                        l4698 0488                          l4794 077E                          l4786 074C  
+                        l4778 071B                          l4796 078B                          l4788 0759  
+                        l4798 0798                          u2500 04D2                          u2501 04D1  
+                        u2520 0528                          u2600 06C3                          u2505 04CE  
+                        u2521 0527                          u2601 06C2                          u2610 06DB  
+                        u2530 061B                          u2515 050D                          u2611 06DA  
+                        u2531 061A                          u2620 06E9                          u2540 0633  
+                        u2700 07BD                          u2621 06E8                          u2605 06BF  
+                        u2541 0632                          u2701 07BC                          u2550 064B  
+                        u2710 07CA                          u2630 0708                          u2615 06D7  
+                        u2551 064A                          u2535 0617                          u2711 07C9  
+                        u2631 0707                          u2560 0663                          u2720 07EF  
+                        u2640 0728                          u2561 0662                          u2545 062F  
+                        u2721 07EE                          u2705 07B9                          u2641 0727  
+                        u2570 067B                          u2650 0735                          u2730 0561  
+                        u2571 067A                          u2555 0647                          u2715 07C6  
+                        u2651 0734                          u2635 0704                          u2731 0560  
+                        u2580 0693                          u2660 0759                          u2740 0567  
+                        u2581 0692                          u2565 065F                          u2725 07EB  
+                        u2661 0758                          u2645 0724                          u2741 0566  
+                        u2590 06AB                          u2670 0766                          u2750 0582  
+                        u2807 051B                          u2591 06AA                          u2575 0677  
+                        u2671 0765                          u2655 0731                          u2751 0581  
+                        u2680 078B                          u2760 0588                          u2817 048D  
+                        u2585 068F                          u2681 078A                          u2665 0755  
+                        u2761 0587                          u2690 0798                          u2770 0591  
+                        u2827 04B6                          u2595 06A7                          u2691 0797  
+                        u2675 0762                          u2771 0590                          u2837 04A6  
+                        u2685 0787                          u2695 0794                          u2787 04E4  
+                        u2797 04F8                          _WREN 0C62                          _main 053B  
+                        btemp 007E              __end_of_ADC_Init 047E              __end_of_ADC_Read 053B  
+                        start 0000         __size_of_Write_digits 00F7                         ?_main 0070  
                        _EEADR 010D                         _CARRY 0018                         _PORTA 0005  
                        _PORTB 0006                         _PORTC 0007                         _PORTD 0008  
                        _TRISA 0085                         _TRISB 0086                         _TRISC 0087  
-                       _TRISD 0088                         _sound 04B5                         status 0003  
-                       wtemp0 007E                  __end_of_main 0604         __size_of_write_digits 00F7  
-                      ??_main 007A                        _ADCON0 001F                        _ADCON1 009F  
+                       _TRISD 0088                         _Sound 04AC                  _Write_digits 0604  
+                       status 0003                         wtemp0 007E                  __end_of_main 0604  
+      __size_of_Write_voltage 0105              __end_of_Init_lcd 0503                        ??_main 007A  
+                      ?_Sound 0070                        _ADCON0 001F                        _ADCON1 009F  
                       _ADRESH 001E                        _ADRESL 009E                        _EEDATA 010C  
-                      _EECON1 018C                        _EECON2 018D                        ?_sound 0070  
-       __end_of_clear_display 049C                  _write_digits 0604               ADC_Read@channel 0074  
-            __end_of_init_lcd 053B                     ?_ADC_Init 0070                     ?_ADC_Read 0070  
-                      sound@i 0072   write_digits@adc_measurement 0074                __pcstackCOMMON 0070  
-               __end_of_sound 04DD                    ??_ADC_Init 0070                    ??_ADC_Read 0072  
-                     ??_sound 0070        __size_of_write_voltage 0105                    __pbssBANK0 0020  
-                  __pmaintext 053B                     ?_init_lcd 0070                 _write_voltage 06FB  
-        end_of_initialization 047A                    ??_init_lcd 0072                ?_write_voltage 0077  
-           __size_of_ADC_Init 0009             __size_of_ADC_Read 002F                  write_data@hb 0073  
-                write_data@lb 0070                    _write_data 049C        __size_of_clear_display 0015  
-         start_initialization 0478               main@charWritten 007B               ??_write_voltage 0079  
-write_voltage@adc_measurement 0077                 _clear_display 0487             __size_of_init_lcd 002F  
-                   __ptext240 047E                     __ptext232 0000                     __ptext241 0000  
-                   __ptext233 06FB                     __ptext234 0604                     __ptext235 050C  
-                   __ptext236 04DD                     __ptext237 049C                     __ptext238 0487  
-                   __ptext239 04B5                   ?_write_data 0070                      _ADC_Init 047E  
-                    _ADC_Read 04DD                __size_of_sound 0028                ?_clear_display 0070  
-               ?_write_digits 0074                      _GO_nDONE 00FA           __size_of_write_data 0019  
-              ??_write_digits 0076               ??_clear_display 0070                      _init_lcd 050C  
-               __size_of_main 00C9         __end_of_write_voltage 0800                  ??_write_data 0071  
-        __end_of_write_digits 06FB            __end_of_write_data 04B5  
+                      _EECON1 018C                        _EECON2 018D                        Sound@i 0072  
+             ADC_Read@channel 0074                     ?_ADC_Init 0070                     ?_ADC_Read 0070  
+               _Write_voltage 06FB   Write_digits@adc_measurement 0074                __pcstackCOMMON 0070  
+               __end_of_Sound 04D4                    _Write_data 0493                    ??_ADC_Init 0070  
+                  ??_ADC_Read 0072                       ??_Sound 0070                ?_Write_voltage 0077  
+                  __pbssBANK0 0020                     ?_Init_lcd 0070                    __pmaintext 053B  
+                Write_data@hb 0073                  Write_data@lb 0070                    ??_Init_lcd 0072  
+      __size_of_Clear_display 0015                   ?_Write_data 0070               ??_Write_voltage 0079  
+        end_of_initialization 0471                 _Clear_display 047E             __size_of_ADC_Init 0009  
+           __size_of_ADC_Read 0038           __size_of_Write_data 0019                ?_Clear_display 0070  
+         start_initialization 046F               main@charWritten 007B             __size_of_Init_lcd 002F  
+Write_voltage@adc_measurement 0077                 ?_Write_digits 0074                     __ptext240 0475  
+                   __ptext232 0000                     __ptext241 0000                     __ptext233 06FB  
+                   __ptext234 0604                     __ptext235 04D4                     __ptext236 0503  
+                   __ptext237 047E                     __ptext238 04AC                     __ptext239 0493  
+                ??_Write_data 0071               ??_Clear_display 0070                      _ADC_Init 0475  
+                    _ADC_Read 0503                __size_of_Sound 0028                ??_Write_digits 0076  
+          __end_of_Write_data 04AC                      _GO_nDONE 00FA         __end_of_Write_voltage 0800  
+                    _Init_lcd 04D4                 __size_of_main 00C9          __end_of_Write_digits 06FB  

@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <pic.h>
 #include <htc.h>
-#include "sound.h"
+#include <pic.h>
+#include "Sound.h"
 #include "LCD.h"
 #include "ADC.h"
 
-
 unsigned int a;
+
 void main()
 {
 	//=================STARTUP INITIALIZERS==============================================
@@ -27,14 +27,12 @@ void main()
 	TRISD = 0; //Always output data.
 
 	//Initialize the lcd screen
-	init_lcd();
+	Init_lcd();
 
 	//Initialize the Analog/Digital module
 	ADC_Init();
 
 	//=================END OF STARTUP INITIALIZERS=======================================
-
-
 
 	//main program loop.
 	int charWritten = 0;
@@ -43,8 +41,8 @@ void main()
 		//write a character to the display. Once per click.
 		if(RA4 == 0 && charWritten == 0)
 		{
-			write_data(0b0100, 0b0011);
-			sound();
+			Write_data(0b0100, 0b0011);
+			Sound();
 			charWritten = 1;
 		}
 		
@@ -53,27 +51,24 @@ void main()
 			charWritten = 0;
 		}
 
-
 		if(RB0 == 0)
 		{
-			clear_display();
-			write_data(0b0101, 0b0110);
-			write_data(0b0100, 0b1111);
-			write_data(0b0100, 0b1100);
-			write_data(0b0101, 0b0100);
-			write_data(0b0100, 0b0001);
-			write_data(0b0100, 0b0111);
-			write_data(0b0100, 0b0101);
-			write_data(0b0011, 0b1101);
+			Clear_display();
+			Write_data(0b0101, 0b0110);
+			Write_data(0b0100, 0b1111);
+			Write_data(0b0100, 0b1100);
+			Write_data(0b0101, 0b0100);
+			Write_data(0b0100, 0b0001);
+			Write_data(0b0100, 0b0111);
+			Write_data(0b0100, 0b0101);
+			Write_data(0b0011, 0b1101);
 
 			a = ADC_Read(0); //Reading Analog Channel 0
 			
-			write_voltage(a);
+			Write_voltage(a);
 		}
-
 	}
-	
-	
+
 /*
 	do
   {
