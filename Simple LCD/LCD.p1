@@ -23,14 +23,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RP0 `Vb  1 e@29 ]
 "103 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _RP1 `Vb  1 e@30 ]
-[s S2 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S2 . C DC Z nPD nTO RP IRP ]
-[s S3 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S3 . . RP0 RP1 ]
-[u S1 `S2 1 `S3 1 ]
-[n S1 . . . ]
+[s S3 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S3 . C DC Z nPD nTO RP IRP ]
+[s S4 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S4 . . RP0 RP1 ]
+[u S2 `S3 1 `S4 1 ]
+[n S2 . . . ]
 "120 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _STATUSbits `VS1  1 e@3 ]
+[v _STATUSbits `VS2  1 e@3 ]
 "124 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _FSR `Vuc  1 e@4 ]
 "128 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -47,12 +47,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RA4 `Vb  1 e@44 ]
 "135 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _RA5 `Vb  1 e@45 ]
-[s S5 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S5 . RA0 RA1 RA2 RA3 RA4 RA5 ]
-[u S4 `S5 1 ]
-[n S4 . . ]
+[s S6 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S6 . RA0 RA1 RA2 RA3 RA4 RA5 ]
+[u S5 `S6 1 ]
+[n S5 . . ]
 "146 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _PORTAbits `VS4  1 e@5 ]
+[v _PORTAbits `VS5  1 e@5 ]
 "150 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _PORTB `Vuc  1 e@6 ]
 "152 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -71,12 +71,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RB6 `Vb  1 e@54 ]
 "159 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _RB7 `Vb  1 e@55 ]
-[s S7 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S7 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-[u S6 `S7 1 ]
-[n S6 . . ]
+[s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S8 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+[u S7 `S8 1 ]
+[n S7 . . ]
 "172 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _PORTBbits `VS6  1 e@6 ]
+[v _PORTBbits `VS7  1 e@6 ]
 "176 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _PORTC `Vuc  1 e@7 ]
 "178 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -95,12 +95,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RC6 `Vb  1 e@62 ]
 "185 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _RC7 `Vb  1 e@63 ]
-[s S9 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S9 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
-[u S8 `S9 1 ]
-[n S8 . . ]
+[s S10 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S10 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+[u S9 `S10 1 ]
+[n S9 . . ]
 "198 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _PORTCbits `VS8  1 e@7 ]
+[v _PORTCbits `VS9  1 e@7 ]
 "202 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _PORTD `Vuc  1 e@8 ]
 "204 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -119,12 +119,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RD6 `Vb  1 e@70 ]
 "211 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _RD7 `Vb  1 e@71 ]
-[s S11 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S11 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
-[u S10 `S11 1 ]
-[n S10 . . ]
+[s S12 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S12 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
+[u S11 `S12 1 ]
+[n S11 . . ]
 "224 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _PORTDbits `VS10  1 e@8 ]
+[v _PORTDbits `VS11  1 e@8 ]
 "228 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _PORTE `Vuc  1 e@9 ]
 "230 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -133,20 +133,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RE1 `Vb  1 e@73 ]
 "232 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _RE2 `Vb  1 e@74 ]
-[s S13 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S13 . RE0 RE1 RE2 ]
-[u S12 `S13 1 ]
-[n S12 . . ]
+[s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S14 . RE0 RE1 RE2 ]
+[u S13 `S14 1 ]
+[n S13 . . ]
 "240 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _PORTEbits `VS12  1 e@9 ]
+[v _PORTEbits `VS13  1 e@9 ]
 "244 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _PCLATH `Vuc  1 e@10 ]
-[s S15 :5 `uc 1 ]
-[n S15 . PCLATH ]
-[u S14 `S15 1 ]
-[n S14 . . ]
+[s S16 :5 `uc 1 ]
+[n S16 . PCLATH ]
+[u S15 `S16 1 ]
+[n S15 . . ]
 "251 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _PCLATHbits `VS14  1 e@10 ]
+[v _PCLATHbits `VS15  1 e@10 ]
 "255 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _INTCON `Vuc  1 e@11 ]
 "257 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -169,14 +169,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TMR0IF `Vb  1 e@90 ]
 "266 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _TMR0IE `Vb  1 e@93 ]
-[s S17 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S17 . RBIF INTF T0IF RBIE INTE T0IE PEIE GIE ]
-[s S18 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S18 . . TMR0IF . TMR0IE ]
-[u S16 `S17 1 `S18 1 ]
-[n S16 . . . ]
+[s S18 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S18 . RBIF INTF T0IF RBIE INTE T0IE PEIE GIE ]
+[s S19 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S19 . . TMR0IF . TMR0IE ]
+[u S17 `S18 1 `S19 1 ]
+[n S17 . . . ]
 "285 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _INTCONbits `VS16  1 e@11 ]
+[v _INTCONbits `VS17  1 e@11 ]
 "289 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _PIR1 `Vuc  1 e@12 ]
 "291 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -195,14 +195,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ADIF `Vb  1 e@102 ]
 "298 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _PSPIF `Vb  1 e@103 ]
-[s S20 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S20 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
-[s S21 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S21 . . . . . . . . ]
-[u S19 `S20 1 `S21 1 ]
-[n S19 . . . ]
+[s S21 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S21 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
+[s S22 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S22 . . . . . . . . ]
+[u S20 `S21 1 `S22 1 ]
+[n S20 . . . ]
 "320 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _PIR1bits `VS19  1 e@12 ]
+[v _PIR1bits `VS20  1 e@12 ]
 "324 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _PIR2 `Vuc  1 e@13 ]
 "326 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -211,12 +211,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _BCLIF `Vb  1 e@107 ]
 "328 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _EEIF `Vb  1 e@108 ]
-[s S23 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S23 . CCP2IF . BCLIF EEIF ]
-[u S22 `S23 1 ]
-[n S22 . . ]
+[s S24 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S24 . CCP2IF . BCLIF EEIF ]
+[u S23 `S24 1 ]
+[n S23 . . ]
 "337 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _PIR2bits `VS22  1 e@13 ]
+[v _PIR2bits `VS23  1 e@13 ]
 "342 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _TMR1L `Vuc  1 e@14 ]
 "346 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -241,18 +241,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _T1INSYNC `Vb  1 e@130 ]
 "362 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _T1SYNC `Vb  1 e@130 ]
-[s S25 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 ]
-[n S25 . TMR1ON TMR1CS nT1SYNC T1OSCEN T1CKPS ]
-[s S26 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S26 . . T1CKPS0 T1CKPS1 ]
-[s S27 :2 `uc 1 :1 `uc 1 ]
-[n S27 . . T1INSYNC ]
+[s S26 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 ]
+[n S26 . TMR1ON TMR1CS nT1SYNC T1OSCEN T1CKPS ]
+[s S27 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S27 . . T1CKPS0 T1CKPS1 ]
 [s S28 :2 `uc 1 :1 `uc 1 ]
-[n S28 . . T1SYNC ]
-[u S24 `S25 1 `S26 1 `S27 1 `S28 1 ]
-[n S24 . . . . . ]
+[n S28 . . T1INSYNC ]
+[s S29 :2 `uc 1 :1 `uc 1 ]
+[n S29 . . T1SYNC ]
+[u S25 `S26 1 `S27 1 `S28 1 `S29 1 ]
+[n S25 . . . . . ]
 "385 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _T1CONbits `VS24  1 e@16 ]
+[v _T1CONbits `VS25  1 e@16 ]
 "389 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _TMR2 `Vuc  1 e@17 ]
 "393 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -271,14 +271,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TOUTPS2 `Vb  1 e@149 ]
 "401 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _TOUTPS3 `Vb  1 e@150 ]
-[s S30 :2 `uc 1 :1 `uc 1 :4 `uc 1 ]
-[n S30 . T2CKPS TMR2ON TOUTPS ]
-[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S31 . T2CKPS0 T2CKPS1 . TOUTPS0 TOUTPS1 TOUTPS2 TOUTPS3 ]
-[u S29 `S30 1 `S31 1 ]
-[n S29 . . . ]
+[s S31 :2 `uc 1 :1 `uc 1 :4 `uc 1 ]
+[n S31 . T2CKPS TMR2ON TOUTPS ]
+[s S32 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S32 . T2CKPS0 T2CKPS1 . TOUTPS0 TOUTPS1 TOUTPS2 TOUTPS3 ]
+[u S30 `S31 1 `S32 1 ]
+[n S30 . . . ]
 "418 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _T2CONbits `VS29  1 e@18 ]
+[v _T2CONbits `VS30  1 e@18 ]
 "422 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _SSPBUF `Vuc  1 e@19 ]
 "426 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -299,14 +299,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _SSPM2 `Vb  1 e@162 ]
 "435 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _SSPM3 `Vb  1 e@163 ]
-[s S33 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S33 . SSPM CKP SSPEN SSPOV WCOL ]
-[s S34 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S34 . SSPM0 SSPM1 SSPM2 SSPM3 ]
-[u S32 `S33 1 `S34 1 ]
-[n S32 . . . ]
+[s S34 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S34 . SSPM CKP SSPEN SSPOV WCOL ]
+[s S35 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S35 . SSPM0 SSPM1 SSPM2 SSPM3 ]
+[u S33 `S34 1 `S35 1 ]
+[n S33 . . . ]
 "451 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _SSPCONbits `VS32  1 e@20 ]
+[v _SSPCONbits `VS33  1 e@20 ]
 "456 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _CCPR1L `Vuc  1 e@21 ]
 "460 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -327,14 +327,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _CCP1M2 `Vb  1 e@186 ]
 "474 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _CCP1M3 `Vb  1 e@187 ]
-[s S36 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S36 . CCP1M CCP1Y CCP1X ]
-[s S37 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S37 . CCP1M0 CCP1M1 CCP1M2 CCP1M3 ]
-[u S35 `S36 1 `S37 1 ]
-[n S35 . . . ]
+[s S37 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S37 . CCP1M CCP1Y CCP1X ]
+[s S38 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S38 . CCP1M0 CCP1M1 CCP1M2 CCP1M3 ]
+[u S36 `S37 1 `S38 1 ]
+[n S36 . . . ]
 "488 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _CCP1CONbits `VS35  1 e@23 ]
+[v _CCP1CONbits `VS36  1 e@23 ]
 "492 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _RCSTA `Vuc  1 e@24 ]
 "494 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -361,18 +361,18 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _nRC8 `Vb  1 e@198 ]
 "505 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _RC8_9 `Vb  1 e@198 ]
-[s S39 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S39 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
-[s S40 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
-[n S40 . RCD8 . RC9 ]
-[s S41 :6 `uc 1 :1 `uc 1 ]
-[n S41 . . nRC8 ]
+[s S40 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S40 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
+[s S41 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
+[n S41 . RCD8 . RC9 ]
 [s S42 :6 `uc 1 :1 `uc 1 ]
-[n S42 . . RC8_9 ]
-[u S38 `S39 1 `S40 1 `S41 1 `S42 1 ]
-[n S38 . . . . . ]
+[n S42 . . nRC8 ]
+[s S43 :6 `uc 1 :1 `uc 1 ]
+[n S43 . . RC8_9 ]
+[u S39 `S40 1 `S41 1 `S42 1 `S43 1 ]
+[n S39 . . . . . ]
 "531 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _RCSTAbits `VS38  1 e@24 ]
+[v _RCSTAbits `VS39  1 e@24 ]
 "535 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _TXREG `Vuc  1 e@25 ]
 "539 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -397,14 +397,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _CCP2M2 `Vb  1 e@234 ]
 "562 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _CCP2M3 `Vb  1 e@235 ]
-[s S44 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S44 . CCP2M CCP2Y CCP2X ]
-[s S45 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S45 . CCP2M0 CCP2M1 CCP2M2 CCP2M3 ]
-[u S43 `S44 1 `S45 1 ]
-[n S43 . . . ]
+[s S45 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S45 . CCP2M CCP2Y CCP2X ]
+[s S46 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S46 . CCP2M0 CCP2M1 CCP2M2 CCP2M3 ]
+[u S44 `S45 1 `S46 1 ]
+[n S44 . . . ]
 "576 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _CCP2CONbits `VS43  1 e@29 ]
+[v _CCP2CONbits `VS44  1 e@29 ]
 "580 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _ADRESH `Vuc  1 e@30 ]
 "584 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -429,20 +429,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _nDONE `Vb  1 e@250 ]
 "595 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _GO_DONE `Vb  1 e@250 ]
-[s S47 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :2 `uc 1 ]
-[n S47 . ADON . GO_nDONE CHS ADCS ]
 [s S48 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :2 `uc 1 ]
-[n S48 . . . . . . ]
-[s S49 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S49 . . GO CHS0 CHS1 CHS2 ADCS0 ADCS1 ]
-[s S50 :2 `uc 1 :1 `uc 1 ]
-[n S50 . . nDONE ]
+[n S48 . ADON . GO_nDONE CHS ADCS ]
+[s S49 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :2 `uc 1 ]
+[n S49 . . . . . . ]
+[s S50 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S50 . . GO CHS0 CHS1 CHS2 ADCS0 ADCS1 ]
 [s S51 :2 `uc 1 :1 `uc 1 ]
-[n S51 . . GO_DONE ]
-[u S46 `S47 1 `S48 1 `S49 1 `S50 1 `S51 1 ]
-[n S46 . . . . . . ]
+[n S51 . . nDONE ]
+[s S52 :2 `uc 1 :1 `uc 1 ]
+[n S52 . . GO_DONE ]
+[u S47 `S48 1 `S49 1 `S50 1 `S51 1 `S52 1 ]
+[n S47 . . . . . . ]
 "629 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _ADCON0bits `VS46  1 e@31 ]
+[v _ADCON0bits `VS47  1 e@31 ]
 "638 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _OPTION_REG `Vuc  1 e@129 ]
 "640 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -461,14 +461,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PS1 `Vb  1 e@1033 ]
 "647 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _PS2 `Vb  1 e@1034 ]
-[s S53 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S53 . PS PSA T0SE T0CS INTEDG nRBPU ]
-[s S54 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S54 . PS0 PS1 PS2 ]
-[u S52 `S53 1 `S54 1 ]
-[n S52 . . . ]
+[s S54 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S54 . PS PSA T0SE T0CS INTEDG nRBPU ]
+[s S55 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S55 . PS0 PS1 PS2 ]
+[u S53 `S54 1 `S55 1 ]
+[n S53 . . . ]
 "663 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _OPTION_REGbits `VS52  1 e@129 ]
+[v _OPTION_REGbits `VS53  1 e@129 ]
 "667 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _TRISA `Vuc  1 e@133 ]
 "669 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -483,12 +483,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TRISA4 `Vb  1 e@1068 ]
 "674 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _TRISA5 `Vb  1 e@1069 ]
-[s S56 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S56 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 ]
-[u S55 `S56 1 ]
-[n S55 . . ]
+[s S57 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S57 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 ]
+[u S56 `S57 1 ]
+[n S56 . . ]
 "685 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _TRISAbits `VS55  1 e@133 ]
+[v _TRISAbits `VS56  1 e@133 ]
 "689 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _TRISB `Vuc  1 e@134 ]
 "691 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -507,12 +507,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TRISB6 `Vb  1 e@1078 ]
 "698 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _TRISB7 `Vb  1 e@1079 ]
-[s S58 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S58 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
-[u S57 `S58 1 ]
-[n S57 . . ]
+[s S59 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S59 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
+[u S58 `S59 1 ]
+[n S58 . . ]
 "711 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _TRISBbits `VS57  1 e@134 ]
+[v _TRISBbits `VS58  1 e@134 ]
 "715 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _TRISC `Vuc  1 e@135 ]
 "717 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -531,12 +531,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TRISC6 `Vb  1 e@1086 ]
 "724 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _TRISC7 `Vb  1 e@1087 ]
-[s S60 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S60 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
-[u S59 `S60 1 ]
-[n S59 . . ]
+[s S61 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S61 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+[u S60 `S61 1 ]
+[n S60 . . ]
 "737 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _TRISCbits `VS59  1 e@135 ]
+[v _TRISCbits `VS60  1 e@135 ]
 "741 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _TRISD `Vuc  1 e@136 ]
 "743 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -555,12 +555,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TRISD6 `Vb  1 e@1094 ]
 "750 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _TRISD7 `Vb  1 e@1095 ]
-[s S62 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S62 . TRISD0 TRISD1 TRISD2 TRISD3 TRISD4 TRISD5 TRISD6 TRISD7 ]
-[u S61 `S62 1 ]
-[n S61 . . ]
+[s S63 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S63 . TRISD0 TRISD1 TRISD2 TRISD3 TRISD4 TRISD5 TRISD6 TRISD7 ]
+[u S62 `S63 1 ]
+[n S62 . . ]
 "763 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _TRISDbits `VS61  1 e@136 ]
+[v _TRISDbits `VS62  1 e@136 ]
 "767 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _TRISE `Vuc  1 e@137 ]
 "769 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -577,12 +577,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _OBF `Vb  1 e@1102 ]
 "775 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _IBF `Vb  1 e@1103 ]
-[s S64 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S64 . TRISE0 TRISE1 TRISE2 . PSPMODE IBOV OBF IBF ]
-[u S63 `S64 1 ]
-[n S63 . . ]
+[s S65 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S65 . TRISE0 TRISE1 TRISE2 . PSPMODE IBOV OBF IBF ]
+[u S64 `S65 1 ]
+[n S64 . . ]
 "788 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _TRISEbits `VS63  1 e@137 ]
+[v _TRISEbits `VS64  1 e@137 ]
 "792 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _PIE1 `Vuc  1 e@140 ]
 "794 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -601,12 +601,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ADIE `Vb  1 e@1126 ]
 "801 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _PSPIE `Vb  1 e@1127 ]
-[s S66 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S66 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE PSPIE ]
-[u S65 `S66 1 ]
-[n S65 . . ]
+[s S67 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S67 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE PSPIE ]
+[u S66 `S67 1 ]
+[n S66 . . ]
 "814 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _PIE1bits `VS65  1 e@140 ]
+[v _PIE1bits `VS66  1 e@140 ]
 "818 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _PIE2 `Vuc  1 e@141 ]
 "820 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -615,12 +615,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _BCLIE `Vb  1 e@1131 ]
 "822 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _EEIE `Vb  1 e@1132 ]
-[s S68 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S68 . CCP2IE . BCLIE EEIE ]
-[u S67 `S68 1 ]
-[n S67 . . ]
+[s S69 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S69 . CCP2IE . BCLIE EEIE ]
+[u S68 `S69 1 ]
+[n S68 . . ]
 "831 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _PIE2bits `VS67  1 e@141 ]
+[v _PIE2bits `VS68  1 e@141 ]
 "835 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _PCON `Vuc  1 e@142 ]
 "837 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -629,14 +629,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _nPOR `Vb  1 e@1137 ]
 "839 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _nBO `Vb  1 e@1136 ]
-[s S70 :1 `uc 1 :1 `uc 1 ]
-[n S70 . nBOR nPOR ]
-[s S71 :1 `uc 1 ]
-[n S71 . nBO ]
-[u S69 `S70 1 `S71 1 ]
-[n S69 . . . ]
+[s S71 :1 `uc 1 :1 `uc 1 ]
+[n S71 . nBOR nPOR ]
+[s S72 :1 `uc 1 ]
+[n S72 . nBO ]
+[u S70 `S71 1 `S72 1 ]
+[n S70 . . . ]
 "849 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _PCONbits `VS69  1 e@142 ]
+[v _PCONbits `VS70  1 e@142 ]
 "853 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _SSPCON2 `Vuc  1 e@145 ]
 "855 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -655,12 +655,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ACKSTAT `Vb  1 e@1166 ]
 "862 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _GCEN `Vb  1 e@1167 ]
-[s S73 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S73 . SEN RSEN PEN RCEN ACKEN ACKDT ACKSTAT GCEN ]
-[u S72 `S73 1 ]
-[n S72 . . ]
+[s S74 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S74 . SEN RSEN PEN RCEN ACKEN ACKDT ACKSTAT GCEN ]
+[u S73 `S74 1 ]
+[n S73 . . ]
 "875 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _SSPCON2bits `VS72  1 e@145 ]
+[v _SSPCON2bits `VS73  1 e@145 ]
 "879 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _PR2 `Vuc  1 e@146 ]
 "883 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -711,26 +711,26 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _READ_WRITE `Vb  1 e@1186 ]
 "910 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _DATA_ADDRESS `Vb  1 e@1189 ]
-[s S75 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S75 . BF UA R_nW S P D_nA CKE SMP ]
 [s S76 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S76 . . . . . . . . . ]
-[s S77 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S77 . . R . D ]
-[s S78 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S78 . . I2C_READ I2C_START I2C_STOP I2C_DATA ]
-[s S79 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S79 . . nW . nA ]
+[n S76 . BF UA R_nW S P D_nA CKE SMP ]
+[s S77 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S77 . . . . . . . . . ]
+[s S78 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S78 . . R . D ]
+[s S79 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S79 . . I2C_READ I2C_START I2C_STOP I2C_DATA ]
 [s S80 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S80 . . nWRITE . nADDRESS ]
+[n S80 . . nW . nA ]
 [s S81 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S81 . . R_W . D_A ]
+[n S81 . . nWRITE . nADDRESS ]
 [s S82 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S82 . . READ_WRITE . DATA_ADDRESS ]
-[u S74 `S75 1 `S76 1 `S77 1 `S78 1 `S79 1 `S80 1 `S81 1 `S82 1 ]
-[n S74 . . . . . . . . . ]
+[n S82 . . R_W . D_A ]
+[s S83 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S83 . . READ_WRITE . DATA_ADDRESS ]
+[u S75 `S76 1 `S77 1 `S78 1 `S79 1 `S80 1 `S81 1 `S82 1 `S83 1 ]
+[n S75 . . . . . . . . . ]
 "970 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _SSPSTATbits `VS74  1 e@148 ]
+[v _SSPSTATbits `VS75  1 e@148 ]
 "974 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _TXSTA `Vuc  1 e@152 ]
 "976 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -753,16 +753,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _nTX8 `Vb  1 e@1222 ]
 "985 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _TX8_9 `Vb  1 e@1222 ]
-[s S84 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S84 . TX9D TRMT BRGH . SYNC TXEN TX9 CSRC ]
-[s S85 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
-[n S85 . TXD8 . nTX8 ]
-[s S86 :6 `uc 1 :1 `uc 1 ]
-[n S86 . . TX8_9 ]
-[u S83 `S84 1 `S85 1 `S86 1 ]
-[n S83 . . . . ]
+[s S85 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S85 . TX9D TRMT BRGH . SYNC TXEN TX9 CSRC ]
+[s S86 :1 `uc 1 :5 `uc 1 :1 `uc 1 ]
+[n S86 . TXD8 . nTX8 ]
+[s S87 :6 `uc 1 :1 `uc 1 ]
+[n S87 . . TX8_9 ]
+[u S84 `S85 1 `S86 1 `S87 1 ]
+[n S84 . . . . ]
 "1007 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _TXSTAbits `VS83  1 e@152 ]
+[v _TXSTAbits `VS84  1 e@152 ]
 "1011 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _SPBRG `Vuc  1 e@153 ]
 "1015 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -779,34 +779,34 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PCFG2 `Vb  1 e@1274 ]
 "1025 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _PCFG3 `Vb  1 e@1275 ]
-[s S88 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S88 . PCFG . ADFM ]
-[s S89 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S89 . PCFG0 PCFG1 PCFG2 PCFG3 ]
-[u S87 `S88 1 `S89 1 ]
-[n S87 . . . ]
+[s S89 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S89 . PCFG . ADFM ]
+[s S90 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S90 . PCFG0 PCFG1 PCFG2 PCFG3 ]
+[u S88 `S89 1 `S90 1 ]
+[n S88 . . . ]
 "1039 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _ADCON1bits `VS87  1 e@159 ]
+[v _ADCON1bits `VS88  1 e@159 ]
 "1048 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _EEDATA `Vuc  1 e@268 ]
 "1052 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _EEADR `Vuc  1 e@269 ]
 "1056 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _EEDATH `Vuc  1 e@270 ]
-[s S91 :6 `uc 1 ]
+[s S92 :6 `uc 1 ]
+[n S92 . . ]
+[u S91 `S92 1 ]
 [n S91 . . ]
-[u S90 `S91 1 ]
-[n S90 . . ]
 "1063 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _EEDATHbits `VS90  1 e@270 ]
+[v _EEDATHbits `VS91  1 e@270 ]
 "1067 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _EEADRH `Vuc  1 e@271 ]
-[s S93 :5 `uc 1 ]
+[s S94 :5 `uc 1 ]
+[n S94 . . ]
+[u S93 `S94 1 ]
 [n S93 . . ]
-[u S92 `S93 1 ]
-[n S92 . . ]
 "1074 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _EEADRHbits `VS92  1 e@271 ]
+[v _EEADRHbits `VS93  1 e@271 ]
 "1083 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _EECON1 `Vuc  1 e@396 ]
 "1085 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
@@ -819,17 +819,23 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _WRERR `Vb  1 e@3171 ]
 "1089 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _EEPGD `Vb  1 e@3175 ]
-[s S95 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S95 . RD WR WREN WRERR . EEPGD ]
-[u S94 `S95 1 ]
-[n S94 . . ]
+[s S96 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S96 . RD WR WREN WRERR . EEPGD ]
+[u S95 `S96 1 ]
+[n S95 . . ]
 "1100 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
-[v _EECON1bits `VS94  1 e@396 ]
+[v _EECON1bits `VS95  1 e@396 ]
 "1104 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h
 [v _EECON2 `Vuc  1 e@397 ]
 "154 C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic.h
 [v __delay `(v  0 ef1`ul ]
 [p i __delay ]
+[s S1 :4 `uc 1 :4 `uc 1 ]
+[n S1 byte_struct hb lb ]
+[; ;structs.h: 3: struct byte_struct{
+[; ;structs.h: 4: unsigned char hb:4;
+[; ;structs.h: 5: unsigned char lb:4;
+[; ;structs.h: 16: };
 [; ;pic16f877.h: 82: volatile unsigned char INDF @ 0x000;
 [; ;pic16f877.h: 86: volatile unsigned char TMR0 @ 0x001;
 [; ;pic16f877.h: 90: volatile unsigned char PCL @ 0x002;
@@ -1608,278 +1614,312 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eeprom_routines.h: 43: extern void eecpymem(volatile unsigned char *to, eeprom unsigned char *from, unsigned char size);
 [; ;eeprom_routines.h: 44: extern void memcpyee(eeprom unsigned char *to, const unsigned char *from, unsigned char size);
 [; ;pic.h: 154: extern void _delay(unsigned long);
-"13 C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.c
+"14 C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.c
 [v _Clear_display `(v  1 ef ]
 {
-[; ;LCD.c: 12: void Clear_display()
-[; ;LCD.c: 13: {
+[; ;LCD.c: 13: void Clear_display()
+[; ;LCD.c: 14: {
 [e :U _Clear_display ]
 [f ]
-[; ;LCD.c: 15: PORTA = 0x2;
-"15
-[e = _PORTA -> -> 2 `i `uc ]
-[; ;LCD.c: 16: PORTD = 0b0000;
+[; ;LCD.c: 16: PORTA = 0x2;
 "16
-[e = _PORTD -> -> 0 `i `uc ]
-[; ;LCD.c: 17: PORTA = 0x00;
+[e = _PORTA -> -> 2 `i `uc ]
+[; ;LCD.c: 17: PORTD = 0b0000;
 "17
-[e = _PORTA -> -> 0 `i `uc ]
-[; ;LCD.c: 18: PORTA = 0x2;
-"18
-[e = _PORTA -> -> 2 `i `uc ]
-[; ;LCD.c: 19: PORTD = 0b0001;
-"19
-[e = _PORTD -> -> 1 `i `uc ]
-[; ;LCD.c: 20: PORTA = 0x00;
-"20
-[e = _PORTA -> -> 0 `i `uc ]
-[; ;LCD.c: 21: _delay(20000);
-"21
-[e ( __delay (1 -> -> -> 20000 `i `l `ul ]
-[; ;LCD.c: 22: }
-"22
-[e :UE 96 ]
-}
-"25
-[v _Init_lcd `(v  1 ef ]
-{
-[; ;LCD.c: 24: void Init_lcd()
-[; ;LCD.c: 25: {
-[e :U _Init_lcd ]
-[f ]
-[; ;LCD.c: 27: PORTA = 0x2;
-"27
-[e = _PORTA -> -> 2 `i `uc ]
-[; ;LCD.c: 28: PORTD = 0b0010;
-"28
-[e = _PORTD -> -> 2 `i `uc ]
-[; ;LCD.c: 29: PORTA = 0x00;
-"29
-[e = _PORTA -> -> 0 `i `uc ]
-[; ;LCD.c: 30: PORTA = 0x2;
-"30
-[e = _PORTA -> -> 2 `i `uc ]
-[; ;LCD.c: 31: PORTD = 0b1000;
-"31
-[e = _PORTD -> -> 8 `i `uc ]
-[; ;LCD.c: 32: PORTA = 0x00;
-"32
-[e = _PORTA -> -> 0 `i `uc ]
-[; ;LCD.c: 33: _delay(20000);
-"33
-[e ( __delay (1 -> -> -> 20000 `i `l `ul ]
-[; ;LCD.c: 36: PORTA = 0x2;
-"36
-[e = _PORTA -> -> 2 `i `uc ]
-[; ;LCD.c: 37: PORTD = 0b0000;
-"37
 [e = _PORTD -> -> 0 `i `uc ]
-[; ;LCD.c: 38: PORTA = 0x00;
-"38
+[; ;LCD.c: 18: PORTA = 0x00;
+"18
 [e = _PORTA -> -> 0 `i `uc ]
-[; ;LCD.c: 39: PORTA = 0x2;
-"39
+[; ;LCD.c: 19: PORTA = 0x2;
+"19
 [e = _PORTA -> -> 2 `i `uc ]
-[; ;LCD.c: 40: PORTD = 0b1111;
-"40
-[e = _PORTD -> -> 15 `i `uc ]
-[; ;LCD.c: 41: PORTA = 0x00;
-"41
+[; ;LCD.c: 20: PORTD = 0b0001;
+"20
+[e = _PORTD -> -> 1 `i `uc ]
+[; ;LCD.c: 21: PORTA = 0x00;
+"21
 [e = _PORTA -> -> 0 `i `uc ]
-[; ;LCD.c: 42: _delay(20000);
-"42
+[; ;LCD.c: 22: _delay(20000);
+"22
 [e ( __delay (1 -> -> -> 20000 `i `l `ul ]
-[; ;LCD.c: 44: Clear_display();
-"44
-[e ( _Clear_display ..  ]
-[; ;LCD.c: 47: }
-"47
+[; ;LCD.c: 23: }
+"23
 [e :UE 97 ]
 }
-"52
+"26
+[v _Init_lcd `(v  1 ef ]
+{
+[; ;LCD.c: 25: void Init_lcd()
+[; ;LCD.c: 26: {
+[e :U _Init_lcd ]
+[f ]
+[; ;LCD.c: 28: PORTA = 0x2;
+"28
+[e = _PORTA -> -> 2 `i `uc ]
+[; ;LCD.c: 29: PORTD = 0b0010;
+"29
+[e = _PORTD -> -> 2 `i `uc ]
+[; ;LCD.c: 30: PORTA = 0x00;
+"30
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;LCD.c: 31: PORTA = 0x2;
+"31
+[e = _PORTA -> -> 2 `i `uc ]
+[; ;LCD.c: 32: PORTD = 0b1000;
+"32
+[e = _PORTD -> -> 8 `i `uc ]
+[; ;LCD.c: 33: PORTA = 0x00;
+"33
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;LCD.c: 34: _delay(20000);
+"34
+[e ( __delay (1 -> -> -> 20000 `i `l `ul ]
+[; ;LCD.c: 37: PORTA = 0x2;
+"37
+[e = _PORTA -> -> 2 `i `uc ]
+[; ;LCD.c: 38: PORTD = 0b0000;
+"38
+[e = _PORTD -> -> 0 `i `uc ]
+[; ;LCD.c: 39: PORTA = 0x00;
+"39
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;LCD.c: 40: PORTA = 0x2;
+"40
+[e = _PORTA -> -> 2 `i `uc ]
+[; ;LCD.c: 41: PORTD = 0b1111;
+"41
+[e = _PORTD -> -> 15 `i `uc ]
+[; ;LCD.c: 42: PORTA = 0x00;
+"42
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;LCD.c: 43: _delay(20000);
+"43
+[e ( __delay (1 -> -> -> 20000 `i `l `ul ]
+[; ;LCD.c: 45: Clear_display();
+"45
+[e ( _Clear_display ..  ]
+[; ;LCD.c: 46: }
+"46
+[e :UE 98 ]
+}
+"51
 [v _Write_data `(v  1 ef2`uc`uc ]
 {
-[; ;LCD.c: 51: void Write_data(char hb, char lb)
-[; ;LCD.c: 52: {
+[; ;LCD.c: 50: void Write_data(char hb, char lb)
+[; ;LCD.c: 51: {
 [e :U _Write_data ]
 [v _hb `uc  1 r1 ]
 [v _lb `uc  1 r2 ]
 [f ]
-[; ;LCD.c: 53: PORTA = 0xA;
+[; ;LCD.c: 52: PORTA = 0xA;
+"52
+[e = _PORTA -> -> 10 `i `uc ]
+[; ;LCD.c: 53: PORTD = hb;
 "53
-[e = _PORTA -> -> 10 `i `uc ]
-[; ;LCD.c: 54: PORTD = hb;
-"54
 [e = _PORTD _hb ]
-[; ;LCD.c: 55: PORTA = 0x08;
-"55
+[; ;LCD.c: 54: PORTA = 0x08;
+"54
 [e = _PORTA -> -> 8 `i `uc ]
-[; ;LCD.c: 57: PORTA = 0xA;
-"57
+[; ;LCD.c: 56: PORTA = 0xA;
+"56
 [e = _PORTA -> -> 10 `i `uc ]
-[; ;LCD.c: 58: PORTD = lb;
-"58
+[; ;LCD.c: 57: PORTD = lb;
+"57
 [e = _PORTD _lb ]
-[; ;LCD.c: 59: PORTA = 0x08;
-"59
+[; ;LCD.c: 58: PORTA = 0x08;
+"58
 [e = _PORTA -> -> 8 `i `uc ]
-[; ;LCD.c: 61: _delay(20000);
-"61
+[; ;LCD.c: 60: _delay(20000);
+"60
 [e ( __delay (1 -> -> -> 20000 `i `l `ul ]
-[; ;LCD.c: 62: }
-"62
-[e :UE 98 ]
+[; ;LCD.c: 61: }
+"61
+[e :UE 99 ]
 }
 "64
+[v _Write_data_struct `(v  1 ef1`S1 ]
+{
+[; ;LCD.c: 63: void Write_data_struct(struct byte_struct chardata)
+[; ;LCD.c: 64: {
+[e :U _Write_data_struct ]
+[v _chardata `S1  1 r1 ]
+[f ]
+[; ;LCD.c: 65: PORTA = 0xA;
+"65
+[e = _PORTA -> -> 10 `i `uc ]
+[; ;LCD.c: 66: PORTD = chardata.hb;
+"66
+[e = _PORTD . _chardata 0 ]
+[; ;LCD.c: 67: PORTA = 0x08;
+"67
+[e = _PORTA -> -> 8 `i `uc ]
+[; ;LCD.c: 69: PORTA = 0xA;
+"69
+[e = _PORTA -> -> 10 `i `uc ]
+[; ;LCD.c: 70: PORTD = chardata.lb;
+"70
+[e = _PORTD . _chardata 1 ]
+[; ;LCD.c: 71: PORTA = 0x08;
+"71
+[e = _PORTA -> -> 8 `i `uc ]
+[; ;LCD.c: 73: _delay(20000);
+"73
+[e ( __delay (1 -> -> -> 20000 `i `l `ul ]
+[; ;LCD.c: 74: }
+"74
+[e :UE 100 ]
+}
+"77
 [v _Write_digits `(v  1 ef1`i ]
 {
-[; ;LCD.c: 63: void Write_digits(int adc_measurement)
-[; ;LCD.c: 64: {
+[; ;LCD.c: 76: void Write_digits(int adc_measurement)
+[; ;LCD.c: 77: {
 [e :U _Write_digits ]
 [v _adc_measurement `i  1 r1 ]
 [f ]
-[; ;LCD.c: 65: Write_data(0b0010,0b1100);
-"65
-[e ( _Write_data (2 , -> -> 2 `i `uc -> -> 12 `i `uc ]
-[; ;LCD.c: 67: if(adc_measurement > 180)
-"67
-[e $ ! > _adc_measurement -> 180 `i 100  ]
-[; ;LCD.c: 68: {
-"68
-{
-[; ;LCD.c: 69: Write_data(0b0011, 0b1001);
-"69
-[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 9 `i `uc ]
-"70
-}
-[; ;LCD.c: 70: }
-[e $U 101  ]
-"71
-[e :U 100 ]
-[; ;LCD.c: 71: else if(adc_measurement > 160)
-[e $ ! > _adc_measurement -> 160 `i 102  ]
-[; ;LCD.c: 72: {
-"72
-{
-[; ;LCD.c: 73: Write_data(0b0011, 0b1000);
-"73
-[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 8 `i `uc ]
-"74
-}
-[; ;LCD.c: 74: }
-[e $U 103  ]
-"75
-[e :U 102 ]
-[; ;LCD.c: 75: else if(adc_measurement > 140)
-[e $ ! > _adc_measurement -> 140 `i 104  ]
-[; ;LCD.c: 76: {
-"76
-{
-[; ;LCD.c: 77: Write_data(0b0011, 0b0111);
-"77
-[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 7 `i `uc ]
+[; ;LCD.c: 78: Write_data(0b0010,0b1100);
 "78
-}
-[; ;LCD.c: 78: }
-[e $U 105  ]
-"79
-[e :U 104 ]
-[; ;LCD.c: 79: else if(adc_measurement > 120)
-[e $ ! > _adc_measurement -> 120 `i 106  ]
-[; ;LCD.c: 80: {
+[e ( _Write_data (2 , -> -> 2 `i `uc -> -> 12 `i `uc ]
+[; ;LCD.c: 80: if(adc_measurement > 180)
 "80
-{
-[; ;LCD.c: 81: Write_data(0b0011, 0b0110);
+[e $ ! > _adc_measurement -> 180 `i 102  ]
+[; ;LCD.c: 81: {
 "81
-[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 6 `i `uc ]
+{
+[; ;LCD.c: 82: Write_data(0b0011, 0b1001);
 "82
-}
-[; ;LCD.c: 82: }
-[e $U 107  ]
+[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 9 `i `uc ]
 "83
-[e :U 106 ]
-[; ;LCD.c: 83: else if(adc_measurement > 100)
-[e $ ! > _adc_measurement -> 100 `i 108  ]
-[; ;LCD.c: 84: {
+}
+[; ;LCD.c: 83: }
+[e $U 103  ]
 "84
-{
-[; ;LCD.c: 85: Write_data(0b0011, 0b0101);
+[e :U 102 ]
+[; ;LCD.c: 84: else if(adc_measurement > 160)
+[e $ ! > _adc_measurement -> 160 `i 104  ]
+[; ;LCD.c: 85: {
 "85
-[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 5 `i `uc ]
+{
+[; ;LCD.c: 86: Write_data(0b0011, 0b1000);
 "86
-}
-[; ;LCD.c: 86: }
-[e $U 109  ]
+[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 8 `i `uc ]
 "87
-[e :U 108 ]
-[; ;LCD.c: 87: else if(adc_measurement > 80)
-[e $ ! > _adc_measurement -> 80 `i 110  ]
-[; ;LCD.c: 88: {
+}
+[; ;LCD.c: 87: }
+[e $U 105  ]
 "88
-{
-[; ;LCD.c: 89: Write_data(0b0011, 0b0100);
+[e :U 104 ]
+[; ;LCD.c: 88: else if(adc_measurement > 140)
+[e $ ! > _adc_measurement -> 140 `i 106  ]
+[; ;LCD.c: 89: {
 "89
-[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 4 `i `uc ]
+{
+[; ;LCD.c: 90: Write_data(0b0011, 0b0111);
 "90
-}
-[; ;LCD.c: 90: }
-[e $U 111  ]
+[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 7 `i `uc ]
 "91
-[e :U 110 ]
-[; ;LCD.c: 91: else if(adc_measurement > 60)
-[e $ ! > _adc_measurement -> 60 `i 112  ]
-[; ;LCD.c: 92: {
+}
+[; ;LCD.c: 91: }
+[e $U 107  ]
 "92
-{
-[; ;LCD.c: 93: Write_data(0b0011, 0b0011);
+[e :U 106 ]
+[; ;LCD.c: 92: else if(adc_measurement > 120)
+[e $ ! > _adc_measurement -> 120 `i 108  ]
+[; ;LCD.c: 93: {
 "93
-[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 3 `i `uc ]
+{
+[; ;LCD.c: 94: Write_data(0b0011, 0b0110);
 "94
-}
-[; ;LCD.c: 94: }
-[e $U 113  ]
+[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 6 `i `uc ]
 "95
-[e :U 112 ]
-[; ;LCD.c: 95: else if(adc_measurement > 40)
-[e $ ! > _adc_measurement -> 40 `i 114  ]
-[; ;LCD.c: 96: {
+}
+[; ;LCD.c: 95: }
+[e $U 109  ]
 "96
-{
-[; ;LCD.c: 97: Write_data(0b0011, 0b0010);
+[e :U 108 ]
+[; ;LCD.c: 96: else if(adc_measurement > 100)
+[e $ ! > _adc_measurement -> 100 `i 110  ]
+[; ;LCD.c: 97: {
 "97
-[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 2 `i `uc ]
+{
+[; ;LCD.c: 98: Write_data(0b0011, 0b0101);
 "98
-}
-[; ;LCD.c: 98: }
-[e $U 115  ]
+[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 5 `i `uc ]
 "99
-[e :U 114 ]
-[; ;LCD.c: 99: else if(adc_measurement > 20)
-[e $ ! > _adc_measurement -> 20 `i 116  ]
-[; ;LCD.c: 100: {
+}
+[; ;LCD.c: 99: }
+[e $U 111  ]
 "100
-{
-[; ;LCD.c: 101: Write_data(0b0011, 0b0001);
+[e :U 110 ]
+[; ;LCD.c: 100: else if(adc_measurement > 80)
+[e $ ! > _adc_measurement -> 80 `i 112  ]
+[; ;LCD.c: 101: {
 "101
-[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 1 `i `uc ]
-"102
-}
-[; ;LCD.c: 102: }
-[e $U 117  ]
-"103
-[e :U 116 ]
-[; ;LCD.c: 103: else if(adc_measurement >= 0)
-[e $ ! >= _adc_measurement -> 0 `i 118  ]
-[; ;LCD.c: 104: {
-"104
 {
-[; ;LCD.c: 105: Write_data(0b0011, 0b0000);
-"105
-[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
-"106
+[; ;LCD.c: 102: Write_data(0b0011, 0b0100);
+"102
+[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 4 `i `uc ]
+"103
 }
-[e :U 118 ]
+[; ;LCD.c: 103: }
+[e $U 113  ]
+"104
+[e :U 112 ]
+[; ;LCD.c: 104: else if(adc_measurement > 60)
+[e $ ! > _adc_measurement -> 60 `i 114  ]
+[; ;LCD.c: 105: {
+"105
+{
+[; ;LCD.c: 106: Write_data(0b0011, 0b0011);
+"106
+[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 3 `i `uc ]
 "107
+}
+[; ;LCD.c: 107: }
+[e $U 115  ]
+"108
+[e :U 114 ]
+[; ;LCD.c: 108: else if(adc_measurement > 40)
+[e $ ! > _adc_measurement -> 40 `i 116  ]
+[; ;LCD.c: 109: {
+"109
+{
+[; ;LCD.c: 110: Write_data(0b0011, 0b0010);
+"110
+[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 2 `i `uc ]
+"111
+}
+[; ;LCD.c: 111: }
+[e $U 117  ]
+"112
+[e :U 116 ]
+[; ;LCD.c: 112: else if(adc_measurement > 20)
+[e $ ! > _adc_measurement -> 20 `i 118  ]
+[; ;LCD.c: 113: {
+"113
+{
+[; ;LCD.c: 114: Write_data(0b0011, 0b0001);
+"114
+[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 1 `i `uc ]
+"115
+}
+[; ;LCD.c: 115: }
+[e $U 119  ]
+"116
+[e :U 118 ]
+[; ;LCD.c: 116: else if(adc_measurement >= 0)
+[e $ ! >= _adc_measurement -> 0 `i 120  ]
+[; ;LCD.c: 117: {
+"117
+{
+[; ;LCD.c: 118: Write_data(0b0011, 0b0000);
+"118
+[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"119
+}
+[e :U 120 ]
+"120
+[e :U 119 ]
 [e :U 117 ]
 [e :U 115 ]
 [e :U 113 ]
@@ -1888,123 +1928,122 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 107 ]
 [e :U 105 ]
 [e :U 103 ]
-[e :U 101 ]
-[; ;LCD.c: 106: }
-[; ;LCD.c: 107: }
-[e :UE 99 ]
+[; ;LCD.c: 119: }
+[; ;LCD.c: 120: }
+[e :UE 101 ]
 }
-"110
+"123
 [v _Write_voltage `(v  1 ef1`i ]
 {
-[; ;LCD.c: 109: void Write_voltage(int adc_measurement)
-[; ;LCD.c: 110: {
+[; ;LCD.c: 122: void Write_voltage(int adc_measurement)
+[; ;LCD.c: 123: {
 [e :U _Write_voltage ]
 [v _adc_measurement `i  1 r1 ]
 [f ]
-[; ;LCD.c: 115: if(adc_measurement < 200)
-"115
-[e $ ! < _adc_measurement -> 200 `i 120  ]
-[; ;LCD.c: 116: {
-"116
-{
-[; ;LCD.c: 117: Write_data(0b0011,0b0000);
-"117
-[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
-[; ;LCD.c: 118: Write_digits(adc_measurement);
-"118
-[e ( _Write_digits (1 _adc_measurement ]
-"119
-}
-[; ;LCD.c: 119: }
-[e $U 121  ]
-"120
-[e :U 120 ]
-[; ;LCD.c: 120: else if(adc_measurement > 200 && adc_measurement < 400)
-[e $ ! && > _adc_measurement -> 200 `i < _adc_measurement -> 400 `i 122  ]
-[; ;LCD.c: 121: {
-"121
-{
-[; ;LCD.c: 122: Write_data(0b0011,0b0001);
-"122
-[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 1 `i `uc ]
-[; ;LCD.c: 123: Write_digits((adc_measurement-200));
-"123
-[e ( _Write_digits (1 - _adc_measurement -> 200 `i ]
-"124
-}
-[; ;LCD.c: 124: }
-[e $U 123  ]
-"125
-[e :U 122 ]
-[; ;LCD.c: 125: else if(adc_measurement > 400 && adc_measurement < 600)
-[e $ ! && > _adc_measurement -> 400 `i < _adc_measurement -> 600 `i 124  ]
-[; ;LCD.c: 126: {
-"126
-{
-[; ;LCD.c: 127: Write_data(0b0011,0b0010);
-"127
-[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 2 `i `uc ]
-[; ;LCD.c: 128: Write_digits((adc_measurement-400));
+[; ;LCD.c: 128: if(adc_measurement < 200)
 "128
-[e ( _Write_digits (1 - _adc_measurement -> 400 `i ]
+[e $ ! < _adc_measurement -> 200 `i 122  ]
+[; ;LCD.c: 129: {
 "129
-}
-[; ;LCD.c: 129: }
-[e $U 125  ]
+{
+[; ;LCD.c: 130: Write_data(0b0011,0b0000);
 "130
-[e :U 124 ]
-[; ;LCD.c: 130: else if(adc_measurement > 600 && adc_measurement < 800)
-[e $ ! && > _adc_measurement -> 600 `i < _adc_measurement -> 800 `i 126  ]
-[; ;LCD.c: 131: {
+[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+[; ;LCD.c: 131: Write_digits(adc_measurement);
 "131
-{
-[; ;LCD.c: 132: Write_data(0b0011,0b0011);
+[e ( _Write_digits (1 _adc_measurement ]
 "132
-[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 3 `i `uc ]
-[; ;LCD.c: 133: Write_digits((adc_measurement-600));
+}
+[; ;LCD.c: 132: }
+[e $U 123  ]
 "133
-[e ( _Write_digits (1 - _adc_measurement -> 600 `i ]
+[e :U 122 ]
+[; ;LCD.c: 133: else if(adc_measurement > 200 && adc_measurement < 400)
+[e $ ! && > _adc_measurement -> 200 `i < _adc_measurement -> 400 `i 124  ]
+[; ;LCD.c: 134: {
 "134
-}
-[; ;LCD.c: 134: }
-[e $U 127  ]
+{
+[; ;LCD.c: 135: Write_data(0b0011,0b0001);
 "135
-[e :U 126 ]
-[; ;LCD.c: 135: else if(adc_measurement > 800 & adc_measurement < 1000)
-[e $ ! & > _adc_measurement -> 800 `i < _adc_measurement -> 1000 `i 128  ]
-[; ;LCD.c: 136: {
+[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 1 `i `uc ]
+[; ;LCD.c: 136: Write_digits((adc_measurement-200));
 "136
-{
-[; ;LCD.c: 137: Write_data(0b0011,0b0100);
+[e ( _Write_digits (1 - _adc_measurement -> 200 `i ]
 "137
-[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 4 `i `uc ]
-[; ;LCD.c: 138: Write_digits((adc_measurement-800));
+}
+[; ;LCD.c: 137: }
+[e $U 125  ]
 "138
-[e ( _Write_digits (1 - _adc_measurement -> 800 `i ]
+[e :U 124 ]
+[; ;LCD.c: 138: else if(adc_measurement > 400 && adc_measurement < 600)
+[e $ ! && > _adc_measurement -> 400 `i < _adc_measurement -> 600 `i 126  ]
+[; ;LCD.c: 139: {
 "139
-}
-[; ;LCD.c: 139: }
-[e $U 129  ]
-"140
-[e :U 128 ]
-[; ;LCD.c: 140: else if(adc_measurement > 1000)
-[e $ ! > _adc_measurement -> 1000 `i 130  ]
-[; ;LCD.c: 141: {
-"141
 {
-[; ;LCD.c: 142: Write_data(0b0011,0b0101);
+[; ;LCD.c: 140: Write_data(0b0011,0b0010);
+"140
+[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 2 `i `uc ]
+[; ;LCD.c: 141: Write_digits((adc_measurement-400));
+"141
+[e ( _Write_digits (1 - _adc_measurement -> 400 `i ]
 "142
-[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 5 `i `uc ]
-"143
 }
-[e :U 130 ]
+[; ;LCD.c: 142: }
+[e $U 127  ]
+"143
+[e :U 126 ]
+[; ;LCD.c: 143: else if(adc_measurement > 600 && adc_measurement < 800)
+[e $ ! && > _adc_measurement -> 600 `i < _adc_measurement -> 800 `i 128  ]
+[; ;LCD.c: 144: {
 "144
+{
+[; ;LCD.c: 145: Write_data(0b0011,0b0011);
+"145
+[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 3 `i `uc ]
+[; ;LCD.c: 146: Write_digits((adc_measurement-600));
+"146
+[e ( _Write_digits (1 - _adc_measurement -> 600 `i ]
+"147
+}
+[; ;LCD.c: 147: }
+[e $U 129  ]
+"148
+[e :U 128 ]
+[; ;LCD.c: 148: else if(adc_measurement > 800 & adc_measurement < 1000)
+[e $ ! & > _adc_measurement -> 800 `i < _adc_measurement -> 1000 `i 130  ]
+[; ;LCD.c: 149: {
+"149
+{
+[; ;LCD.c: 150: Write_data(0b0011,0b0100);
+"150
+[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 4 `i `uc ]
+[; ;LCD.c: 151: Write_digits((adc_measurement-800));
+"151
+[e ( _Write_digits (1 - _adc_measurement -> 800 `i ]
+"152
+}
+[; ;LCD.c: 152: }
+[e $U 131  ]
+"153
+[e :U 130 ]
+[; ;LCD.c: 153: else if(adc_measurement > 1000)
+[e $ ! > _adc_measurement -> 1000 `i 132  ]
+[; ;LCD.c: 154: {
+"154
+{
+[; ;LCD.c: 155: Write_data(0b0011,0b0101);
+"155
+[e ( _Write_data (2 , -> -> 3 `i `uc -> -> 5 `i `uc ]
+"156
+}
+[e :U 132 ]
+"157
+[e :U 131 ]
 [e :U 129 ]
 [e :U 127 ]
 [e :U 125 ]
 [e :U 123 ]
-[e :U 121 ]
-[; ;LCD.c: 143: }
-[; ;LCD.c: 144: }
-[e :UE 119 ]
+[; ;LCD.c: 156: }
+[; ;LCD.c: 157: }
+[e :UE 121 ]
 }

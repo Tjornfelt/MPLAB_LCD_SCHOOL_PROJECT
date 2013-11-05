@@ -1625,38 +1625,38 @@ Version 3.2 HI-TECH Software Intermediate Code
 "11
 [e :UE 96 ]
 }
-"14
+"15
 [v _ADC_Read `(ui  1 ef1`uc ]
 {
-[; ;ADC.c: 13: unsigned int ADC_Read(unsigned char channel)
-[; ;ADC.c: 14: {
+[; ;ADC.c: 14: unsigned int ADC_Read(unsigned char channel)
+[; ;ADC.c: 15: {
 [e :U _ADC_Read ]
 [v _channel `uc  1 r1 ]
 [f ]
-[; ;ADC.c: 15: ADCON0 &= 0xC5;
-"15
-[e =& _ADCON0 -> -> 197 `i `uc ]
-[; ;ADC.c: 16: ADCON0 |= channel<<3;
+[; ;ADC.c: 16: ADCON0 &= 0xC5;
 "16
-[e =| _ADCON0 -> << -> _channel `i -> 3 `i `uc ]
-[; ;ADC.c: 17: _delay((unsigned long)((2)*(4000000/4000.0)));
+[e =& _ADCON0 -> -> 197 `i `uc ]
+[; ;ADC.c: 17: ADCON0 |= channel<<3;
 "17
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;ADC.c: 18: GO_nDONE = 1;
+[e =| _ADCON0 -> << -> _channel `i -> 3 `i `uc ]
+[; ;ADC.c: 18: _delay((unsigned long)((2)*(4000000/4000.0)));
 "18
-[e = _GO_nDONE -> -> 1 `i `b ]
-[; ;ADC.c: 19: while(GO_nDONE);
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;ADC.c: 19: GO_nDONE = 1;
 "19
+[e = _GO_nDONE -> -> 1 `i `b ]
+[; ;ADC.c: 20: while(GO_nDONE);
+"20
 [e $U 98  ]
 [e :U 99 ]
 [e :U 98 ]
 [e $ _GO_nDONE 99  ]
 [e :U 100 ]
-[; ;ADC.c: 20: return ((ADRESH<<8)+ADRESL);
-"20
+[; ;ADC.c: 21: return ((ADRESH<<8)+ADRESL);
+"21
 [e ) -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
 [e $UE 97  ]
-[; ;ADC.c: 21: }
-"21
+[; ;ADC.c: 22: }
+"22
 [e :UE 97 ]
 }

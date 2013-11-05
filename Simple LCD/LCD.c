@@ -1,3 +1,4 @@
+#include "structs.h"
 #include <pic.h>
 #define Data PORTD
 #define Control PORTA
@@ -58,6 +59,20 @@ void Write_data(char hb, char lb)
 
 	_delay(Delay);
 }
+
+void Write_data_struct(struct byte_struct chardata)
+{
+	Control = Write;
+	Data = chardata.hb;
+	Control = DataRegister;
+
+	Control = Write;
+	Data = chardata.lb;
+	Control = DataRegister;
+
+	_delay(Delay);
+}
+
 void Write_digits(int adc_measurement)
 {
 	Write_data(0b0010,0b1100); //comma

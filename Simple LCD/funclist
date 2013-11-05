@@ -1,10 +1,12 @@
-_Clear_display: CODE, 1150 0 21
-_Sound: CODE, 1196 0 40
-_main: CODE, 1339 0 201
-_Init_lcd: CODE, 1236 0 47
+_Clear_display: CODE, 976 0 21
+_Sound: CODE, 1049 0 40
+_Write_data_struct: CODE, 1022 0 27
+_main: CODE, 1329 0 211
+_Init_lcd: CODE, 1089 0 47
 _Write_voltage: CODE, 1787 0 261
-_Write_data: CODE, 1171 0 25
-_ADC_Read: CODE, 1283 0 56
+_Write_data: CODE, 997 0 25
+_Thermal_Init: CODE, 1192 0 137
+_ADC_Read: CODE, 1136 0 56
 _Write_digits: CODE, 1540 0 247
-_ADC_Init: CODE, 1141 0 9
-Total: 907
+_ADC_Init: CODE, 967 0 9
+Total: 1081

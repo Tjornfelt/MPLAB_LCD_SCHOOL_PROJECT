@@ -1035,6 +1035,7 @@ ADCON1 = 0xC0;
 
 }
 
+
 unsigned int ADC_Read(unsigned char channel)
 {
 ADCON0 &= 0xC5;

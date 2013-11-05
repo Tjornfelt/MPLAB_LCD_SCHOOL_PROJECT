@@ -10,6 +10,7 @@ void ADC_Init()
                  //With reference voltages VDD and VSS
 }
 
+//must be int, not char, because we read 10 bits!
 unsigned int ADC_Read(unsigned char channel)
 {
   ADCON0 &= 0xC5; //Clearing the Channel Selection Bits

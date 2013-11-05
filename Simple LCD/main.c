@@ -1,10 +1,13 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <htc.h>
+#include "structs.h"
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <htc.h>
 #include <pic.h>
+//#include <pic16f877.h>
 #include "Sound.h"
 #include "LCD.h"
 #include "ADC.h"
+#include "Thermometer.h"
 
 unsigned int a;
 
@@ -13,12 +16,12 @@ void main()
 	//=================STARTUP INITIALIZERS==============================================
 
 	//LED lights for verifying stuff works!
-	TRISB = 0x01; //set for output
-	PORTB = 0x9; //1001
+	TRISB = 0x01; //set for output, except on RB0 which is input.
+	PORTB = 0x9; //1001 - RB0 is set for input previously, therefore the first light cant light up.
 	
-	//Buzzer
-	TRISC = 0;
-	PORTC = 0;
+	//Buzzer and temperature sensor settings. C3-4 are inputs
+	TRISC = 0b00000; //RC4 = SDA, RC3 = SDL
+	PORTC = 0b11000;
 	
 	//display control ports
 	TRISA = 0b00010001; //RA0 and RA4 are inputs. RA1-3 are outputs.
@@ -32,7 +35,12 @@ void main()
 	//Initialize the Analog/Digital module
 	ADC_Init();
 
+	//Initialize the thermal sensor. Work in progress, not currently working!
+	Thermal_Init();
+
 	//=================END OF STARTUP INITIALIZERS=======================================
+
+	
 
 	//main program loop.
 	int charWritten = 0;
@@ -41,7 +49,12 @@ void main()
 		//write a character to the display. Once per click.
 		if(RA4 == 0 && charWritten == 0)
 		{
-			Write_data(0b0100, 0b0011);
+			struct byte_struct char_c;
+			char_c.hb = 0b0100;
+			char_c.lb = 0b0011;
+			
+			Write_data_struct(char_c);
+			//Write_data(0b0100, 0b0011);
 			Sound();
 			charWritten = 1;
 		}

@@ -1,6 +1,14 @@
 
 # 1 "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.c"
 
+# 3 "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\structs.h"
+struct byte_struct{
+unsigned char hb:4;
+unsigned char lb:4;
+
+# 16
+};
+
 # 82 "C:\Program Files (x86)\HI-TECH Software\PICC\9.83\include\pic16f877.h"
 volatile unsigned char INDF @ 0x000;
 
@@ -1027,7 +1035,7 @@ extern void memcpyee(eeprom unsigned char *to, const unsigned char *from, unsign
 #pragma inline(_delay)
 extern void _delay(unsigned long);
 
-# 12 "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.c"
+# 13 "C:\Users\Mads\Documents\GitHub\MPLAB_LCD_SCHOOL_PROJECT\Simple LCD\LCD.c"
 void Clear_display()
 {
 
@@ -1061,8 +1069,6 @@ PORTA = 0x00;
 _delay(20000);
 
 Clear_display();
-
-
 }
 
 
@@ -1079,6 +1085,20 @@ PORTA = 0x08;
 
 _delay(20000);
 }
+
+void Write_data_struct(struct byte_struct chardata)
+{
+PORTA = 0xA;
+PORTD = chardata.hb;
+PORTA = 0x08;
+
+PORTA = 0xA;
+PORTD = chardata.lb;
+PORTA = 0x08;
+
+_delay(20000);
+}
+
 void Write_digits(int adc_measurement)
 {
 Write_data(0b0010,0b1100);
